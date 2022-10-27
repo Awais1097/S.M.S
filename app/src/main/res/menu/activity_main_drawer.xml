@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <item
+        android:id="@+id/nav_main"
+        android:icon="@drawable/ic_menu_camera"
+        android:title="@string/menu_catloge"
+        >
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_home"
+                    android:icon="@drawable/dashboard_icon"
+                    android:title="@string/menu_home" />
+                <item
+                    android:id="@+id/nav_products"
+                    android:icon="@drawable/product_icon_white"
+                    android:title="@string/menu_products" />
+                <item
+                    android:id="@+id/nav_gallery"
+                    android:icon="@drawable/customers_icon_white"
+                    android:title="@string/menu_customers" />
+                <item
+                    android:id="@+id/nav_slideshow"
+                    android:icon="@drawable/comany_icon_white"
+                    android:title="@string/menu_companies" />
+            </group>
+        </menu>
+    </item>
+
+
+    <item
+        android:id="@+id/nav_report"
+        android:icon="@drawable/ic_menu_camera"
+        android:title="@string/menu_reports"
+        >
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_today"
+                    android:icon="@drawable/today_sale_icon"
+                    android:title="@string/menu_today" />
+                <item
+                    android:id="@+id/nav_sale_rep"
+                    android:icon="@drawable/sale_icon"
+                    android:title="@string/menu_sale_report" />
+                <item
+                    android:id="@+id/nav_stock"
+                    android:icon="@drawable/stock_icon"
+                    android:title="@string/menu_stock" />
+
+                <item
+                    android:id="@+id/nav_short"
+                    android:icon="@drawable/short_product_icon"
+                    android:title="@string/menu_short" />
+            </group>
+        </menu>
+    </item>
+
+
+    <item
+        android:id="@+id/nav_tools"
+        android:icon="@drawable/ic_menu_camera"
+        android:title="@string/menu_tools"
+        >
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_import"
+                    android:icon="@drawable/import_icon"
+                    android:title="@string/menu_import" />
+                <item
+                    android:id="@+id/nav_export"
+                    android:icon="@drawable/export_icon"
+                    android:title="@string/menu_export" />
+                <item
+                    android:id="@+id/nav_database"
+                    android:icon="@drawable/database_icon"
+                    android:title="@string/menu_database" />
+                <item
+                    android:id="@+id/nav_setting"
+                    android:icon="@drawable/settings_icon"
+                    android:title="@string/menu_setting" />
+
+            </group>
+        </menu>
+    </item>
+
+</menu>
