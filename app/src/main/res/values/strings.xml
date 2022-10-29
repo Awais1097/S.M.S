@@ -14,7 +14,7 @@
     <string name="menu_slideshow">Slideshow</string>
 
     <string name="log_in">LOG IN</string>
-    <string name="forget_password">Forget Password?</string>
+    <string name="forget_password"><u>Forget Password?</u></string>
     <string name="login">Login</string>
 
     <string name="loading">Loading..</string>
@@ -34,5 +34,41 @@
     <string name="menu_export">Export Data</string>
     <string name="menu_database">Database</string>
     <string name="menu_setting">Settings</string>
+    <string name="user_id">User ID</string>
+    <string name="password">Password</string>
+    <string name="don_t_have_a_account">Don\'t have a account?</string>
+    <string name="create_now"><u>Create Now</u></string>
+    <string name="add_shop_detail">Add Shop Detail</string>
+    <string name="add_derail">Add Detail</string>
+    <string name="shop_name">Shop Name</string>
+    <string name="shop_type">Shop Type</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="employees">Employees</string>
+    <string name="country">Country</string>
+    <string name="city">City</string>
+    <string name="address">Address</string>
+    <string name="owner_name">Owner Name</string>
+    <string name="email_address">Email Address</string>
+    <string name="re_enter_password">Re-Enter Password</string>
+    <string name="save">Save</string>
+
+    <string name="error_failed_to_create_camera_image_file">Failed to create Camera image file</string>
+    <string name="error_failed_pick_gallery_image">Failed to pick Gallery image</string>
+    <string name="error_failed_to_crop_image">Failed to crop image</string>
+    <string name="error_failed_to_compress_image">Failed to compress image</string>
+    <string name="error_task_cancelled">Task Cancelled</string>
+    <string name="error_camera_app_not_found">Camera app not found</string>
+    <string name="image_picker_provider_authority_suffix" translatable="false">.imagepicker.provider</string>
+
+    <string name="title_choose_image_provider">Choose</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="title_gallery">Gallery</string>
+    <string name="title_camera">Camera</string>
+
+    <string name="permission_camera_denied">
+        <![CDATA[Camera permission is needed to take a picture. Please allow permission from Settings > Permissions.]]></string>
+
+
 
 </resources>

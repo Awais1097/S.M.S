@@ -1321,10 +1321,10 @@ object Utilities {
             val sentPI: PendingIntent =
                 PendingIntent.getBroadcast(context, 0, Intent("SMS_SENT"), 0)
             SmsManager.getDefault().sendTextMessage(number, null, msg, sentPI, null)
-            Toast.makeText(
+           /* Toast.makeText(
                 App.context, "Message Sent",
                 Toast.LENGTH_LONG
-            ).show()
+            ).show()*/
         } catch (ex: java.lang.Exception) {
             Toast.makeText(
                 App.context, ex.message.toString(),

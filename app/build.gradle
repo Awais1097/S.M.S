@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -13,7 +14,7 @@ android {
     defaultConfig {
         applicationId "com.awais.storemanagementsystem"
         minSdk 24
-        targetSdk 32
+        targetSdk 30
         versionCode 1
         versionName "1.0"
 
@@ -90,7 +91,7 @@ dependencies {
     implementation 'org.apache.commons:commons-csv:1.9.0'
     implementation 'org.greenrobot:eventbus:3.2.0'
     implementation 'com.squareup.okhttp3:okhttp:4.9.1'
-    implementation platform('com.google.firebase:firebase-bom:30.2.0')
+    implementation platform('com.google.firebase:firebase-bom:31.0.2')
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.firebaseui:firebase-ui:0.6.0'
     implementation("androidx.security:security-crypto:1.0.0")
@@ -107,4 +108,13 @@ dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-annotations:2.12.4'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.4'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //Circle Image View
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    // vertical Progress Bar
+    implementation "com.github.skydoves:progressview:1.1.3"
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation 'com.mikhaellopez:circularprogressbar:3.1.0'
+
+
 }

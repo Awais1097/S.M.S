@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1008975388503",
+    "project_id": "shop-managemet-system",
+    "storage_bucket": "shop-managemet-system.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1008975388503:android:d210f11524d1152313e812",
+        "android_client_info": {
+          "package_name": "com.awais.storemanagementsystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1008975388503-1ge821c2sk6e0p0bgrljtf9hrhafg1t9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.awais.storemanagementsystem",
+            "certificate_hash": "3190eeda812e7fff48294af09389d804503c8715"
+          }
+        },
+        {
+          "client_id": "1008975388503-ugnk8haeg3gcr5197pidnsedp4g3t6si.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhvVfN1Gn0eAdsvVCNW1EuO_ALV6YMSzg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1008975388503-ugnk8haeg3gcr5197pidnsedp4g3t6si.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

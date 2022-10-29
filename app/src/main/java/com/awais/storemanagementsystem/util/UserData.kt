@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
+import com.awais.storemanagementsystem.model.ShopDetailResponse
 import com.awais.storemanagementsystem.model.UserDataResponse
 import com.google.gson.Gson
 import java.text.SimpleDateFormat
@@ -56,7 +57,7 @@ object UserData {
 
     fun saveUser(
         context: Context,
-        user: UserDataResponse,
+        user: ShopDetailResponse,
     ) {
         val editor = getSharedPreferencesEditor(context)
         editor.putString(USER_NAME, Gson().toJson(user))
@@ -80,14 +81,14 @@ object UserData {
         editor.commit()
     }
 
-    fun getUser(context: Context): UserDataResponse {
+    fun getUser(context: Context): ShopDetailResponse {
         val editor = getSharedPreferences(context)
         val data = editor.getString(USER_NAME,"{}")
         if(data == "{}")
-            return UserDataResponse()
+            return ShopDetailResponse()
 
         return  Gson().fromJson(
-           data ,UserDataResponse::class.java
+           data ,ShopDetailResponse::class.java
         )
     }
 

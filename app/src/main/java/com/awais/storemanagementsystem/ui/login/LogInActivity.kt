@@ -5,13 +5,21 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import androidx.core.view.isVisible
 import com.awais.storemanagementsystem.R
 import com.awais.storemanagementsystem.databinding.ActivityLogInBinding
+import com.awais.storemanagementsystem.model.ShopDetailResponse
 import com.awais.storemanagementsystem.util.ActivityUtils
+import com.awais.storemanagementsystem.util.UserData
 import com.awais.storemanagementsystem.util.Utilities
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import com.google.gson.Gson
 
 class LogInActivity : AppCompatActivity() {
 
@@ -29,8 +37,61 @@ class LogInActivity : AppCompatActivity() {
                 this, "+923066395565"
             )
         }
+        binding.createNow.setOnClickListener {
+            ActivityUtils.startRegisterActivity(this)
+        }
 
     }
+
+
+    fun getUsers() {
+        FirebaseDatabase.getInstance().reference.child("Shops").addValueEventListener(object :
+            ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()) {
+                    val list: ArrayList<ShopDetailResponse> = ArrayList()
+                    for (d in snapshot.children) {
+                        Log.e("data", d.value.toString())
+                        val user = Gson().fromJson(d.value.toString(), ShopDetailResponse::class.java)
+                        list.add(user)
+                    }
+                    val mUser = list.find {
+                        it.email == binding.edittextEmail.text.toString()
+                    }
+                    if (mUser == null) {
+                        Utilities.showToast(this@LogInActivity, "Please enter your correct user id")
+                        binding.login.isVisible = true
+                        binding.progressButton.isVisible = false
+                        return
+                    }
+                    if (mUser.password != binding.edittextPassword.text.toString()) {
+                        Utilities.showToast(this@LogInActivity, "Please enter correct password")
+                        binding.login.isVisible = true
+                        binding.progressButton.isVisible = false
+                        return
+                    }
+                    UserData.saveUser(this@LogInActivity, mUser)
+                    binding.login.isVisible = true
+                    binding.progressButton.isVisible = false
+                    ActivityUtils.startMainActivity(this@LogInActivity)
+                    finish()
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                binding.login.isVisible = true
+                binding.progressButton.isVisible = false
+                Utilities.showSnackbar(
+                    binding.root,
+                    "No internet working please try again",
+                    "",
+                    getColor(R.color.Red)
+                ) {
+                }
+            }
+        })
+    }
+
 
     private fun registerNewUser() {
         val email: String = binding.edittextEmail.text.toString()
@@ -45,9 +106,8 @@ class LogInActivity : AppCompatActivity() {
         }
         binding.login.isVisible = false
         binding.progressButton.isVisible = true
+        getUsers()
 
-        ActivityUtils.startMainActivity(this)
-        finish()
     }
 
 

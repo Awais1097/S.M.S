@@ -10,6 +10,7 @@ import android.widget.Toast
 import com.awais.storemanagementsystem.MainActivity
 import com.awais.storemanagementsystem.ui.FrameActivity
 import com.awais.storemanagementsystem.ui.login.LogInActivity
+import com.awais.storemanagementsystem.ui.login.RegisterActivity
 
 
 object ActivityUtils {
@@ -182,6 +183,11 @@ object ActivityUtils {
 
     fun startLoginActivity(activity: Context) {
         val intent = Intent(activity, LogInActivity::class.java)
+        startActivity(activity, intent)
+    }
+
+    fun startRegisterActivity(activity: Context) {
+        val intent = Intent(activity, RegisterActivity::class.java)
         startActivity(activity, intent)
     }
 

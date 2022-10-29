@@ -73,7 +73,7 @@ class SplashActivity : AppCompatActivity() {
                 listPermissionsNeeded.toTypedArray(),
                 1234
             )
-            return true
+            return false
         }
         return true
     }
