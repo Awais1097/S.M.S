@@ -65,7 +65,7 @@ object UserData {
         saveIsLogIn(context,true)
     }
 
-    private fun saveIsLogIn(
+    fun saveIsLogIn(
         context: Context, login: Boolean
     ) {
         val editor = getSharedPreferencesEditor(context)
