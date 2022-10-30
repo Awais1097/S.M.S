@@ -1,18 +1,21 @@
 package com.awais.storemanagementsystem
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
+import android.widget.Switch
+import android.widget.TextView
+import androidx.activity.ComponentActivity
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
-import androidx.navigation.NavController.OnDestinationChangedListener
-import androidx.navigation.NavDestination
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.*
 import com.awais.storemanagementsystem.databinding.ActivityMainBinding
+import com.awais.storemanagementsystem.dbbackup.OnCompleteListener
+import com.awais.storemanagementsystem.dbbackup.RoomBackup
+import com.awais.storemanagementsystem.roomdb.AppDatabase
 import com.awais.storemanagementsystem.util.ActivityUtils
 import com.awais.storemanagementsystem.util.UserData
 import com.awais.storemanagementsystem.util.Utilities
@@ -23,8 +26,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
-    var navController: NavController? = null
-    var drawerLayout: DrawerLayout? = null
+    private var navController: NavController? = null
+    private var drawerLayout: DrawerLayout? = null
+    lateinit var room: RoomBackup
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,17 +50,52 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.nav_home, R.id.nav_products, R.id.nav_gallery, R.id.nav_slideshow,
-                R.id.nav_today
+                R.id.nav_brands, R.id.nav_rack
             ), drawerLayout
         )
         setupActionBarWithNavController(navController!!, appBarConfiguration)
         navView.setupWithNavController(navController!!)
         navView.setNavigationItemSelectedListener(this)
+        val user = UserData.getUser(this)
+        val headerView = navView.getHeaderView(0)
+        val titleTextView = headerView.findViewById<TextView>(R.id.title_text_view)
+        val emailTextView = headerView.findViewById<TextView>(R.id.textView_detail)
+        val switch = headerView.findViewById<Switch>(R.id.switch_view)
+        titleTextView.text = user.shopName
+        emailTextView.text = user.email
+        switch.setOnClickListener {
+            UserData.saveShopOnOff(this, !switch.isChecked)
+        }
+        room = RoomBackup(this as ComponentActivity)
+            .database(AppDatabase.get())
+            .enableLogDebug(true)
+            .backupIsEncrypted(false)
+            .customBackupFileName("ShopDataBaseBackUp.sqlite")
+            .backupLocation(RoomBackup.BACKUP_FILE_LOCATION_CUSTOM_DIALOG)
+            .maxFileCount(1)
+            .onCompleteListener(object : OnCompleteListener {
+                override fun onComplete(success: Boolean, message: String, exitCode: Int) {
+                    if (success) {
+                        room.restartApp(Intent(applicationContext, MainActivity::class.java))
+                        Utilities.showSnackbar(
+                            binding.root, "Task complete successfully.", "",
+                            getColor(R.color.Green)
+                        ) {
+                        }
+                    } else {
+                        Utilities.showSnackbar(
+                            binding.root, "Task Canceled.", "",
+                            getColor(R.color.Red)
+                        ) {
+                        }
+                    }
+                }
+            })
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
-       // menuInflater.inflate(R.menu.main, menu)
+        // menuInflater.inflate(R.menu.main, menu)
         return true
     }
 
@@ -75,8 +114,21 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 finish()
                 return true
             }
-            R.id.nav_exit->{
+            R.id.nav_exit -> {
                 finish()
+                return true
+            }
+            R.id.nav_backup -> {
+                room.backup()
+                return true
+            }
+            R.id.nav_restore -> {
+                room.restore()
+                return true
+            }
+            R.id.nav_setting -> {
+                ActivityUtils.startRegisterActivity(this, true)
+                return true
             }
         }
         try {

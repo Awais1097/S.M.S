@@ -5,14 +5,18 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
+import com.awais.storemanagementsystem.roomdb.deo.BrandDao
 import com.awais.storemanagementsystem.roomdb.deo.ProductsDao
+import com.awais.storemanagementsystem.roomdb.deo.RackDao
+import com.awais.storemanagementsystem.roomdb.entity.BrandEntity
 import com.awais.storemanagementsystem.roomdb.entity.ProductEntity
+import com.awais.storemanagementsystem.roomdb.entity.RacksEntity
 import com.awais.storemanagementsystem.util.App
 import java.util.concurrent.Executors
 
 @Database(
     entities = [
-        ProductEntity::class
+        ProductEntity::class, BrandEntity::class, RacksEntity::class
     ], version = 1, exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -34,7 +38,8 @@ abstract class AppDatabase : RoomDatabase() {
                                 "StoreAppDatabase"
                             )
                             .addCallback(sRoomDatabaseCallback)
-                            .allowMainThreadQueries().build()
+                            .allowMainThreadQueries()
+                            .build()
                     }
                 }
             }
@@ -46,12 +51,16 @@ abstract class AppDatabase : RoomDatabase() {
                 super.onCreate(db)
                 databaseWriteExecutor.execute {
                     INSTANCE?.productsDao()?.deleteAll()
+                    INSTANCE?.brandsDao()?.deleteAll()
+                    INSTANCE?.racksDao()?.deleteAll()
                 }
             }
         }
     }
 
     abstract fun productsDao(): ProductsDao
+    abstract fun brandsDao(): BrandDao
+    abstract fun racksDao(): RackDao
 
 
 }

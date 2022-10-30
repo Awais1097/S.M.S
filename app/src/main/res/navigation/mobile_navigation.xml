@@ -29,6 +29,18 @@
         android:label="@string/menu_companies"
         tools:layout="@layout/fragment_slideshow" />
 
+    <fragment
+        android:id="@+id/nav_brands"
+        android:name="com.awais.storemanagementsystem.ui.BrandFragment"
+        android:label="@string/menu_brands"
+        tools:layout="@layout/fragment_brand" />
+
+    <fragment
+        android:id="@+id/nav_rack"
+        android:name="com.awais.storemanagementsystem.ui.RackFragment"
+        android:label="@string/menu_rack"
+        tools:layout="@layout/fragment_brand" />
+
 
     <fragment
         android:id="@+id/nav_today"

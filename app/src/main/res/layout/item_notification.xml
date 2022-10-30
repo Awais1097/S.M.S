@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginEnd="5dp"
+    android:layout_marginBottom="5dp"
+    app:cardCornerRadius="16sp"
+    app:cardElevation="2dp"
+    app:strokeColor="@color/Gray"
+    app:strokeWidth="0.8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvRecentNotice"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="16sp"
+            android:backgroundTint="#00000000"
+            android:elevation="0sp"
+            app:cardCornerRadius="50sp"
+            app:cardElevation="0.0sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivRecentNotice"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_fluent_note_24_filled"
+                android:scaleType="centerCrop" />
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvNoticeTitle"
+                style="@style/H2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0sp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/brand_name" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2sp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/image_view"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginEnd="8sp"
+                    android:padding="1.8sp"
+                    android:paddingStart="0sp"
+                    android:paddingEnd="0sp"
+                    android:src="@drawable/brand_icon"
+                    app:tint="@color/Gray" />
+
+                <TextView
+                    android:id="@+id/tvNoticeDate"
+                    style="@style/Body_small_gray"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:text="@string/company_name" />
+
+                <ImageView
+                    android:id="@+id/image_view_pring"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginEnd="8sp"
+                    android:padding="1.8sp"
+                    android:paddingStart="0sp"
+                    android:paddingEnd="0sp"
+                    android:visibility="gone"
+                    android:src="@drawable/ic_baseline_local_printshop_24"
+                    app:tint="@color/black" />
+
+                <ImageView
+                    android:id="@+id/do_delete"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="8sp"
+                    android:padding="1sp"
+                    android:paddingStart="0sp"
+                    android:paddingEnd="0sp"
+                    android:src="@drawable/ic_baseline_delete_24"
+                    app:tint="@color/Red" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

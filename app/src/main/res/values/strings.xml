@@ -38,7 +38,7 @@
     <string name="password">Password</string>
     <string name="don_t_have_a_account">Don\'t have a account?</string>
     <string name="create_now"><u>Create Now</u></string>
-    <string name="add_shop_detail">Add Shop Detail</string>
+    <string name="add_shop_detail">Shop Detail</string>
     <string name="add_derail">Add Detail</string>
     <string name="shop_name">Shop Name</string>
     <string name="shop_type">Shop Type</string>
@@ -68,7 +68,29 @@
 
     <string name="permission_camera_denied">
         <![CDATA[Camera permission is needed to take a picture. Please allow permission from Settings > Permissions.]]></string>
-
+    <string name="menu_backup">BackUp</string>
+    <string name="menu_restore">Restore</string>
+    <string name="action_about">About</string>
+    <string name="menu_brands">Brands</string>
+    <string name="menu_rack">Racks</string>
+    <string name="on">ON</string>
+    <string name="off">OFF</string>
+    <string name="old_password">Old Password</string>
+    <string name="today_sale">Today Sale :</string>
+    <string name="sale">Sale</string>
+    <string name="products">Products</string>
+    <string name="date_wise_sale">Date Wise Sale :</string>
+    <string name="month">Month</string>
+    <string name="brand_wise_sale">Brand Wise Sale :</string>
+    <string name="see_all"><![CDATA[See all >>]]></string>
+    <string name="short_products">Short Products :</string>
+    <string name="add_new_brand">Add New Brand</string>
+    <string name="add_new_rack">Add New Rack</string>
+    <string name="brand_name">Brand Name</string>
+    <string name="rack_title">Rack Title</string>
+    <string name="all_brands">All Brands :</string>
+    <string name="all_racks">All Racks :</string>
+    <string name="company_name">Company Name</string>
 
 
 </resources>

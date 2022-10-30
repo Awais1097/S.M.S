@@ -9,15 +9,16 @@ import androidx.core.view.isVisible
 import com.awais.storemanagementsystem.R
 import com.awais.storemanagementsystem.databinding.ActivityRegisterBinding
 import com.awais.storemanagementsystem.model.ShopDetailResponse
+import com.awais.storemanagementsystem.util.UserData
 import com.awais.storemanagementsystem.util.Utilities
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.database.FirebaseDatabase
 import com.google.gson.Gson
-import org.greenrobot.eventbus.EventBus
 
 class RegisterActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityRegisterBinding
+    private lateinit var binding: ActivityRegisterBinding
+    var password: String? = null
 
     @SuppressLint("UseCompatLoadingForDrawables")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,10 +36,28 @@ class RegisterActivity : AppCompatActivity() {
         binding.saveButton.setOnClickListener {
             validation()
         }
+        if (intent.getBooleanExtra("isEdit", false)) {
+            val user = UserData.getUser(this@RegisterActivity)
+            binding.shopNameEditText.setText(user.shopName)
+            binding.shopTypeEditText.setText(user.shopType)
+            binding.employeeEditText.setText(user.employees.toString())
+            binding.phoneNumberEditText.setText(user.contactNumber)
+            binding.mobileNumberEditText.setText(user.mobileNumber)
+            binding.targetMaxEditText.setText(user.dailyTargetMax.toString())
+            binding.targetMinEditText.setText(user.dailyTargetMin.toString())
+            binding.countryEditText.setText(user.country)
+            binding.cityEditText.setText(user.city)
+            binding.addressEditText.setText(user.address)
+            binding.ownerNameEditText.setText(user.ownerName)
+            binding.ownerMobileEditText.setText(user.ownerNumber)
+            binding.emailAddressEditText.setText(user.email)
+            password = user.password
+            binding.oldPasswod.isVisible = password != null
+        }
 
     }
 
-    fun validation() {
+    private fun validation() {
         if (TextUtils.isEmpty(binding.shopNameEditText.text)) {
             binding.shopNameEditText.error = "Enter Shop Name"
             binding.shopNameEditText.requestFocus()
@@ -111,6 +130,14 @@ class RegisterActivity : AppCompatActivity() {
             return
         }
         binding.employeeEditText.error = null
+        if(password != null){
+            if (!TextUtils.equals(password, binding.oldPasswodEditText.text)) {
+                binding.passwrod2EditText.error = "Enter correct password"
+                binding.passwrod2EditText.requestFocus()
+                return
+            }
+            binding.passwrod2EditText.error = null
+        }
         if (TextUtils.isEmpty(binding.passwodEditText.text)) {
             binding.passwodEditText.error = "Enter email password"
             binding.passwodEditText.requestFocus()
@@ -169,7 +196,7 @@ class RegisterActivity : AppCompatActivity() {
         database.child("Shops").child(user.email.toString()).setValue(gson)
             .addOnCompleteListener {
                 val msg =
-                    "Dear ${user.ownerName} Wel Come to S.M.S.\n" +
+                    "Dear ${user.ownerName} Wel Come.\n" +
                             "Congratulation you are added in our S,M,S family.\n"
                 val msg2 = "Login\n" +
                         "User ID: ${user.email}\n" +
@@ -204,7 +231,6 @@ class RegisterActivity : AppCompatActivity() {
                     }.show()
             }
     }
-
 
 
 }

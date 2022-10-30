@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:text="Today Sale :"
+            android:text="@string/today_sale"
             android:textColor="?android:textColorPrimary" />
 
         <LinearLayout
@@ -60,7 +60,7 @@
                             style="@style/Body"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Sale"
+                            android:text="@string/sale"
                             android:textColor="@color/white" />
 
                     </LinearLayout>
@@ -109,7 +109,7 @@
                             style="@style/Body"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Products"
+                            android:text="@string/products"
                             android:textColor="@color/white" />
 
                     </LinearLayout>
@@ -139,7 +139,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="7"
-                android:text="Date Wise Sale : "
+                android:text="@string/date_wise_sale"
                 android:textColor="?android:textColorPrimary" />
 
 
@@ -180,7 +180,7 @@
                         android:drawableTint="@color/white"
                         android:gravity="center_vertical"
                         android:minWidth="60dp"
-                        android:text="Month"
+                        android:text="@string/month"
                         tools:ignore="UseCompatTextViewDrawableXml" />
 
                 </LinearLayout>
@@ -236,7 +236,7 @@
                                 style="@style/Body"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Sale"
+                                android:text="@string/sale"
                                 android:textColor="@color/white" />
 
                         </LinearLayout>
@@ -287,7 +287,7 @@
                                 style="@style/Body"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Products"
+                                android:text="@string/products"
                                 android:textColor="@color/white" />
 
                         </LinearLayout>
@@ -320,7 +320,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="7"
                 android:padding="8dp"
-                android:text="Brand Wise Sale : "
+                android:text="@string/brand_wise_sale"
                 android:textColor="?android:textColorPrimary" />
 
             <TextView
@@ -328,7 +328,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:text="See all >>" />
+                android:text="@string/see_all" />
 
 
         </LinearLayout>
@@ -349,7 +349,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="7"
                 android:padding="8dp"
-                android:text="Short Products :"
+                android:text="@string/short_products"
                 android:textColor="?android:textColorPrimary" />
 
             <TextView
@@ -357,7 +357,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:text="See all >>" />
+                android:text="@string/see_all" />
 
 
         </LinearLayout>

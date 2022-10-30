@@ -4,8 +4,8 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
+import android.util.Log
 import com.awais.storemanagementsystem.model.ShopDetailResponse
-import com.awais.storemanagementsystem.model.UserDataResponse
 import com.google.gson.Gson
 import java.text.SimpleDateFormat
 import java.util.*
@@ -16,11 +16,8 @@ object UserData {
     private const val SHARE_PREFRENCE_NAME = "currantUserDate"
     private const val USER_NAME = "userName"
     private const val USER_LOGIN = "userLogIn"
+    private const val USER_ON_OFF = "shopOnOff"
     private const val USER_IMAGE = "userImage"
-
-    const val channelID = "J2ynUem3MhIjF9La"
-    const val roomName = "Quiz"
-    const val roomNameNotes = "NotesBoard"
 
     @SuppressLint("ConstantLocale")
     val simpleDateFormat = SimpleDateFormat("yyyy/MM/dd HH:mm:ss", Locale.getDefault())
@@ -55,27 +52,27 @@ object UserData {
     @SuppressLint("ConstantLocale")
     val simpleDateFormat9 = SimpleDateFormat("EEEE dd MMMM yyyy", Locale.getDefault())
 
-    fun saveUser(
-        context: Context,
-        user: ShopDetailResponse,
-    ) {
+    fun saveUser(context: Context, user: ShopDetailResponse, ) {
         val editor = getSharedPreferencesEditor(context)
         editor.putString(USER_NAME, Gson().toJson(user))
         editor.commit()
-        saveIsLogIn(context,true)
+        saveIsLogIn(context, true)
     }
 
-    fun saveIsLogIn(
-        context: Context, login: Boolean
-    ) {
+    fun saveIsLogIn(context: Context, login: Boolean) {
         val editor = getSharedPreferencesEditor(context)
         editor.putBoolean(USER_LOGIN, login)
         editor.commit()
     }
 
-    fun saveImage(
-        context: Context, image: String
-    ) {
+    fun saveShopOnOff(context: Context, login: Boolean) {
+        val editor = getSharedPreferencesEditor(context)
+        editor.putBoolean(USER_ON_OFF, login)
+        editor.commit()
+        Log.e("Shop", "$login")
+    }
+
+    fun saveImage(context: Context, image: String) {
         val editor = getSharedPreferencesEditor(context)
         editor.putString(USER_IMAGE, image)
         editor.commit()
@@ -83,13 +80,9 @@ object UserData {
 
     fun getUser(context: Context): ShopDetailResponse {
         val editor = getSharedPreferences(context)
-        val data = editor.getString(USER_NAME,"{}")
-        if(data == "{}")
-            return ShopDetailResponse()
-
-        return  Gson().fromJson(
-           data ,ShopDetailResponse::class.java
-        )
+        val data = editor.getString(USER_NAME, "{}")
+        if (data == "{}") return ShopDetailResponse()
+        return Gson().fromJson(data, ShopDetailResponse::class.java)
     }
 
     fun userLogIn(context: Context): Boolean {
@@ -100,6 +93,14 @@ object UserData {
         }
     }
 
+    fun userShopOnOff(context: Context): Boolean {
+        return try {
+            getSharedPreferences(context).getBoolean(USER_ON_OFF, true)
+        } catch (e: Exception) {
+            true
+        }
+    }
+
     fun getImageUrl(context: Context): String {
         return getSharedPreferences(context).getString(USER_IMAGE, "") ?: ""
     }
@@ -107,7 +108,6 @@ object UserData {
     fun clearAll(context: Context) {
         getSharedPreferencesEditor(context).clear()
     }
-
 
     fun getSharedPreferences(context: Context): SharedPreferences {
         return context.getSharedPreferences(SHARE_PREFRENCE_NAME, MODE_PRIVATE)

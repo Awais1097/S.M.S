@@ -186,8 +186,9 @@ object ActivityUtils {
         startActivity(activity, intent)
     }
 
-    fun startRegisterActivity(activity: Context) {
+    fun startRegisterActivity(activity: Context, isEdit: Boolean? = false) {
         val intent = Intent(activity, RegisterActivity::class.java)
+        intent.putExtra("isEdit", isEdit)
         startActivity(activity, intent)
     }
 

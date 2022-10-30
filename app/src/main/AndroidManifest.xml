@@ -32,6 +32,9 @@
             android:name=".ui.login.RegisterActivity"
             android:exported="false" />
         <activity
+            android:name=".imagepicker.ImagePickerActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false"
             android:label="@string/app_name"
@@ -51,6 +54,15 @@
         <activity
             android:name=".ui.FrameActivity"
             android:exported="false" />
+        <provider
+            android:name=".imagepicker.ImagePickerFileProvider"
+            android:authorities="${applicationId}.imagepicker.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/image_picker_provider_paths" />
+        </provider>
     </application>
 
 </manifest>

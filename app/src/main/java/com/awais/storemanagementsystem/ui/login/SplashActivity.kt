@@ -46,7 +46,7 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun start() {
-        if (UserData.userLogIn(this)) {
+        if (!UserData.userLogIn(this)) {
             ActivityUtils.startMainActivity(this)
         } else {
             ActivityUtils.startLoginActivity(this)

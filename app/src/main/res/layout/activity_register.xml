@@ -32,11 +32,6 @@
             android:orientation="vertical"
             android:padding="10dp">
 
-            <TextView
-                style="@style/H2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/add_derail" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -265,6 +260,29 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/email_address"
                     android:inputType="textEmailAddress" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/old_passwod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <View
+                    android:layout_width="30dp"
+                    android:layout_height="30dp" />
+
+                <EditText
+                    android:id="@+id/old_passwod_edit_text"
+                    style="@style/Body_black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/old_password"
+                    android:inputType="textPassword" />
 
             </LinearLayout>
 
