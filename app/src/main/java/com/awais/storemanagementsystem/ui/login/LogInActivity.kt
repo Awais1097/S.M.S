@@ -64,6 +64,12 @@ class LogInActivity : AppCompatActivity() {
                         binding.progressButton.isVisible = false
                         return
                     }
+                    if(mUser.isAllow == false){
+                        Utilities.showSnackbar(binding.root,"Not allow to use",null,R.color.Red)
+                        binding.login.isVisible = true
+                        binding.progressButton.isVisible = false
+                        return
+                    }
                     if (mUser.password != binding.edittextPassword.text.toString()) {
                         Utilities.showToast(this@LogInActivity, "Please enter correct password")
                         binding.login.isVisible = true

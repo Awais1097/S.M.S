@@ -62,6 +62,9 @@ data class ShopDetailResponse(
     val deviceID: String? = null,
 
     @field:SerializedName("deviceName")
-    val deviceName: String? = null
+    val deviceName: String? = null,
+
+    @field:SerializedName("isAllow")
+    val isAllow: Boolean? = true
 
 ) : Parcelable

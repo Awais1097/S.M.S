@@ -130,7 +130,7 @@ class RegisterActivity : AppCompatActivity() {
             return
         }
         binding.employeeEditText.error = null
-        if(password != null){
+        if (password != null) {
             if (!TextUtils.equals(password, binding.oldPasswodEditText.text)) {
                 binding.passwrod2EditText.error = "Enter correct password"
                 binding.passwrod2EditText.requestFocus()
@@ -190,10 +190,12 @@ class RegisterActivity : AppCompatActivity() {
             ownerName = binding.ownerNameEditText.text.toString(),
             ownerNumber = binding.ownerMobileEditText.text.toString(),
             password = binding.passwodEditText.text.toString(),
-            deviceName = Utilities.deviceName
+            deviceName = Utilities.deviceName,
+            isAllow = true
         )
         val gson = Gson().toJson(user)
-        database.child("Shops").child(user.email.toString()).setValue(gson)
+        database.child("Shops").child(user.email.toString().replace("@", "_").replace(".", "_"))
+            .setValue(gson)
             .addOnCompleteListener {
                 val msg =
                     "Dear ${user.ownerName} Wel Come.\n" +
