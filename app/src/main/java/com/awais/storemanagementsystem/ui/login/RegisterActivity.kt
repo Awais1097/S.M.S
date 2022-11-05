@@ -19,6 +19,7 @@ class RegisterActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegisterBinding
     var password: String? = null
+    var shopid: String? = null
 
     @SuppressLint("UseCompatLoadingForDrawables")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,6 +54,9 @@ class RegisterActivity : AppCompatActivity() {
             binding.emailAddressEditText.setText(user.email)
             password = user.password
             binding.oldPasswod.isVisible = password != null
+            shopid = user.shop_id
+                ?: ("SHOP_-" + binding.cityEditText.text.toString()
+                    .uppercase() + (0 until 100000).random())
         }
 
     }
@@ -191,43 +195,49 @@ class RegisterActivity : AppCompatActivity() {
             ownerNumber = binding.ownerMobileEditText.text.toString(),
             password = binding.passwodEditText.text.toString(),
             deviceName = Utilities.deviceName,
-            isAllow = true
+            isAllow = true,
+            shop_id = if (shopid == null) "SHOP_-" + binding.cityEditText.text.toString()
+                .uppercase() + (0 until 100000).random() else shopid
         )
         val gson = Gson().toJson(user)
-        database.child("Shops").child(user.email.toString().replace("@", "_").replace(".", "_"))
+        database.child("Shops").child(user.shop_id.toString().replace("@", "_").replace(".", "_"))
             .setValue(gson)
             .addOnCompleteListener {
-                val msg =
-                    "Dear ${user.ownerName} Wel Come.\n" +
-                            "Congratulation you are added in our S,M,S family.\n"
-                val msg2 = "Login\n" +
-                        "User ID: ${user.email}\n" +
-                        "Password: ${user.password}\n" +
-                        "Shop Name : ${user.shopName}\n"
-                val msg3 =
-                    "For More Detail contact on +923066395565 .\nThanks you.."
-                Utilities.sendMessageOnNumber(
-                    this, user.ownerNumber ?: user.contactNumber ?: user.mobileNumber ?: "1234", msg
-                )
-                Utilities.sendMessageOnNumber(
-                    this,
-                    user.ownerNumber ?: user.contactNumber ?: user.mobileNumber ?: "1234",
-                    msg2
-                )
-                Utilities.sendMessageOnNumber(
-                    this,
-                    user.ownerNumber ?: user.contactNumber ?: user.mobileNumber ?: "1234",
-                    msg3
-                )
+                if (!intent.getBooleanExtra("isEdit", false)) {
+                    val msg =
+                        "Dear ${user.ownerName} Wel Come.\n" +
+                                "Congratulation you are added in our S,M,S family.\n"
+                    val msg2 = "Login\n" +
+                            "User ID: ${user.email}\n" +
+                            "Password: ${user.password}\n" +
+                            "Shop Name : ${user.shopName}\n"
+                    val msg3 =
+                        "For More Detail contact on +923066395565 .\nThanks you.."
+                    Utilities.sendMessageOnNumber(
+                        this,
+                        user.ownerNumber ?: user.contactNumber ?: user.mobileNumber ?: "1234",
+                        msg
+                    )
+                    Utilities.sendMessageOnNumber(
+                        this,
+                        user.ownerNumber ?: user.contactNumber ?: user.mobileNumber ?: "1234",
+                        msg2
+                    )
+                    Utilities.sendMessageOnNumber(
+                        this,
+                        user.ownerNumber ?: user.contactNumber ?: user.mobileNumber ?: "1234",
+                        msg3
+                    )
+                }
                 binding.saveButton.isVisible = true
                 binding.progressButton.isVisible = false
-                Toast.makeText(applicationContext, "Shop Added Successfully", Toast.LENGTH_LONG)
+                Toast.makeText(applicationContext, "Shop Data Successfully", Toast.LENGTH_LONG)
                     .show()
                 finish()
             }.addOnCanceledListener {
                 binding.saveButton.isVisible = true
                 binding.progressButton.isVisible = false
-                Snackbar.make(binding.root, "Shop Not Added Successfully", Snackbar.LENGTH_LONG)
+                Snackbar.make(binding.root, "Shop Not Data Successfully", Snackbar.LENGTH_LONG)
                     .setAction("Try Again") {
                         save()
                     }.show()

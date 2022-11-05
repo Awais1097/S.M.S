@@ -7,6 +7,9 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class ShopDetailResponse(
 
+    @field:SerializedName("shop_id")
+    val shop_id: String? = null,
+
     @field:SerializedName("country")
     val country: String? = null,
 

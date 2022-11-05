@@ -9,6 +9,7 @@ import com.awais.storemanagementsystem.roomdb.deo.BrandDao
 import com.awais.storemanagementsystem.roomdb.deo.ProductsDao
 import com.awais.storemanagementsystem.roomdb.deo.RackDao
 import com.awais.storemanagementsystem.roomdb.entity.BrandEntity
+import com.awais.storemanagementsystem.roomdb.entity.CustomerEntity
 import com.awais.storemanagementsystem.roomdb.entity.ProductEntity
 import com.awais.storemanagementsystem.roomdb.entity.RacksEntity
 import com.awais.storemanagementsystem.util.App
@@ -16,7 +17,7 @@ import java.util.concurrent.Executors
 
 @Database(
     entities = [
-        ProductEntity::class, BrandEntity::class, RacksEntity::class
+        ProductEntity::class, BrandEntity::class, RacksEntity::class, CustomerEntity::class
     ], version = 1, exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {

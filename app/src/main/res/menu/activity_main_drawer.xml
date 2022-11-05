@@ -18,6 +18,10 @@
                     android:icon="@drawable/product_icon_white"
                     android:title="@string/menu_products" />
                 <item
+                    android:id="@+id/nav_stock"
+                    android:icon="@drawable/ic_baseline_amp_stories_24"
+                    android:title="@string/menu_stock" />
+                <item
                     android:id="@+id/nav_gallery"
                     android:icon="@drawable/customers_icon_white"
                     android:title="@string/menu_customers" />
@@ -54,7 +58,7 @@
                     android:icon="@drawable/sale_icon"
                     android:title="@string/menu_sale_report" />
                 <item
-                    android:id="@+id/nav_stock"
+                    android:id="@+id/nav_add_stock"
                     android:icon="@drawable/stock_icon"
                     android:title="@string/menu_stock" />
 

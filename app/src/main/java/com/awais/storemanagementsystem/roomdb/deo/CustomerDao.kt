@@ -2,36 +2,36 @@ package com.awais.storemanagementsystem.roomdb.deo
 
 import androidx.room.*
 import androidx.room.OnConflictStrategy.Companion.IGNORE
-import com.awais.storemanagementsystem.roomdb.entity.BrandEntity
+import com.awais.storemanagementsystem.roomdb.entity.CustomerEntity
 
 @Dao
-interface BrandDao {
+interface CustomerDao {
 
-    @Insert(entity = BrandEntity::class, onConflict = IGNORE)
-    fun insert(user: BrandEntity?)
+    @Insert(entity = CustomerEntity::class, onConflict = IGNORE)
+    fun insert(user: CustomerEntity?)
 
-    @Query("DELETE FROM Brands WHERE _id =:Id")
+    @Query("DELETE FROM Customers WHERE CustomersId =:Id")
     fun delete(Id: Int)
 
     @Update
-    fun updateUsers(vararg users: BrandEntity)
+    fun updateUsers(vararg users: CustomerEntity)
 
     @Delete
-    fun delete(user: BrandEntity)
+    fun delete(user: CustomerEntity)
 
-    @Query("DELETE FROM Brands")
+    @Query("DELETE FROM Customers")
     fun deleteAll()
 
-    @Query("SELECT * FROM Brands order by _id")
-    fun getAll(): List<BrandEntity>
+    @Query("SELECT * FROM Customers order by CustomersId")
+    fun getAll(): List<CustomerEntity>
 
-    @Query("SELECT * FROM Brands WHERE _id = :pid")
-    fun getById(pid: Int): BrandEntity
+    @Query("SELECT * FROM Customers WHERE CustomersId = :pid")
+    fun getById(pid: Int): CustomerEntity
 
-    @Insert(entity = BrandEntity::class, onConflict = IGNORE)
-    fun insertAll(users: List<BrandEntity>)
+    @Insert(entity = CustomerEntity::class, onConflict = IGNORE)
+    fun insertAll(users: List<CustomerEntity>)
 
-    @Query("SELECT * FROM Brands WHERE CompanyId = :pid")
-    fun getByCompanyId(pid: Int): List<BrandEntity>
+    @Query("SELECT * FROM Customers WHERE CustomersCompId = :pid")
+    fun getByCompanyId(pid: Int): List<CustomerEntity>
 
 }
