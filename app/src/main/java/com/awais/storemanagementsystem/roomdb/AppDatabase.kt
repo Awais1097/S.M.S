@@ -6,6 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.awais.storemanagementsystem.roomdb.deo.BrandDao
+import com.awais.storemanagementsystem.roomdb.deo.CustomerDao
 import com.awais.storemanagementsystem.roomdb.deo.ProductsDao
 import com.awais.storemanagementsystem.roomdb.deo.RackDao
 import com.awais.storemanagementsystem.roomdb.entity.BrandEntity
@@ -54,6 +55,7 @@ abstract class AppDatabase : RoomDatabase() {
                     INSTANCE?.productsDao()?.deleteAll()
                     INSTANCE?.brandsDao()?.deleteAll()
                     INSTANCE?.racksDao()?.deleteAll()
+                    INSTANCE?.customerDao()?.deleteAll()
                 }
             }
         }
@@ -62,6 +64,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun productsDao(): ProductsDao
     abstract fun brandsDao(): BrandDao
     abstract fun racksDao(): RackDao
+    abstract fun customerDao(): CustomerDao
 
 
 }

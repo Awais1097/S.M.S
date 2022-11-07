@@ -92,6 +92,12 @@
     <string name="all_racks">All Racks :</string>
     <string name="company_name">Company Name</string>
     <string name="shop_pic">Shop Pic:</string>
+    <string name="menu_sync">Sync</string>
+    <string name="menu_unload">Upload</string>
+    <string name="menu_sever">Server</string>
+    <string name="add_new_customer" >Add New Customer:</string>
+    <string name="cutomer_name">Customer Name</string>
+    <string name="all_cusromer" >All Customers:</string>
 
 
 </resources>

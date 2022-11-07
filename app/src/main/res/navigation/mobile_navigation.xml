@@ -21,7 +21,7 @@
         android:id="@+id/nav_gallery"
         android:name="com.awais.storemanagementsystem.ui.gallery.GalleryFragment"
         android:label="@string/menu_customers"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_customer" />
 
     <fragment
         android:id="@+id/nav_slideshow"

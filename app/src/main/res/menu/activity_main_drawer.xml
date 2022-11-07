@@ -5,8 +5,7 @@
     <item
         android:id="@+id/nav_main"
         android:icon="@drawable/ic_menu_camera"
-        android:title="@string/menu_catloge"
-        >
+        android:title="@string/menu_catloge">
         <menu>
             <group android:checkableBehavior="single">
                 <item
@@ -45,8 +44,7 @@
     <item
         android:id="@+id/nav_report"
         android:icon="@drawable/ic_menu_camera"
-        android:title="@string/menu_reports"
-        >
+        android:title="@string/menu_reports">
         <menu>
             <group android:checkableBehavior="single">
                 <item
@@ -71,12 +69,10 @@
     </item>
 
 
-
     <item
         android:id="@+id/nav_database"
         android:icon="@drawable/database_icon"
-        android:title="@string/menu_database"
-        >
+        android:title="@string/menu_database">
         <menu>
             <group android:checkableBehavior="single">
                 <item
@@ -91,12 +87,33 @@
         </menu>
     </item>
 
+    <item
+        android:id="@+id/nav_server"
+        android:icon="@drawable/database_icon"
+        android:title="@string/menu_sever">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_server_setting"
+                    android:icon="@drawable/settings_icon"
+                    android:title="@string/menu_setting" />
+                <item
+                    android:id="@+id/nav_sync"
+                    android:icon="@drawable/ic_baseline_sync_24"
+                    android:title="@string/menu_sync" />
+                <item
+                    android:id="@+id/nav_upload"
+                    android:icon="@drawable/ic_baseline_arrow_circle_up_24"
+                    android:title="@string/menu_unload" />
+            </group>
+        </menu>
+    </item>
+
 
     <item
         android:id="@+id/nav_tools"
-        android:icon="@drawable/ic_menu_camera"
-        android:title="@string/menu_tools"
-        >
+        android:icon="@drawable/settings_icon"
+        android:title="@string/menu_tools">
         <menu>
             <group android:checkableBehavior="single">
                 <item

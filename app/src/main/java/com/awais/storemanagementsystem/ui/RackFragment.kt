@@ -1,5 +1,6 @@
 package com.awais.storemanagementsystem.ui
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
@@ -19,6 +20,7 @@ import com.awais.storemanagementsystem.adapter.RackListAdapter
 import com.awais.storemanagementsystem.databinding.FragmentBrandBinding
 import com.awais.storemanagementsystem.roomdb.AppDatabase
 import com.awais.storemanagementsystem.roomdb.entity.RacksEntity
+import com.awais.storemanagementsystem.util.PDFConverter
 import com.awais.storemanagementsystem.util.Utilities
 import com.awais.storemanagementsystem.util.Utilities.decode
 import com.awais.storemanagementsystem.viewmodel.RacksViewModel
@@ -27,11 +29,11 @@ import com.bumptech.glide.Glide
 class RackFragment : Fragment() {
 
     private var _binding: FragmentBrandBinding? = null
-    // This property is only valid between onCreateView and onDestroyView.
     private var uri: String? = null
     private val binding get() = _binding!!
     var mItem = RacksEntity()
 
+    @SuppressLint("SetTextI18n", "UseCompatLoadingForDrawables")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
@@ -46,6 +48,10 @@ class RackFragment : Fragment() {
         binding.brandMv.setImageDrawable(requireContext().getDrawable(R.drawable.rank_icon))
         binding.imageViewPring.isVisible = true
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        binding.imageViewPring.setOnClickListener {
+            val pdfConverter = PDFConverter()
+            pdfConverter.createPdf(requireContext(), binding.recyclerView, requireActivity())
+        }
         viewModel.list.observe(viewLifecycleOwner) {
             binding.recyclerView.adapter = RackListAdapter(it,
                 onItemClick = object : RackListAdapter.OnItemClick {
@@ -66,7 +72,8 @@ class RackFragment : Fragment() {
                     }
 
                     override fun onPrint(item: RacksEntity) {
-                        
+                        val pdfConverter = PDFConverter()
+                        pdfConverter.createPdf(requireContext(), binding.recyclerView, requireActivity())
                     }
                 }
             )
