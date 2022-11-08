@@ -29,6 +29,10 @@
                     android:icon="@drawable/comany_icon_white"
                     android:title="@string/menu_companies" />
                 <item
+                    android:id="@+id/nav_category"
+                    android:icon="@drawable/ic_baseline_auto_awesome_motion_24"
+                    android:title="@string/menu_category" />
+                <item
                     android:id="@+id/nav_brands"
                     android:icon="@drawable/brand_icon"
                     android:title="@string/menu_brands" />

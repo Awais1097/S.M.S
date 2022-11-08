@@ -100,6 +100,7 @@
     <string name="cutomer_name">Name</string>
     <string name="all_cusromer" >All Customers:</string>
     <string name="all_companies" >All Companies:</string>
+    <string name="menu_category">Category</string>
 
 
 </resources>
