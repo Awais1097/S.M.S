@@ -68,10 +68,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         titleTextView.text = user.shopName
         emailTextView.text = user.email
         switch.isChecked = !UserData.userShopOnOff(this)
-        setToolBarColor(switch,headerView)
+        setToolBarColor(headerView)
         switch.setOnClickListener {
             UserData.saveShopOnOff(this, !switch.isChecked)
-            setToolBarColor(switch,headerView)
+            setToolBarColor(headerView)
         }
         room = RoomBackup(this as ComponentActivity)
             .database(AppDatabase.get())
@@ -147,18 +147,20 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
-    private fun setToolBarColor(@SuppressLint("UseSwitchCompatOrMaterialCode") switch: Switch, header:View){
+    private fun setToolBarColor(header: View) {
+        val isChecked = !UserData.userShopOnOff(this)
         binding.appBarMain.toolbar.setBackgroundColor(
-            if (switch.isChecked) getColor(R.color.purple_500) else getColor(R.color.Red)
+            if (isChecked) getColor(R.color.purple_500) else getColor(R.color.Red)
         )
         header.setBackgroundColor(
-            if (switch.isChecked) getColor(R.color.purple_500) else getColor(R.color.Red)
+            if (isChecked) getColor(R.color.purple_500) else getColor(R.color.Red)
         )
         /*window.navigationBarColor = ContextCompat.getColor(this,
             if (switch.isChecked) R.color.purple_500 else R.color.Red
         )*/
-        window.statusBarColor = ContextCompat.getColor(this,
-            if (switch.isChecked) R.color.purple_500 else R.color.Red
+        window.statusBarColor = ContextCompat.getColor(
+            this,
+            if (isChecked) R.color.purple_500 else R.color.Red
         )
     }
 
