@@ -1,13 +1,16 @@
 package com.awais.storemanagementsystem
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Switch
 import android.widget.TextView
 import androidx.activity.ComponentActivity
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -30,6 +33,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private var drawerLayout: DrawerLayout? = null
     lateinit var room: RoomBackup
 
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -63,8 +67,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val switch = headerView.findViewById<Switch>(R.id.switch_view)
         titleTextView.text = user.shopName
         emailTextView.text = user.email
+        switch.isChecked = !UserData.userShopOnOff(this)
+        setToolBarColor(switch,headerView)
         switch.setOnClickListener {
             UserData.saveShopOnOff(this, !switch.isChecked)
+            setToolBarColor(switch,headerView)
         }
         room = RoomBackup(this as ComponentActivity)
             .database(AppDatabase.get())
@@ -139,4 +146,20 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         return true
     }
+
+    private fun setToolBarColor(@SuppressLint("UseSwitchCompatOrMaterialCode") switch: Switch, header:View){
+        binding.appBarMain.toolbar.setBackgroundColor(
+            if (switch.isChecked) getColor(R.color.purple_500) else getColor(R.color.Red)
+        )
+        header.setBackgroundColor(
+            if (switch.isChecked) getColor(R.color.purple_500) else getColor(R.color.Red)
+        )
+        /*window.navigationBarColor = ContextCompat.getColor(this,
+            if (switch.isChecked) R.color.purple_500 else R.color.Red
+        )*/
+        window.statusBarColor = ContextCompat.getColor(this,
+            if (switch.isChecked) R.color.purple_500 else R.color.Red
+        )
+    }
+
 }

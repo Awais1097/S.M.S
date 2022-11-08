@@ -96,8 +96,10 @@
     <string name="menu_unload">Upload</string>
     <string name="menu_sever">Server</string>
     <string name="add_new_customer" >Add New Customer:</string>
-    <string name="cutomer_name">Customer Name</string>
+    <string name="add_new_company" >Add New Company:</string>
+    <string name="cutomer_name">Name</string>
     <string name="all_cusromer" >All Customers:</string>
+    <string name="all_companies" >All Companies:</string>
 
 
 </resources>

@@ -41,19 +41,20 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/on" />
+                android:text="@string/off" />
 
             <Switch
                 android:id="@+id/switch_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:buttonTint="@color/black"
+                android:trackTint="@color/white"
+                android:thumbTint="@color/my_btn_toggle"
                 tools:ignore="UseSwitchCompatOrMaterialXml" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/off" />
+                android:text="@string/on" />
         </LinearLayout>
     </LinearLayout>
 
