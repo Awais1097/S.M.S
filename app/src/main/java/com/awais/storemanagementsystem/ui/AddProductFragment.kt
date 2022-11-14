@@ -10,21 +10,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.graphics.drawable.toBitmap
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.awais.route.imagepicker.ImagePicker
 import com.awais.storemanagementsystem.R
-import com.awais.storemanagementsystem.adapter.RackListAdapter
+import com.awais.storemanagementsystem.adapter.ProductsListAdapter
 import com.awais.storemanagementsystem.databinding.FragmentAddProductsBinding
-import com.awais.storemanagementsystem.databinding.FragmentBrandBinding
 import com.awais.storemanagementsystem.roomdb.AppDatabase
-import com.awais.storemanagementsystem.roomdb.entity.RacksEntity
-import com.awais.storemanagementsystem.util.PDFConverter
+import com.awais.storemanagementsystem.roomdb.entity.ProductEntity
 import com.awais.storemanagementsystem.util.Utilities
 import com.awais.storemanagementsystem.util.Utilities.decode
-import com.awais.storemanagementsystem.viewmodel.RacksViewModel
+import com.awais.storemanagementsystem.viewmodel.ProductsViewModel
 import com.bumptech.glide.Glide
 
 class AddProductFragment : Fragment() {
@@ -32,14 +29,14 @@ class AddProductFragment : Fragment() {
     private var _binding: FragmentAddProductsBinding? = null
     private var uri: String? = null
     private val binding get() = _binding!!
-    var mItem = RacksEntity()
+    var mItem = ProductEntity()
 
     @SuppressLint("SetTextI18n", "UseCompatLoadingForDrawables")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         val viewModel =
-            ViewModelProvider(this)[RacksViewModel::class.java]
+            ViewModelProvider(this)[ProductsViewModel::class.java]
         _binding = FragmentAddProductsBinding.inflate(inflater, container, false)
         binding.addImage.setOnClickListener {
             ImagePicker.with(this).cameraOnly().crop().start()
@@ -47,32 +44,27 @@ class AddProductFragment : Fragment() {
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         viewModel.list.observe(viewLifecycleOwner) {
-            binding.recyclerView.adapter = RackListAdapter(it,
-                onItemClick = object : RackListAdapter.OnItemClick {
+            binding.recyclerView.adapter = ProductsListAdapter(it,
+                onItemClick = object : ProductsListAdapter.OnItemClick {
 
-                    override fun onDelete(item: RacksEntity) {
+                    override fun onDelete(item: ProductEntity) {
                         deleteBrand(item)
                         viewModel.getAll()
                     }
 
-                    override fun onClick(item: RacksEntity) {
+                    override fun onClick(item: ProductEntity) {
                         mItem = item
-                        binding.brandNameEditText.setText(item.col_rackname)
-                        if (item.col_image != null) {
-                            Glide.with(requireContext()).load(decode(item.col_image!!)).centerCrop()
+                        binding.brandNameEditText.setText(item.col_productname)
+                        if (item.col_img != null) {
+                            Glide.with(requireContext()).load(decode(item.col_img!!)).centerCrop()
                                 .into(binding.imageView)
                         }
-                        uri = item.col_image
-                    }
-
-                    override fun onPrint(item: RacksEntity) {
-                        val pdfConverter = PDFConverter()
-                        pdfConverter.createPdf(requireContext(), binding.recyclerView, requireActivity())
+                        uri = item.col_img
                     }
                 }
             )
             binding.countTv.text =
-                "${requireContext().getString(R.string.all_comanies)} (${it.size})"
+                "${requireContext().getString(R.string.all_products)} (${it.size})"
         }
         binding.saveButton.setOnClickListener {
             if (TextUtils.isEmpty(binding.brandNameEditText.text)) {
@@ -119,24 +111,24 @@ class AddProductFragment : Fragment() {
 
     private fun saveBrand() {
         try {
-            mItem.col_rackname = binding.brandNameEditText.text.toString()
-            mItem.col_image = Utilities.encode(binding.imageView.drawable.toBitmap())
-            if(mItem.col_rackid == null){
-                mItem.col_rackid = "RACK-${(binding.recyclerView.adapter?.itemCount ?: 0) + 1}"
+            mItem.col_productname = binding.brandNameEditText.text.toString()
+            mItem.col_img = Utilities.encode(binding.imageView.drawable.toBitmap())
+            if(mItem.col_productid == null){
+                mItem.col_productid = "PRO-${(binding.recyclerView.adapter?.itemCount ?: 0) + 1}"
             }
-            AppDatabase.get().racksDao().insert(mItem)
-            Utilities.showSnackbar(binding.root, "Rack Saved", null, R.color.Green)
+            AppDatabase.get().productsDao().insert(mItem)
+            Utilities.showSnackbar(binding.root, "Product Saved", null, R.color.Green)
         } catch (ex: Exception) {
-            Utilities.showSnackbar(binding.root, "Rack Not Saved", null, R.color.Red)
+            Utilities.showSnackbar(binding.root, "Product Not Saved", null, R.color.Red)
         }
     }
 
-    private fun deleteBrand(item: RacksEntity) {
+    private fun deleteBrand(item: ProductEntity) {
         try {
-            AppDatabase.get().racksDao().delete(item)
-            Utilities.showSnackbar(binding.root, "Rack Deleted", null, R.color.Green)
+            AppDatabase.get().productsDao().delete(item)
+            Utilities.showSnackbar(binding.root, "Product Deleted", null, R.color.Green)
         } catch (ex: Exception) {
-            Utilities.showSnackbar(binding.root, "Rack Not Deleted", null, R.color.Red)
+            Utilities.showSnackbar(binding.root, "Product Not Deleted", null, R.color.Red)
         }
     }
 
