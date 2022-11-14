@@ -1,6 +1,5 @@
 package com.awais.storemanagementsystem.ui
 
-import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
@@ -10,75 +9,62 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.graphics.drawable.toBitmap
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.awais.route.imagepicker.ImagePicker
 import com.awais.storemanagementsystem.R
-import com.awais.storemanagementsystem.adapter.RackListAdapter
+import com.awais.storemanagementsystem.adapter.CategoryListAdapter
 import com.awais.storemanagementsystem.databinding.FragmentBrandBinding
 import com.awais.storemanagementsystem.roomdb.AppDatabase
-import com.awais.storemanagementsystem.roomdb.entity.RacksEntity
-import com.awais.storemanagementsystem.util.PDFConverter
+import com.awais.storemanagementsystem.roomdb.entity.Categoryntity
 import com.awais.storemanagementsystem.util.Utilities
 import com.awais.storemanagementsystem.util.Utilities.decode
-import com.awais.storemanagementsystem.viewmodel.RacksViewModel
+import com.awais.storemanagementsystem.viewmodel.CategoryViewModel
 import com.bumptech.glide.Glide
 
-class RackFragment : Fragment() {
+class CategoryFragment : Fragment() {
 
     private var _binding: FragmentBrandBinding? = null
+    // This property is only valid between onCreateView and onDestroyView.
     private var uri: String? = null
     private val binding get() = _binding!!
-    var mItem = RacksEntity()
+    var mItem = Categoryntity()
 
-    @SuppressLint("SetTextI18n", "UseCompatLoadingForDrawables")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         val viewModel =
-            ViewModelProvider(this)[RacksViewModel::class.java]
+            ViewModelProvider(this)[CategoryViewModel::class.java]
         _binding = FragmentBrandBinding.inflate(inflater, container, false)
         binding.addImage.setOnClickListener {
             ImagePicker.with(this).cameraOnly().crop().start()
         }
-        binding.titleTextView.text =  requireContext().getString(R.string.add_new_rack)
-        binding.brandNameEditText.hint = requireContext().getString(R.string.rack_title)
-        binding.brandMv.setImageDrawable(requireContext().getDrawable(R.drawable.rack_img_icon))
-        binding.imageViewPring.isVisible = true
+        binding.titleTextView.text =  requireContext().getString(R.string.add_new_category)
+        binding.brandNameEditText.hint = requireContext().getString(R.string.category_title)
+        binding.brandMv.setImageDrawable(requireContext().getDrawable(R.drawable.caregory_img_icon))
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        binding.imageViewPring.setOnClickListener {
-            val pdfConverter = PDFConverter()
-            pdfConverter.createPdf(requireContext(), binding.recyclerView, requireActivity())
-        }
         viewModel.list.observe(viewLifecycleOwner) {
-            binding.recyclerView.adapter = RackListAdapter(it,
-                onItemClick = object : RackListAdapter.OnItemClick {
-
-                    override fun onDelete(item: RacksEntity) {
+            binding.recyclerView.adapter = CategoryListAdapter(it,
+                onItemClick = object : CategoryListAdapter.OnItemClick {
+                    override fun onDelete(item: Categoryntity) {
                         deleteBrand(item)
-                        viewModel.getAll()
+                        viewModel.getAllBrands()
                     }
 
-                    override fun onClick(item: RacksEntity) {
+                    override fun onClick(item: Categoryntity) {
                         mItem = item
-                        binding.brandNameEditText.setText(item.col_rackname)
-                        if (item.col_image != null) {
-                            Glide.with(requireContext()).load(decode(item.col_image!!)).centerCrop()
+                        binding.brandNameEditText.setText(item.col_name)
+                        if (item.col_imge != null) {
+                            Glide.with(requireContext()).load(decode(item.col_imge!!)).centerCrop()
                                 .into(binding.imageView)
                         }
-                        uri = item.col_image
-                    }
-
-                    override fun onPrint(item: RacksEntity) {
-                        val pdfConverter = PDFConverter()
-                        pdfConverter.createPdf(requireContext(), binding.recyclerView, requireActivity())
+                        uri = item.col_imge
                     }
                 }
             )
             binding.countTv.text =
-                "${requireContext().getString(R.string.all_racks)} (${it.size})"
+                "${requireContext().getString(R.string.all_category)} (${it.size})"
         }
         binding.saveButton.setOnClickListener {
             if (TextUtils.isEmpty(binding.brandNameEditText.text)) {
@@ -90,7 +76,7 @@ class RackFragment : Fragment() {
                 return@setOnClickListener
             }
             saveBrand()
-            viewModel.getAll()
+            viewModel.getAllBrands()
             binding.brandNameEditText.text = null
             uri = null
             binding.imageView.setImageDrawable(null)
@@ -125,24 +111,21 @@ class RackFragment : Fragment() {
 
     private fun saveBrand() {
         try {
-            mItem.col_rackname = binding.brandNameEditText.text.toString()
-            mItem.col_image = Utilities.encode(binding.imageView.drawable.toBitmap())
-            if(mItem.col_rackid == null){
-                mItem.col_rackid = "RACK-${(binding.recyclerView.adapter?.itemCount ?: 0) + 1}"
-            }
-            AppDatabase.get().racksDao().insert(mItem)
-            Utilities.showSnackbar(binding.root, "Rack Saved", null, R.color.Green)
+            mItem.col_name = binding.brandNameEditText.text.toString()
+            mItem.col_imge = Utilities.encode(binding.imageView.drawable.toBitmap())
+            AppDatabase.get().categoryDao().insert(mItem)
+            Utilities.showSnackbar(binding.root, "Category Saved", null, R.color.Green)
         } catch (ex: Exception) {
-            Utilities.showSnackbar(binding.root, "Rack Not Saved", null, R.color.Red)
+            Utilities.showSnackbar(binding.root, "Category Not Saved", null, R.color.Red)
         }
     }
 
-    private fun deleteBrand(item: RacksEntity) {
+    private fun deleteBrand(item: Categoryntity) {
         try {
-            AppDatabase.get().racksDao().delete(item)
-            Utilities.showSnackbar(binding.root, "Rack Deleted", null, R.color.Green)
+            AppDatabase.get().categoryDao().delete(item)
+            Utilities.showSnackbar(binding.root, "Category Deleted", null, R.color.Green)
         } catch (ex: Exception) {
-            Utilities.showSnackbar(binding.root, "Rack Not Deleted", null, R.color.Red)
+            Utilities.showSnackbar(binding.root, "Category Not Deleted", null, R.color.Red)
         }
     }
 

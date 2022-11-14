@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.awais.route.imagepicker.ImagePicker
 import com.awais.storemanagementsystem.R
 import com.awais.storemanagementsystem.adapter.RackListAdapter
+import com.awais.storemanagementsystem.databinding.FragmentAddProductsBinding
 import com.awais.storemanagementsystem.databinding.FragmentBrandBinding
 import com.awais.storemanagementsystem.roomdb.AppDatabase
 import com.awais.storemanagementsystem.roomdb.entity.RacksEntity
@@ -26,9 +27,9 @@ import com.awais.storemanagementsystem.util.Utilities.decode
 import com.awais.storemanagementsystem.viewmodel.RacksViewModel
 import com.bumptech.glide.Glide
 
-class RackFragment : Fragment() {
+class AddProductFragment : Fragment() {
 
-    private var _binding: FragmentBrandBinding? = null
+    private var _binding: FragmentAddProductsBinding? = null
     private var uri: String? = null
     private val binding get() = _binding!!
     var mItem = RacksEntity()
@@ -39,19 +40,12 @@ class RackFragment : Fragment() {
     ): View {
         val viewModel =
             ViewModelProvider(this)[RacksViewModel::class.java]
-        _binding = FragmentBrandBinding.inflate(inflater, container, false)
+        _binding = FragmentAddProductsBinding.inflate(inflater, container, false)
         binding.addImage.setOnClickListener {
             ImagePicker.with(this).cameraOnly().crop().start()
         }
-        binding.titleTextView.text =  requireContext().getString(R.string.add_new_rack)
-        binding.brandNameEditText.hint = requireContext().getString(R.string.rack_title)
-        binding.brandMv.setImageDrawable(requireContext().getDrawable(R.drawable.rack_img_icon))
-        binding.imageViewPring.isVisible = true
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        binding.imageViewPring.setOnClickListener {
-            val pdfConverter = PDFConverter()
-            pdfConverter.createPdf(requireContext(), binding.recyclerView, requireActivity())
-        }
+
         viewModel.list.observe(viewLifecycleOwner) {
             binding.recyclerView.adapter = RackListAdapter(it,
                 onItemClick = object : RackListAdapter.OnItemClick {
@@ -78,7 +72,7 @@ class RackFragment : Fragment() {
                 }
             )
             binding.countTv.text =
-                "${requireContext().getString(R.string.all_racks)} (${it.size})"
+                "${requireContext().getString(R.string.all_comanies)} (${it.size})"
         }
         binding.saveButton.setOnClickListener {
             if (TextUtils.isEmpty(binding.brandNameEditText.text)) {

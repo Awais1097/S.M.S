@@ -10,35 +10,36 @@
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/nav_home"
-                    android:icon="@drawable/dashboard_icon"
+                    android:icon="@drawable/dashboard_img_icon"
                     android:title="@string/menu_home" />
                 <item
+                    android:id="@+id/nav_stock"
+                    android:icon="@drawable/stock_img_icon"
+                    android:title="@string/menu_stock" />
+
+                <item
                     android:id="@+id/nav_products"
-                    android:icon="@drawable/product_icon_white"
+                    android:icon="@drawable/product_icon"
                     android:title="@string/menu_products" />
                 <item
-                    android:id="@+id/nav_stock"
-                    android:icon="@drawable/ic_baseline_amp_stories_24"
-                    android:title="@string/menu_stock" />
-                <item
                     android:id="@+id/nav_gallery"
-                    android:icon="@drawable/customers_icon_white"
+                    android:icon="@drawable/customers_img_icon"
                     android:title="@string/menu_customers" />
                 <item
                     android:id="@+id/nav_slideshow"
-                    android:icon="@drawable/comany_icon_white"
+                    android:icon="@drawable/company_img_icon_colr"
                     android:title="@string/menu_companies" />
                 <item
                     android:id="@+id/nav_category"
-                    android:icon="@drawable/ic_baseline_auto_awesome_motion_24"
+                    android:icon="@drawable/caregory_img_icon"
                     android:title="@string/menu_category" />
                 <item
                     android:id="@+id/nav_brands"
-                    android:icon="@drawable/brand_icon"
+                    android:icon="@drawable/brand_img_icon"
                     android:title="@string/menu_brands" />
                 <item
                     android:id="@+id/nav_rack"
-                    android:icon="@drawable/rank_icon"
+                    android:icon="@drawable/rack_img_icon"
                     android:title="@string/menu_rack" />
             </group>
         </menu>
@@ -53,20 +54,20 @@
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/nav_today"
-                    android:icon="@drawable/today_sale_icon"
+                    android:icon="@drawable/roday_sale_img_2_icon"
                     android:title="@string/menu_today" />
                 <item
                     android:id="@+id/nav_sale_rep"
-                    android:icon="@drawable/sale_icon"
+                    android:icon="@drawable/today_sale_img_icon"
                     android:title="@string/menu_sale_report" />
                 <item
                     android:id="@+id/nav_add_stock"
-                    android:icon="@drawable/stock_icon"
+                    android:icon="@drawable/stock_img_icon"
                     android:title="@string/menu_stock" />
 
                 <item
                     android:id="@+id/nav_short"
-                    android:icon="@drawable/short_product_icon"
+                    android:icon="@drawable/short_products_img_icon"
                     android:title="@string/menu_short" />
             </group>
         </menu>
@@ -81,11 +82,11 @@
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/nav_backup"
-                    android:icon="@drawable/ic_baseline_backup_24"
+                    android:icon="@drawable/databse_backup_icon_img"
                     android:title="@string/menu_backup" />
                 <item
                     android:id="@+id/nav_restore"
-                    android:icon="@drawable/ic_baseline_settings_backup_restore_24"
+                    android:icon="@drawable/database_restore_img_icon"
                     android:title="@string/menu_restore" />
             </group>
         </menu>
@@ -99,15 +100,15 @@
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/nav_server_setting"
-                    android:icon="@drawable/settings_icon"
+                    android:icon="@drawable/server_setting_img_icon"
                     android:title="@string/menu_setting" />
                 <item
                     android:id="@+id/nav_sync"
-                    android:icon="@drawable/ic_baseline_sync_24"
+                    android:icon="@drawable/sync_img_icon"
                     android:title="@string/menu_sync" />
                 <item
                     android:id="@+id/nav_upload"
-                    android:icon="@drawable/ic_baseline_arrow_circle_up_24"
+                    android:icon="@drawable/upload_img_icon"
                     android:title="@string/menu_unload" />
             </group>
         </menu>
@@ -122,19 +123,19 @@
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/nav_import"
-                    android:icon="@drawable/import_icon"
+                    android:icon="@drawable/import_img_icon"
                     android:title="@string/menu_import" />
                 <item
                     android:id="@+id/nav_export"
-                    android:icon="@drawable/export_icon"
+                    android:icon="@drawable/export_img_icon"
                     android:title="@string/menu_export" />
                 <item
                     android:id="@+id/nav_setting"
-                    android:icon="@drawable/settings_icon"
+                    android:icon="@drawable/setting_img_icon"
                     android:title="@string/menu_setting" />
                 <item
                     android:id="@+id/nav_logout"
-                    android:icon="@drawable/ic_baseline_lock_24"
+                    android:icon="@drawable/user_lock_img_icon"
                     android:title="@string/menu_logout" />
                 <item
                     android:id="@+id/nav_exit"
@@ -142,7 +143,7 @@
                     android:title="@string/action_exit" />
                 <item
                     android:id="@+id/nav_about"
-                    android:icon="@drawable/ic_baseline_info_24"
+                    android:icon="@drawable/info_img_icon"
                     android:title="@string/action_about" />
 
             </group>

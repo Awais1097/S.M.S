@@ -6,11 +6,12 @@
     android:layout_height="match_parent"
     android:background="@color/purple_500"
     tools:context=".ui.login.SplashActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,26 +21,27 @@
         <ImageView
             android:layout_width="300dp"
             android:layout_height="300dp"
-            android:scaleType="center"
-            android:src="@drawable/app_icon" />
+            android:src="@drawable/shop_icon_img" />
 
         <TextView
+            style="@style/H1_white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="@string/app_name"
-            style="@style/H1_white"
-            android:textSize="40dp"
-            android:textStyle="bold"
-            android:gravity="center"/>
+            android:textSize="50dp"
+            android:textStyle="bold" />
 
         <TextView
+            style="@style/H1_white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="26dp"
+            android:padding="16dp"
             android:text="@string/app_name_complete"
-            android:layout_marginTop="10dp"
-            style="@style/H1_white"
-            android:textStyle="bold"
-            android:gravity="center"/>
+            android:textColor="@color/LightGrey"
+            android:textStyle="bold" />
     </LinearLayout>
 
 

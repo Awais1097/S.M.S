@@ -49,17 +49,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         navController = findNavController(R.id.nav_host_fragment_content_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.nav_home, R.id.nav_products, R.id.nav_gallery, R.id.nav_slideshow,
-                R.id.nav_brands, R.id.nav_rack
-            ), drawerLayout
-        )
+        // Passing each menu ID as a set of Ids because each menu should be considered as top level destinations.
+        appBarConfiguration = AppBarConfiguration(setOf(R.id.nav_home), drawerLayout)
+        /*, R.id.nav_products, R.id.nav_gallery, R.id.nav_slideshow,
+                R.id.nav_brands, R.id.nav_rack*/
         setupActionBarWithNavController(navController!!, appBarConfiguration)
         navView.setupWithNavController(navController!!)
         navView.setNavigationItemSelectedListener(this)
+        navView.itemIconTintList = null
         val user = UserData.getUser(this)
         val headerView = navView.getHeaderView(0)
         val titleTextView = headerView.findViewById<TextView>(R.id.title_text_view)
@@ -152,15 +149,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         binding.appBarMain.toolbar.setBackgroundColor(
             if (isChecked) getColor(R.color.purple_500) else getColor(R.color.Red)
         )
-        header.setBackgroundColor(
-            if (isChecked) getColor(R.color.purple_500) else getColor(R.color.Red)
-        )
+        header.background =
+            if (isChecked) getDrawable(R.drawable.nav_bg) else getDrawable(R.drawable.nav_bg_red)
         /*window.navigationBarColor = ContextCompat.getColor(this,
             if (switch.isChecked) R.color.purple_500 else R.color.Red
         )*/
         window.statusBarColor = ContextCompat.getColor(
-            this,
-            if (isChecked) R.color.purple_500 else R.color.Red
+            this, if (isChecked) R.color.purple_500 else R.color.Red
         )
     }
 

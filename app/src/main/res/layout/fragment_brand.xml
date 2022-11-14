@@ -34,7 +34,8 @@
                 android:id="@+id/image_view"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:background="@color/black"
+                android:background="@color/LightGrey"
+                android:src="@drawable/empty_img_icon"
                 android:scaleType="centerInside"
                 tools:ignore="ContentDescription" />
 
@@ -81,8 +82,7 @@
                 android:id="@+id/brand_mv"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
-                android:src="@drawable/brand_icon"
-                app:tint="@color/black"
+                android:src="@drawable/brand_img_icon"
                 tools:ignore="ContentDescription" />
 
             <EditText
