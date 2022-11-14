@@ -113,6 +113,7 @@
     <string name="category">Category</string>
     <string name="unit_size">Unit Size</string>
     <string name="cartoon_size">Cartoon Size</string>
+    <string name="retler_price">Retail Price</string>
 
 
 </resources>

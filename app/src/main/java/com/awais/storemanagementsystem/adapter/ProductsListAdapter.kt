@@ -22,16 +22,16 @@ class ProductsListAdapter(var list : List<ProductEntity>, var onItemClick: OnIte
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = list[position]
-        holder.binding.description2Tv.text =item.col_productid+" - "+ item.col_productname
-        holder.binding.description3Tv.text = item.col_unitprice.toString()
-        holder.binding.description4Tv.text = item.col_unitsize.toString()
-       /* if (item.col != null) {
-            Glide.with(holder.itemView.context).load(Utilities.decode(item.col_imge!!)).centerCrop()
+        holder.binding.description3Tv.text =item.col_productid+" - "+ item.col_productname
+        holder.binding.description2Tv.text = "Price: "+ item.col_unitprice.toString()
+        holder.binding.description4Tv.text = "Size: "+ item.col_unitsize.toString()
+        if (item.col_img != null) {
+            Glide.with(holder.itemView.context).load(Utilities.decode(item.col_img!!)).centerCrop()
                 .into(holder.binding.itemImage)
         }
         holder.binding.doDelete.setOnClickListener {
             onItemClick.onDelete(item)
-        }*/
+        }
         holder.itemView.setOnClickListener {
             onItemClick.onClick(item)
         }

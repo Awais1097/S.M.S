@@ -20,12 +20,13 @@ import com.awais.storemanagementsystem.roomdb.AppDatabase
 import com.awais.storemanagementsystem.roomdb.entity.Categoryntity
 import com.awais.storemanagementsystem.util.Utilities
 import com.awais.storemanagementsystem.util.Utilities.decode
-import com.awais.storemanagementsystem.viewmodel.CategoryViewModel
+import com.awais.storemanagementsystem.viewmodel.ProductsViewModel
 import com.bumptech.glide.Glide
 
 class CategoryFragment : Fragment() {
 
     private var _binding: FragmentBrandBinding? = null
+
     // This property is only valid between onCreateView and onDestroyView.
     private var uri: String? = null
     private val binding get() = _binding!!
@@ -35,21 +36,22 @@ class CategoryFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         val viewModel =
-            ViewModelProvider(this)[CategoryViewModel::class.java]
+            ViewModelProvider(this)[ProductsViewModel::class.java]
         _binding = FragmentBrandBinding.inflate(inflater, container, false)
         binding.addImage.setOnClickListener {
             ImagePicker.with(this).cameraOnly().crop().start()
         }
-        binding.titleTextView.text =  requireContext().getString(R.string.add_new_category)
+        binding.titleTextView.text = requireContext().getString(R.string.add_new_category)
         binding.brandNameEditText.hint = requireContext().getString(R.string.category_title)
         binding.brandMv.setImageDrawable(requireContext().getDrawable(R.drawable.caregory_img_icon))
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        viewModel.list.observe(viewLifecycleOwner) {
+        viewModel.getAllCategory()
+        viewModel.list_catg.observe(viewLifecycleOwner) {
             binding.recyclerView.adapter = CategoryListAdapter(it,
                 onItemClick = object : CategoryListAdapter.OnItemClick {
                     override fun onDelete(item: Categoryntity) {
                         deleteBrand(item)
-                        viewModel.getAllBrands()
+                        viewModel.getAllCategory()
                     }
 
                     override fun onClick(item: Categoryntity) {
@@ -76,10 +78,10 @@ class CategoryFragment : Fragment() {
                 return@setOnClickListener
             }
             saveBrand()
-            viewModel.getAllBrands()
+            viewModel.getAllCategory()
             binding.brandNameEditText.text = null
             uri = null
-            binding.imageView.setImageDrawable(null)
+            binding.imageView.setImageDrawable(requireContext().getDrawable(R.drawable.empty_img_icon))
             mItem._id = null
         }
         return binding.root
@@ -97,7 +99,7 @@ class CategoryFragment : Fragment() {
                 val d = data?.data!!
                 Glide.with(this).load(d).centerCrop()
                     .placeholder(R.drawable.brand_icon).into(binding.imageView)
-                uri =  Utilities.encode(binding.imageView.drawable.toBitmap())
+                uri = Utilities.encode(binding.imageView.drawable.toBitmap())
             }
             ImagePicker.RESULT_ERROR -> {
                 Toast.makeText(requireContext(), ImagePicker.getError(data), Toast.LENGTH_SHORT)

@@ -136,8 +136,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="7"
-                    android:hint="Unit (UOM)"
-                    android:inputType="textCapCharacters" />
+                    android:hint="@string/retler_price"
+                    android:inputType="numberDecimal" />
 
             </LinearLayout>
 
@@ -185,7 +185,7 @@
                     android:src="@drawable/caregory_img_icon"
                     tools:ignore="ContentDescription" />
 
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/category_edit_text"
                     style="@style/Body_black"
                     android:layout_width="match_parent"
@@ -210,7 +210,7 @@
                     android:src="@drawable/company_img_icon_colr"
                     tools:ignore="ContentDescription" />
 
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/company_edit_text"
                     style="@style/Body_black"
                     android:layout_width="match_parent"
@@ -235,7 +235,7 @@
                     android:src="@drawable/brand_img_icon"
                     tools:ignore="ContentDescription" />
 
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/brand_name_edit_text"
                     style="@style/Body_black"
                     android:layout_width="match_parent"
@@ -260,7 +260,7 @@
                     android:src="@drawable/rack_img_icon"
                     tools:ignore="ContentDescription" />
 
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/rack_name_edit_text"
                     style="@style/Body_black"
                     android:layout_width="match_parent"
@@ -317,7 +317,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
-                tools:listitem="@layout/item_notification" />
+                tools:listitem="@layout/item_product_list" />
 
 
         </LinearLayout>

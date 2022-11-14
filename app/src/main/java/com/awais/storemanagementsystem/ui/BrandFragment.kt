@@ -2,7 +2,6 @@ package com.awais.storemanagementsystem.ui
 
 import android.app.Activity
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.LayoutInflater
@@ -21,7 +20,7 @@ import com.awais.storemanagementsystem.roomdb.AppDatabase
 import com.awais.storemanagementsystem.roomdb.entity.BrandEntity
 import com.awais.storemanagementsystem.util.Utilities
 import com.awais.storemanagementsystem.util.Utilities.decode
-import com.awais.storemanagementsystem.viewmodel.BrandViewModel
+import com.awais.storemanagementsystem.viewmodel.ProductsViewModel
 import com.bumptech.glide.Glide
 
 class BrandFragment : Fragment() {
@@ -36,13 +35,14 @@ class BrandFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         val viewModel =
-            ViewModelProvider(this)[BrandViewModel::class.java]
+            ViewModelProvider(this)[ProductsViewModel::class.java]
         _binding = FragmentBrandBinding.inflate(inflater, container, false)
         binding.addImage.setOnClickListener {
             ImagePicker.with(this).cameraOnly().crop().start()
         }
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        viewModel.list.observe(viewLifecycleOwner) {
+        viewModel.getAllBrands()
+        viewModel.list_brand.observe(viewLifecycleOwner) {
             binding.recyclerView.adapter = BrandListAdapter(it,
                 onItemClick = object : BrandListAdapter.OnItemClick {
                     override fun onDelete(item: BrandEntity) {
@@ -77,7 +77,7 @@ class BrandFragment : Fragment() {
             viewModel.getAllBrands()
             binding.brandNameEditText.text = null
             uri = null
-            binding.imageView.setImageDrawable(null)
+            binding.imageView.setImageDrawable(requireContext().getDrawable(R.drawable.empty_img_icon))
             mItem._id = null
         }
         return binding.root

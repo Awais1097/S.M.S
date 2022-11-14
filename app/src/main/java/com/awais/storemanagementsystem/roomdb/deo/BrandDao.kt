@@ -31,7 +31,4 @@ interface BrandDao {
     @Insert(entity = BrandEntity::class, onConflict = IGNORE)
     fun insertAll(users: List<BrandEntity>)
 
-    @Query("SELECT * FROM Brands WHERE CompanyId = :pid")
-    fun getByCompanyId(pid: Int): List<BrandEntity>
-
 }

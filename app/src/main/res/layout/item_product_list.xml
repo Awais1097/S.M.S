@@ -6,6 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
+    app:strokeColor="@color/Gray"
+    app:strokeWidth="0.8dp"
+    app:cardCornerRadius="8dp"
     android:background="@color/white"
     android:orientation="vertical">
 
@@ -17,7 +20,7 @@
         <ImageView
             android:id="@+id/item_image"
             android:layout_width="50dp"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
             android:paddingRight="5dp"
             android:scaleType="fitXY"
             android:src="@drawable/product_icon"
@@ -67,6 +70,17 @@
                     android:gravity="end"
                     android:includeFontPadding="false"
                     android:maxLines="2" />
+
+                <ImageView
+                    android:id="@+id/do_delete"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="8sp"
+                    android:padding="1sp"
+                    android:paddingStart="0sp"
+                    android:paddingEnd="0sp"
+                    android:src="@drawable/ic_baseline_delete_24"
+                    app:tint="@color/Red" />
 
             </LinearLayout>
 
