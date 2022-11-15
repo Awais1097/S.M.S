@@ -130,6 +130,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 room.restore()
                 return true
             }
+            R.id.nav_about -> {
+                ActivityUtils.startCallActivity(
+                    this, "+923066395565"
+                )
+                return true
+            }
             R.id.nav_setting -> {
                 ActivityUtils.startRegisterActivity(this, true)
                 return true

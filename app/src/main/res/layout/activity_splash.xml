@@ -20,7 +20,7 @@
 
         <ImageView
             android:layout_width="300dp"
-            android:layout_height="300dp"
+            android:layout_height="350dp"
             android:src="@drawable/shop_icon_img" />
 
         <TextView

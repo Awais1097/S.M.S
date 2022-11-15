@@ -13,6 +13,10 @@
                     android:icon="@drawable/dashboard_img_icon"
                     android:title="@string/menu_home" />
                 <item
+                    android:id="@+id/nav_orders"
+                    android:icon="@drawable/purchase_order_img_icon"
+                    android:title="@string/menu_orders" />
+                <item
                     android:id="@+id/nav_stock"
                     android:icon="@drawable/stock_img_icon"
                     android:title="@string/menu_stock" />

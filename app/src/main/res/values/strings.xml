@@ -70,7 +70,7 @@
         <![CDATA[Camera permission is needed to take a picture. Please allow permission from Settings > Permissions.]]></string>
     <string name="menu_backup">BackUp</string>
     <string name="menu_restore">Restore</string>
-    <string name="action_about">Info.</string>
+    <string name="action_about">.Info</string>
     <string name="menu_brands">Brands</string>
     <string name="menu_rack">Racks</string>
     <string name="on">ON</string>
@@ -118,6 +118,7 @@
     <string name="unit_size">Unit Size</string>
     <string name="cartoon_size">Cartoon Size</string>
     <string name="retler_price">Retail Price</string>
+    <string name="menu_orders">Orders</string>
 
 
 </resources>
