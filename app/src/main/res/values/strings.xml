@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">S.M.S</string>
-    <string name="app_name_complete">Store Management System</string>
+    <string name="app_name_complete">Shop Management System</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -70,7 +70,7 @@
         <![CDATA[Camera permission is needed to take a picture. Please allow permission from Settings > Permissions.]]></string>
     <string name="menu_backup">BackUp</string>
     <string name="menu_restore">Restore</string>
-    <string name="action_about">About</string>
+    <string name="action_about">Info.</string>
     <string name="menu_brands">Brands</string>
     <string name="menu_rack">Racks</string>
     <string name="on">ON</string>
@@ -82,14 +82,22 @@
     <string name="date_wise_sale">Date Wise Sale :</string>
     <string name="month">Month</string>
     <string name="brand_wise_sale">Brand Wise Sale :</string>
+    <string name="all_products">All Products: </string>
     <string name="see_all"><![CDATA[See all >>]]></string>
     <string name="short_products">Short Products :</string>
     <string name="add_new_brand">Add New Brand</string>
+    <string name="add_new_product">Add New Product</string>
     <string name="add_new_rack">Add New Rack</string>
+    <string name="add_new_category">Add New Category</string>
     <string name="brand_name">Brand Name</string>
+    <string name="rack_name">Rack Name</string>
+    <string name="product_name">Product Name</string>
     <string name="rack_title">Rack Title</string>
+    <string name="category_title">Category Title</string>
     <string name="all_brands">All Brands :</string>
+    <string name="all_category">All Categories :</string>
     <string name="all_racks">All Racks :</string>
+    <string name="all_comanies">All Comanies :</string>
     <string name="company_name">Company Name</string>
     <string name="shop_pic">Shop Pic:</string>
     <string name="menu_sync">Sync</string>
@@ -105,6 +113,11 @@
     <string name="qty">QTY</string>
     <string name="product">Product</string>
     <string name="create_new_receipt">Create New Receipt</string>
+    <string name="unit_price">Unit Price</string>
+    <string name="category">Category</string>
+    <string name="unit_size">Unit Size</string>
+    <string name="cartoon_size">Cartoon Size</string>
+    <string name="retler_price">Retail Price</string>
 
 
 </resources>

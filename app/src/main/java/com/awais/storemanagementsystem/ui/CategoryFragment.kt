@@ -14,22 +14,23 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.awais.route.imagepicker.ImagePicker
 import com.awais.storemanagementsystem.R
-import com.awais.storemanagementsystem.adapter.BrandListAdapter
+import com.awais.storemanagementsystem.adapter.CategoryListAdapter
 import com.awais.storemanagementsystem.databinding.FragmentBrandBinding
 import com.awais.storemanagementsystem.roomdb.AppDatabase
-import com.awais.storemanagementsystem.roomdb.entity.BrandEntity
+import com.awais.storemanagementsystem.roomdb.entity.Categoryntity
 import com.awais.storemanagementsystem.util.Utilities
 import com.awais.storemanagementsystem.util.Utilities.decode
 import com.awais.storemanagementsystem.viewmodel.ProductsViewModel
 import com.bumptech.glide.Glide
 
-class BrandFragment : Fragment() {
+class CategoryFragment : Fragment() {
 
     private var _binding: FragmentBrandBinding? = null
+
     // This property is only valid between onCreateView and onDestroyView.
     private var uri: String? = null
     private val binding get() = _binding!!
-    var mItem = BrandEntity()
+    var mItem = Categoryntity()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -40,19 +41,22 @@ class BrandFragment : Fragment() {
         binding.addImage.setOnClickListener {
             ImagePicker.with(this).cameraOnly().crop().start()
         }
+        binding.titleTextView.text = requireContext().getString(R.string.add_new_category)
+        binding.brandNameEditText.hint = requireContext().getString(R.string.category_title)
+        binding.brandMv.setImageDrawable(requireContext().getDrawable(R.drawable.caregory_img_icon))
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        viewModel.getAllBrands()
-        viewModel.list_brand.observe(viewLifecycleOwner) {
-            binding.recyclerView.adapter = BrandListAdapter(it,
-                onItemClick = object : BrandListAdapter.OnItemClick {
-                    override fun onDelete(item: BrandEntity) {
+        viewModel.getAllCategory()
+        viewModel.list_catg.observe(viewLifecycleOwner) {
+            binding.recyclerView.adapter = CategoryListAdapter(it,
+                onItemClick = object : CategoryListAdapter.OnItemClick {
+                    override fun onDelete(item: Categoryntity) {
                         deleteBrand(item)
-                        viewModel.getAllBrands()
+                        viewModel.getAllCategory()
                     }
 
-                    override fun onClick(item: BrandEntity) {
+                    override fun onClick(item: Categoryntity) {
                         mItem = item
-                        binding.brandNameEditText.setText(item.col_branchname)
+                        binding.brandNameEditText.setText(item.col_name)
                         if (item.col_imge != null) {
                             Glide.with(requireContext()).load(decode(item.col_imge!!)).centerCrop()
                                 .into(binding.imageView)
@@ -62,7 +66,7 @@ class BrandFragment : Fragment() {
                 }
             )
             binding.countTv.text =
-                "${requireContext().getString(R.string.all_brands)} (${it.size})"
+                "${requireContext().getString(R.string.all_category)} (${it.size})"
         }
         binding.saveButton.setOnClickListener {
             if (TextUtils.isEmpty(binding.brandNameEditText.text)) {
@@ -74,7 +78,7 @@ class BrandFragment : Fragment() {
                 return@setOnClickListener
             }
             saveBrand()
-            viewModel.getAllBrands()
+            viewModel.getAllCategory()
             binding.brandNameEditText.text = null
             uri = null
             binding.imageView.setImageDrawable(requireContext().getDrawable(R.drawable.empty_img_icon))
@@ -95,7 +99,7 @@ class BrandFragment : Fragment() {
                 val d = data?.data!!
                 Glide.with(this).load(d).centerCrop()
                     .placeholder(R.drawable.brand_icon).into(binding.imageView)
-                uri =  Utilities.encode(binding.imageView.drawable.toBitmap())
+                uri = Utilities.encode(binding.imageView.drawable.toBitmap())
             }
             ImagePicker.RESULT_ERROR -> {
                 Toast.makeText(requireContext(), ImagePicker.getError(data), Toast.LENGTH_SHORT)
@@ -109,21 +113,21 @@ class BrandFragment : Fragment() {
 
     private fun saveBrand() {
         try {
-            mItem.col_branchname = binding.brandNameEditText.text.toString()
+            mItem.col_name = binding.brandNameEditText.text.toString()
             mItem.col_imge = Utilities.encode(binding.imageView.drawable.toBitmap())
-            AppDatabase.get().brandsDao().insert(mItem)
-            Utilities.showSnackbar(binding.root, "Brand Saved", null, R.color.Green)
+            AppDatabase.get().categoryDao().insert(mItem)
+            Utilities.showSnackbar(binding.root, "Category Saved", null, R.color.Green)
         } catch (ex: Exception) {
-            Utilities.showSnackbar(binding.root, "Brand Not Saved", null, R.color.Red)
+            Utilities.showSnackbar(binding.root, "Category Not Saved", null, R.color.Red)
         }
     }
 
-    private fun deleteBrand(item: BrandEntity) {
+    private fun deleteBrand(item: Categoryntity) {
         try {
-            AppDatabase.get().brandsDao().delete(item)
-            Utilities.showSnackbar(binding.root, "Brand Deleted", null, R.color.Green)
+            AppDatabase.get().categoryDao().delete(item)
+            Utilities.showSnackbar(binding.root, "Category Deleted", null, R.color.Green)
         } catch (ex: Exception) {
-            Utilities.showSnackbar(binding.root, "Brand Not Deleted", null, R.color.Red)
+            Utilities.showSnackbar(binding.root, "Category Not Deleted", null, R.color.Red)
         }
     }
 

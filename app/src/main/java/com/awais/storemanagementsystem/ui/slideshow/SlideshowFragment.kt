@@ -44,6 +44,7 @@ class SlideshowFragment : Fragment() {
         _binding = FragmentCustomerBinding.inflate(inflater, container, false)
         val root: View = binding.root
         binding.titleTextView.text =  getString(R.string.add_new_company)
+        binding.brandMv.setImageDrawable(requireContext().getDrawable(R.drawable.company_img_icon_colr))
         binding.addImage.setOnClickListener {
             ImagePicker.with(this).cameraOnly().crop().start()
         }

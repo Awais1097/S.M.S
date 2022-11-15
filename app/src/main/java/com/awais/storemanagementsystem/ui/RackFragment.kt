@@ -23,6 +23,7 @@ import com.awais.storemanagementsystem.roomdb.entity.RacksEntity
 import com.awais.storemanagementsystem.util.PDFConverter
 import com.awais.storemanagementsystem.util.Utilities
 import com.awais.storemanagementsystem.util.Utilities.decode
+import com.awais.storemanagementsystem.viewmodel.ProductsViewModel
 import com.awais.storemanagementsystem.viewmodel.RacksViewModel
 import com.bumptech.glide.Glide
 
@@ -38,27 +39,28 @@ class RackFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         val viewModel =
-            ViewModelProvider(this)[RacksViewModel::class.java]
+            ViewModelProvider(this)[ProductsViewModel::class.java]
         _binding = FragmentBrandBinding.inflate(inflater, container, false)
         binding.addImage.setOnClickListener {
             ImagePicker.with(this).cameraOnly().crop().start()
         }
-        binding.titleTextView.text =  requireContext().getString(R.string.add_new_rack)
+        binding.titleTextView.text = requireContext().getString(R.string.add_new_rack)
         binding.brandNameEditText.hint = requireContext().getString(R.string.rack_title)
-        binding.brandMv.setImageDrawable(requireContext().getDrawable(R.drawable.rank_icon))
+        binding.brandMv.setImageDrawable(requireContext().getDrawable(R.drawable.rack_img_icon))
         binding.imageViewPring.isVisible = true
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.imageViewPring.setOnClickListener {
             val pdfConverter = PDFConverter()
             pdfConverter.createPdf(requireContext(), binding.recyclerView, requireActivity())
         }
-        viewModel.list.observe(viewLifecycleOwner) {
+        viewModel.getAllRack()
+        viewModel.list_rack.observe(viewLifecycleOwner) {
             binding.recyclerView.adapter = RackListAdapter(it,
                 onItemClick = object : RackListAdapter.OnItemClick {
 
                     override fun onDelete(item: RacksEntity) {
                         deleteBrand(item)
-                        viewModel.getAll()
+                        viewModel.getAllRack()
                     }
 
                     override fun onClick(item: RacksEntity) {
@@ -73,7 +75,11 @@ class RackFragment : Fragment() {
 
                     override fun onPrint(item: RacksEntity) {
                         val pdfConverter = PDFConverter()
-                        pdfConverter.createPdf(requireContext(), binding.recyclerView, requireActivity())
+                        pdfConverter.createPdf(
+                            requireContext(),
+                            binding.recyclerView,
+                            requireActivity()
+                        )
                     }
                 }
             )
@@ -90,10 +96,10 @@ class RackFragment : Fragment() {
                 return@setOnClickListener
             }
             saveBrand()
-            viewModel.getAll()
+            viewModel.getAllRack()
             binding.brandNameEditText.text = null
             uri = null
-            binding.imageView.setImageDrawable(null)
+            binding.imageView.setImageDrawable(requireContext().getDrawable(R.drawable.empty_img_icon))
             mItem._id = null
         }
         return binding.root
@@ -111,7 +117,7 @@ class RackFragment : Fragment() {
                 val d = data?.data!!
                 Glide.with(this).load(d).centerCrop()
                     .placeholder(R.drawable.brand_icon).into(binding.imageView)
-                uri =  Utilities.encode(binding.imageView.drawable.toBitmap())
+                uri = Utilities.encode(binding.imageView.drawable.toBitmap())
             }
             ImagePicker.RESULT_ERROR -> {
                 Toast.makeText(requireContext(), ImagePicker.getError(data), Toast.LENGTH_SHORT)
@@ -127,7 +133,7 @@ class RackFragment : Fragment() {
         try {
             mItem.col_rackname = binding.brandNameEditText.text.toString()
             mItem.col_image = Utilities.encode(binding.imageView.drawable.toBitmap())
-            if(mItem.col_rackid == null){
+            if (mItem.col_rackid == null) {
                 mItem.col_rackid = "RACK-${(binding.recyclerView.adapter?.itemCount ?: 0) + 1}"
             }
             AppDatabase.get().racksDao().insert(mItem)

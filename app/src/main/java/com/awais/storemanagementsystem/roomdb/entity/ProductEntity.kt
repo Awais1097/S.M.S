@@ -7,36 +7,41 @@ import com.awais.storemanagementsystem.roomdb.entity.ProductEntity.Companion.TAB
 
 @Entity(tableName = TABLE_PRODUCT)
 class ProductEntity(
-    @PrimaryKey(autoGenerate = true) val _id: Int?,
-    @ColumnInfo(name = COL_BRANCHID) val col_branchid: Int?,
-    @ColumnInfo(name = COL_COMPANYID) val col_companyid: Int?,
-    @ColumnInfo(name = COL_SPOGROUPID) val col_spogroupid: Int?,
-    @ColumnInfo(name = COL_PRODUCTID) val col_productid: String?,
-    @ColumnInfo(name = COL_PRODUCTNAME) val col_productname: String?,
-    @ColumnInfo(name = COL_UNITSIZE) val col_unitsize: String?,
-    @ColumnInfo(name = COL_CARTONSIZE) val col_cartonsize: String?,
-    @ColumnInfo(name = COL_UNITPRICE) val col_unitprice: Double?,
-    @ColumnInfo(name = COL_RETAILPRICE) val col_retailprice: Double?,
-    @ColumnInfo(name = COL_ISSHORT) val col_isshort: String?,
-    @ColumnInfo(name = COL_GENERICNAME) val col_genericname: String?,
-    @ColumnInfo(name = COL_COMPANYNAME) val col_companyname: String?,
-    @ColumnInfo(name = COL_ISNEW) val col_isNew: String?
-) {
+    @PrimaryKey(autoGenerate = true) var _id: Int? = null,
+    @ColumnInfo(name = COL_PRODUCTID) var col_productid: String? = null,
+    @ColumnInfo(name = COL_PRODUCTNAME) var col_productname: String? = null,
+    @ColumnInfo(name = COL_UNITSIZE) var col_unitsize: String? = null,
+    @ColumnInfo(name = COL_CARTONSIZE) var col_cartonsize: String? = null,
+    @ColumnInfo(name = COL_UNITPRICE) var col_unitprice: Double? = null,
+    @ColumnInfo(name = COL_RETAILPRICE) var col_retailprice: Double? = null,
+    @ColumnInfo(name = COL_CATEGORYID) var col_categoryid: Int? = null,
+    @ColumnInfo(name = COL_CATEGORYNAME) var col_categoryname: String? = null,
+    @ColumnInfo(name = COL_BRANDID) var col_brandid: Int? = null,
+    @ColumnInfo(name = COL_BRANDNAME) var col_brandname: String? = null,
+    @ColumnInfo(name = COL_COMPID) var col_compid: String? = null,
+    @ColumnInfo(name = COL_COMPNAME) var col_compname: String? = null,
+    @ColumnInfo(name = COL_RACKID) var col_rackid: String? = null,
+    @ColumnInfo(name = COL_RACKNAME) var col_rackname: String? = null,
+    @ColumnInfo(name = COL_IMG) var col_img: String? = null,
+
+    ) {
     companion object {
         const val TABLE_PRODUCT = "product"
-        const val COL_BRANCHID = "branchid"
-        const val COL_COMPANYID = "companyid"
-        const val COL_SPOGROUPID = "spogroupid"
         const val COL_PRODUCTID = "productid"
         const val COL_PRODUCTNAME = "productname"
         const val COL_UNITSIZE = "unitsize"
         const val COL_CARTONSIZE = "cartonsize"
         const val COL_UNITPRICE = "unitprice"
         const val COL_RETAILPRICE = "retailprice"
-        const val COL_ISSHORT = "isshort"
-        const val COL_GENERICNAME = "genericname"
-        const val COL_COMPANYNAME = "companyname"
-        const val COL_ISNEW = "isNew"
+        const val COL_CATEGORYID = "categoryid"
+        const val COL_CATEGORYNAME = "categoryname"
+        const val COL_BRANDID = "brandid"
+        const val COL_BRANDNAME = "brandname"
+        const val COL_COMPID = "compid"
+        const val COL_COMPNAME = "compname"
+        const val COL_RACKID = "rackid"
+        const val COL_RACKNAME = "rackname"
+        const val COL_IMG = "proimg"
     }
 
 }

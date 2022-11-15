@@ -13,7 +13,7 @@ import java.util.concurrent.Executors
 @Database(
     entities = [
         ProductEntity::class, BrandEntity::class, RacksEntity::class, CustomerEntity::class,
-        CompanyEntity::class
+        CompanyEntity::class, Categoryntity::class
     ], version = 1, exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -52,6 +52,7 @@ abstract class AppDatabase : RoomDatabase() {
                     INSTANCE?.racksDao()?.deleteAll()
                     INSTANCE?.customerDao()?.deleteAll()
                     INSTANCE?.companyDao()?.deleteAll()
+                    INSTANCE?.categoryDao()?.deleteAll()
                 }
             }
         }
@@ -62,6 +63,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun racksDao(): RackDao
     abstract fun customerDao(): CustomerDao
     abstract fun companyDao(): CompanyDao
+    abstract fun categoryDao(): CategoryDao
 
 
 }

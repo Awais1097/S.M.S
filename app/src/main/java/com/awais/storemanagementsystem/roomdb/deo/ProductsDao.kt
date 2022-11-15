@@ -23,10 +23,7 @@ interface ProductsDao {
     fun deleteAll()
 
     @Query("SELECT * FROM product order by productname")
-    suspend fun getAll(): List<ProductEntity>
-
-    @Query("SELECT * FROM product where isNew = '1' order by productname")
-    suspend fun getNewAll(): List<ProductEntity>
+    fun getAll(): List<ProductEntity>
 
     @Query("SELECT * FROM product WHERE productid = :pid")
     fun getById(pid: Int): ProductEntity

@@ -13,9 +13,9 @@
 
     <fragment
         android:id="@+id/nav_products"
-        android:name="com.awais.storemanagementsystem.ui.home.HomeFragment"
+        android:name="com.awais.storemanagementsystem.ui.AddProductFragment"
         android:label="@string/menu_products"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_add_products" />
 
     <fragment
         android:id="@+id/nav_gallery"
@@ -39,6 +39,12 @@
         android:id="@+id/nav_rack"
         android:name="com.awais.storemanagementsystem.ui.RackFragment"
         android:label="@string/menu_rack"
+        tools:layout="@layout/fragment_brand" />
+
+    <fragment
+        android:id="@+id/nav_category"
+        android:name="com.awais.storemanagementsystem.ui.CategoryFragment"
+        android:label="@string/menu_category"
         tools:layout="@layout/fragment_brand" />
 
 
