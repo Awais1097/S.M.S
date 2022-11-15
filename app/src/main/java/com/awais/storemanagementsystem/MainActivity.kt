@@ -20,6 +20,7 @@ import com.awais.storemanagementsystem.dbbackup.OnCompleteListener
 import com.awais.storemanagementsystem.dbbackup.RoomBackup
 import com.awais.storemanagementsystem.roomdb.AppDatabase
 import com.awais.storemanagementsystem.util.ActivityUtils
+import com.awais.storemanagementsystem.util.BottomSheet
 import com.awais.storemanagementsystem.util.UserData
 import com.awais.storemanagementsystem.util.Utilities
 import com.google.android.material.navigation.NavigationView
@@ -42,9 +43,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         setSupportActionBar(binding.appBarMain.toolbar)
 
-        binding.appBarMain.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+        binding.appBarMain.fab.setOnClickListener {
+            BottomSheet().show(supportFragmentManager,"Receipt")
         }
         drawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView

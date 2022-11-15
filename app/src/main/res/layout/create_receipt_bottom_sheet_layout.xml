@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        style="@style/H2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/create_new_receipt" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="31dp"
+            android:layout_height="30dp"
+            android:src="@drawable/my_image_pro" />
+
+        <EditText
+            android:id="@+id/shop_name_edit_text"
+            style="@style/Body_black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/cutomer_name_" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="31dp"
+            android:layout_height="30dp"
+            android:src="@drawable/product_icon" />
+
+
+        <EditText
+            android:id="@+id/target_min_edit_text"
+            style="@style/Body_black"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:hint="@string/product"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/target_max_edit_text"
+            style="@style/Body_black"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:hint="@string/qty"
+            android:inputType="numberDecimal" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/title_text_view"
+        style="@style/H2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/products" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>

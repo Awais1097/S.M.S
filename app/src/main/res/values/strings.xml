@@ -98,9 +98,13 @@
     <string name="add_new_customer" >Add New Customer:</string>
     <string name="add_new_company" >Add New Company:</string>
     <string name="cutomer_name">Name</string>
+    <string name="cutomer_name_">Customer Name</string>
     <string name="all_cusromer" >All Customers:</string>
     <string name="all_companies" >All Companies:</string>
     <string name="menu_category">Category</string>
+    <string name="qty">QTY</string>
+    <string name="product">Product</string>
+    <string name="create_new_receipt">Create New Receipt</string>
 
 
 </resources>

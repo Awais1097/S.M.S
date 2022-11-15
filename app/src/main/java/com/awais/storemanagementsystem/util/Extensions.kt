@@ -1,7 +1,9 @@
 package com.awais.route.util
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Context
+import android.content.ContextWrapper
 import android.graphics.drawable.GradientDrawable
 import android.util.TypedValue
 import android.view.LayoutInflater
@@ -9,10 +11,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.LayoutRes
 import androidx.core.content.ContextCompat
+import com.awais.storemanagementsystem.R
+import com.google.android.material.snackbar.Snackbar
 import java.time.DayOfWeek
 import java.time.temporal.WeekFields
 import java.util.*
@@ -47,11 +52,13 @@ internal val Context.inputMethodManager
 
 internal inline fun Boolean?.orFalse(): Boolean = this ?: false
 
-internal fun Context.getDrawableCompat(@DrawableRes drawable: Int) = ContextCompat.getDrawable(this, drawable)
+internal fun Context.getDrawableCompat(@DrawableRes drawable: Int) =
+    ContextCompat.getDrawable(this, drawable)
 
 internal fun Context.getColorCompat(@ColorRes color: Int) = ContextCompat.getColor(this, color)
 
-internal fun TextView.setTextColorRes(@ColorRes color: Int) = setTextColor(context.getColorCompat(color))
+internal fun TextView.setTextColorRes(@ColorRes color: Int) =
+    setTextColor(context.getColorCompat(color))
 
 @SuppressLint("NewApi")
 fun daysOfWeekFromLocale(): Array<DayOfWeek> {
@@ -79,4 +86,32 @@ fun GradientDrawable.setCornerRadius(
         bottomRight, bottomRight,
         bottomLeft, bottomLeft
     ).toFloatArray()
+}
+
+fun Context.findActivity(): Activity? = when (this) {
+    is Activity -> this
+    is ContextWrapper -> baseContext.findActivity()
+    else -> null
+}
+
+fun Context.showToast(msg: String, duration: Int = Toast.LENGTH_SHORT) {
+    Toast.makeText(this, msg, duration).show()
+}
+
+fun View.showSnack(
+    message: String?,
+    actionText: String?,
+    messageColor: Int? = R.color.black,
+    actionColor: Int? = R.color.white,
+    textColor: Int? = R.color.white,
+    onClickListener: View.OnClickListener? = null
+) {
+    val snackbar = Snackbar
+        .make(this, message!!, Snackbar.LENGTH_LONG)
+        .setAction(actionText, onClickListener)
+    val sbView = snackbar.view
+    sbView.setBackgroundColor(messageColor!!)
+    snackbar.setActionTextColor(actionColor!!)
+    snackbar.setTextColor(textColor!!)
+    snackbar.show()
 }
