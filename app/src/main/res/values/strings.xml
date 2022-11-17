@@ -76,7 +76,7 @@
     <string name="on">ON</string>
     <string name="off">OFF</string>
     <string name="old_password">Old Password</string>
-    <string name="today_sale">Today Sale :</string>
+    <string name="today_sale">Today :</string>
     <string name="sale">Sale</string>
     <string name="products">Products</string>
     <string name="date_wise_sale">Date Wise Sale :</string>
@@ -119,6 +119,13 @@
     <string name="cartoon_size">Cartoon Size</string>
     <string name="retler_price">Retail Price</string>
     <string name="menu_orders">Orders</string>
-
+    <string name="target">Target</string>
+    <string name="progress">Progress</string>
+    <string name="recent_used">Recent used:</string>
+    <string name="short_pro">Short Pro.</string>
+    <string name="reciept">Receipt</string>
+    <string name="_0">0</string>
+    <string name="toady_receipts">Toady Receipts:</string>
+    <string name="no_record_found">No record found</string>
 
 </resources>

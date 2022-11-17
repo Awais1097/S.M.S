@@ -51,21 +51,29 @@
         <entry key="..\:/others/sample/SMS/AAchart/src/main/res/layout/content_special_chart.xml" value="0.12760416666666666" />
         <entry key="..\:/others/sample/SMS/AAchart/src/main/res/layout/item_exlist_group.xml" value="0.12760416666666666" />
         <entry key="..\:/others/sample/SMS/AAchart/src/main/res/layout/item_exlist_item.xml" value="0.12760416666666666" />
+        <entry key="..\:/others/sample/SMS/app/src/main/res/drawable/badge_background.xml" value="0.15" />
         <entry key="..\:/others/sample/SMS/app/src/main/res/drawable/circle_red.xml" value="0.138" />
         <entry key="..\:/others/sample/SMS/app/src/main/res/drawable/group_down.xml" value="0.138" />
         <entry key="..\:/others/sample/SMS/app/src/main/res/drawable/ic_back_arrow_white.xml" value="0.182" />
+        <entry key="..\:/others/sample/SMS/app/src/main/res/drawable/rect_rounded_right_yellow_bg.xml" value="0.15" />
+        <entry key="..\:/others/sample/SMS/app/src/main/res/drawable/side_nav_bar.xml" value="0.15" />
         <entry key="..\:/others/sample/SMS/app/src/main/res/layout/activity_log_in.xml" value="0.264" />
         <entry key="..\:/others/sample/SMS/app/src/main/res/layout/activity_main.xml" value="0.12760416666666666" />
         <entry key="..\:/others/sample/SMS/app/src/main/res/layout/activity_register.xml" value="0.264" />
         <entry key="..\:/others/sample/SMS/app/src/main/res/layout/activity_splash.xml" value="0.25" />
         <entry key="..\:/others/sample/SMS/app/src/main/res/layout/app_bar_main.xml" value="0.3455571227080395" />
+        <entry key="..\:/others/sample/SMS/app/src/main/res/layout/base_fragment_list.xml" value="0.25" />
+        <entry key="..\:/others/sample/SMS/app/src/main/res/layout/chart_sample_layout.xml" value="0.25" />
         <entry key="..\:/others/sample/SMS/app/src/main/res/layout/content_main.xml" value="0.12760416666666666" />
         <entry key="..\:/others/sample/SMS/app/src/main/res/layout/create_receipt_bottom_sheet_layout.xml" value="0.24895833333333334" />
         <entry key="..\:/others/sample/SMS/app/src/main/res/layout/dialog_choose_app.xml" value="0.25" />
+        <entry key="..\:/others/sample/SMS/app/src/main/res/layout/fragment_add_products.xml" value="0.25" />
         <entry key="..\:/others/sample/SMS/app/src/main/res/layout/fragment_brand.xml" value="0.25" />
         <entry key="..\:/others/sample/SMS/app/src/main/res/layout/fragment_customer.xml" value="0.264" />
         <entry key="..\:/others/sample/SMS/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/others/sample/SMS/app/src/main/res/layout/item_product_suggestion.xml" value="0.25" />
         <entry key="..\:/others/sample/SMS/app/src/main/res/layout/nav_header_main.xml" value="0.25" />
+        <entry key="..\:/others/sample/SMS/app/src/main/res/layout/text_item_layout.xml" value="0.25" />
         <entry key="..\:/others/sample/SMS/app/src/main/res/menu/activity_main_drawer.xml" value="0.264" />
         <entry key="..\:/others/sample/SMS/app/src/main/res/xml/provider_paths.xml" value="0.25" />
       </map>

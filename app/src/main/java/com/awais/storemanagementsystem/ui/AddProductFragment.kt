@@ -20,6 +20,7 @@ import com.awais.storemanagementsystem.adapter.ProductsListAdapter
 import com.awais.storemanagementsystem.databinding.FragmentAddProductsBinding
 import com.awais.storemanagementsystem.roomdb.AppDatabase
 import com.awais.storemanagementsystem.roomdb.entity.*
+import com.awais.storemanagementsystem.util.ActivityUtils
 import com.awais.storemanagementsystem.util.Utilities
 import com.awais.storemanagementsystem.util.Utilities.decode
 import com.awais.storemanagementsystem.viewmodel.ProductsViewModel
@@ -156,6 +157,11 @@ class AddProductFragment : Fragment() {
             uri = null
             binding.imageView.setImageDrawable(requireContext().getDrawable(R.drawable.empty_img_icon))
             mItem._id = null
+        }
+        binding.seeAll.setOnClickListener {
+            ActivityUtils.startFrameActivity(
+                requireContext(),getString(R.string.products),ProductsListFragment.TAG
+            )
         }
         return binding.root
     }
