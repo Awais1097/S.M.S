@@ -71,6 +71,8 @@
         <entry key="..\:/others/sample/SMS/app/src/main/res/layout/fragment_brand.xml" value="0.25" />
         <entry key="..\:/others/sample/SMS/app/src/main/res/layout/fragment_customer.xml" value="0.264" />
         <entry key="..\:/others/sample/SMS/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/others/sample/SMS/app/src/main/res/layout/item_notification.xml" value="0.25" />
+        <entry key="..\:/others/sample/SMS/app/src/main/res/layout/item_product_list.xml" value="0.25" />
         <entry key="..\:/others/sample/SMS/app/src/main/res/layout/item_product_suggestion.xml" value="0.25" />
         <entry key="..\:/others/sample/SMS/app/src/main/res/layout/nav_header_main.xml" value="0.25" />
         <entry key="..\:/others/sample/SMS/app/src/main/res/layout/text_item_layout.xml" value="0.25" />

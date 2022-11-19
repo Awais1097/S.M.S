@@ -5,27 +5,35 @@
     android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp"
-    app:strokeColor="@color/Gray"
-    app:strokeWidth="0.8dp"
-    app:cardCornerRadius="8dp"
-    android:background="@color/white"
+    android:layout_margin="3dp"
+    app:cardElevation="0dp"
     android:orientation="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp">
+        android:layout_margin="5dp"
+        android:layout_gravity="center">
 
-        <ImageView
-            android:id="@+id/item_image"
-            android:layout_width="50dp"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvRecentNotice"
+            android:layout_width="45dp"
             android:layout_height="45dp"
-            android:paddingRight="5dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/product_icon"
+            android:backgroundTint="#00000000"
+            android:elevation="0sp"
+            app:cardCornerRadius="50sp"
+            app:cardElevation="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/item_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/empty_img_icon"
+                android:scaleType="centerCrop" />
+        </androidx.cardview.widget.CardView>
 
 
         <LinearLayout
@@ -35,22 +43,31 @@
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/item_image"
+            android:layout_marginStart="@dimen/dimen_size_5dp"
+            app:layout_constraintStart_toEndOf="@+id/cvRecentNotice"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/description_3_tv"
+                style="@style/Body_black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:maxLines="2" />
+            <TextView
+                android:id="@+id/description_6_tv"
                 style="@style/Body_small_gray"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="2dp"
                 android:includeFontPadding="false"
                 android:maxLines="2" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp">
+                android:layout_marginTop="2dp"
+                android:gravity="bottom">
 
                 <TextView
                     android:id="@+id/description_2_tv"
@@ -73,8 +90,8 @@
 
                 <ImageView
                     android:id="@+id/do_delete"
-                    android:layout_width="22dp"
-                    android:layout_height="22dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_marginStart="8sp"
                     android:padding="1sp"
                     android:paddingStart="0sp"

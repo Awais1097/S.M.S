@@ -8,15 +8,14 @@
     android:layout_marginEnd="5dp"
     android:layout_marginBottom="5dp"
     app:cardCornerRadius="16sp"
-    app:cardElevation="2dp"
-    app:strokeColor="@color/Gray"
-    app:strokeWidth="0.8dp">
+    app:cardElevation="0dp"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="8dp">
+        android:padding="5dp">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cvRecentNotice"

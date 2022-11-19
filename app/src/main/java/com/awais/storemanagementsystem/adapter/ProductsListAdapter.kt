@@ -1,5 +1,6 @@
 package com.awais.storemanagementsystem.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -20,11 +21,13 @@ class ProductsListAdapter(var list : List<ProductEntity>, var onItemClick: OnIte
         )
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = list[position]
         holder.binding.description3Tv.text =item.col_productid+" - "+ item.col_productname
         holder.binding.description2Tv.text = "Price: "+ item.col_unitprice.toString()
         holder.binding.description4Tv.text = "Size: "+ item.col_unitsize.toString()
+        holder.binding.description6Tv.text = "Rack: "+ item.col_rackname.toString()
         if (item.col_img != null) {
             Glide.with(holder.itemView.context).load(Utilities.decode(item.col_img!!)).centerCrop()
                 .into(holder.binding.itemImage)
