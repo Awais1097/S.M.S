@@ -29,8 +29,8 @@ class SupplierAdapter(var list: List<SupplierEntity>, var onItemClick: OnItemCli
         val item = list[position]
         holder.binding.tvNoticeTitle.text = item.col_id +" - "+ item.col_name
         holder.binding.tvNoticeDate.text = item.col_city.toString()
-        holder.binding.imageViewPring.isVisible = true
-        holder.binding.imageView.setImageDrawable(holder.itemView.context.getDrawable(R.drawable.rank_icon))
+        holder.binding.imageViewPring.isVisible = false
+        holder.binding.imageView.setImageDrawable(holder.itemView.context.getDrawable(R.drawable.supplier_img_icon))
         if (item.col_imge != null) {
             Glide.with(holder.itemView.context).load(Utilities.decode(item.col_imge!!)).centerCrop()
                 .into(holder.binding.ivRecentNotice)

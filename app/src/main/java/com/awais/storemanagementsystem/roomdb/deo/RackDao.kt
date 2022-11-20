@@ -7,7 +7,7 @@ import com.awais.storemanagementsystem.roomdb.entity.RacksEntity
 @Dao
 interface RackDao {
 
-    @Insert(entity = RacksEntity::class, onConflict = IGNORE)
+    @Insert(entity = RacksEntity::class, onConflict = OnConflictStrategy.REPLACE)
     fun insert(user: RacksEntity?)
 
     @Query("DELETE FROM Racks WHERE _id =:Id")
@@ -28,7 +28,7 @@ interface RackDao {
     @Query("SELECT * FROM Racks WHERE _id = :pid")
     fun getById(pid: Int): RacksEntity
 
-    @Insert(entity = RacksEntity::class, onConflict = IGNORE)
+    @Insert(entity = RacksEntity::class, onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(users: List<RacksEntity>)
 
 }

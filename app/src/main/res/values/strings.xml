@@ -104,11 +104,13 @@
     <string name="menu_unload">Upload</string>
     <string name="menu_sever">Server</string>
     <string name="add_new_customer" >Add New Customer:</string>
+    <string name="add_stock" >Add Stock:</string>
     <string name="add_new_company" >Add New Company:</string>
     <string name="add_new_supplier" >Add New Supplier:</string>
     <string name="cutomer_name">Name</string>
     <string name="cutomer_name_">Customer Name</string>
     <string name="all_cusromer" >All Customers:</string>
+    <string name="all_stock" >All Stock:</string>
     <string name="all_companies" >All Companies:</string>
     <string name="all_suppliers" >All Suppliers:</string>
     <string name="menu_category">Category</string>
@@ -131,5 +133,10 @@
     <string name="no_record_found">No record found</string>
     <string name="menu_suppliers">Suppliers</string>
     <string name="remarks">Remarks</string>
+    <string name="supplier">Supplier</string>
+    <string name="date">Date</string>
+    <string name="search_reciept">Search Receipt</string>
+    <string name="recripy_id">Receipt ID:</string>
+    <string name="search">Search</string>
 
 </resources>

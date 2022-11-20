@@ -265,7 +265,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="3dp"
             android:orientation="vertical">
 
             <TextView
@@ -279,9 +279,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginStart="@dimen/dimen_size_6dp"
-                android:layout_marginEnd="@dimen/dimen_size_6dp">
+                android:layout_marginEnd="@dimen/dimen_size_6dp"
+                android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -384,9 +384,9 @@
                         style="@style/H2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_size_5dp"
                         android:gravity="center"
                         android:text="@string/short_pro"
-                        android:layout_marginTop="@dimen/dimen_size_5dp"
                         app:layout_constraintBottom_toBottomOf="parent" />
 
 
@@ -433,11 +433,55 @@
 
         </LinearLayout>
 
+        <TextView
+            style="@style/H2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="3dp"
+            android:text="@string/search_reciept"
+            android:textColor="?android:textColorPrimary" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:padding="@dimen/dimen_size_5dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_size_5dp"
+                android:layout_weight="7">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/Body_black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/recripy_id" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/login"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/dimen_size_10dp"
+                android:layout_marginEnd="@dimen/dimen_size_5dp"
+                android:backgroundTint="@color/purple_500"
+                android:text="@string/search"
+                android:textAllCaps="false"
+                app:cornerRadius="20dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
             android:orientation="horizontal">
 
             <TextView

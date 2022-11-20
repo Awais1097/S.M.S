@@ -1,4 +1,4 @@
-package com.awais.storemanagementsystem.ui.slideshow
+package com.awais.storemanagementsystem.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

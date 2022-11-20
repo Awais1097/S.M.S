@@ -7,7 +7,7 @@ import com.awais.storemanagementsystem.roomdb.entity.StockInEntity
 @Dao
 interface StockInDao {
 
-    @Insert(entity = StockInEntity::class, onConflict = IGNORE)
+    @Insert(entity = StockInEntity::class, onConflict = OnConflictStrategy.REPLACE)
     fun insert(user: StockInEntity?)
 
     @Query("DELETE FROM StockIn WHERE _id =:Id")
@@ -28,7 +28,7 @@ interface StockInDao {
     @Query("SELECT * FROM StockIn WHERE _id = :pid")
     fun getById(pid: Int): StockInEntity
 
-    @Insert(entity = StockInEntity::class, onConflict = IGNORE)
+    @Insert(entity = StockInEntity::class, onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(users: List<StockInEntity>)
 
 }

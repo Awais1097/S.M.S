@@ -7,7 +7,7 @@ import com.awais.storemanagementsystem.roomdb.entity.Categoryntity
 @Dao
 interface CategoryDao {
 
-    @Insert(entity = Categoryntity::class, onConflict = IGNORE)
+    @Insert(entity = Categoryntity::class, onConflict = OnConflictStrategy.REPLACE)
     fun insert(user: Categoryntity?)
 
     @Query("DELETE FROM Category WHERE _id =:Id")
@@ -28,7 +28,7 @@ interface CategoryDao {
     @Query("SELECT * FROM Category WHERE _id = :pid")
     fun getById(pid: Int): Categoryntity
 
-    @Insert(entity = Categoryntity::class, onConflict = IGNORE)
+    @Insert(entity = Categoryntity::class, onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(users: List<Categoryntity>)
 
 }

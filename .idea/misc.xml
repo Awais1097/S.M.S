@@ -7,6 +7,7 @@
         <entry key="..\:/SMS/app/src/main/res/drawable/ic_fluent_note_24_filled.xml" value="0.2" />
         <entry key="..\:/SMS/app/src/main/res/drawable/nav_bg.xml" value="0.199" />
         <entry key="..\:/SMS/app/src/main/res/drawable/nav_bg_red.xml" value="0.2" />
+        <entry key="..\:/SMS/app/src/main/res/layout/activity_log_in.xml" value="0.1921875" />
         <entry key="..\:/SMS/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/SMS/app/src/main/res/layout/activity_register.xml" value="0.33" />
         <entry key="..\:/SMS/app/src/main/res/layout/activity_splash.xml" value="0.22" />
@@ -16,7 +17,9 @@
         <entry key="..\:/SMS/app/src/main/res/layout/fragment_brand.xml" value="0.33" />
         <entry key="..\:/SMS/app/src/main/res/layout/fragment_company.xml" value="0.1921875" />
         <entry key="..\:/SMS/app/src/main/res/layout/fragment_customer.xml" value="0.33" />
+        <entry key="..\:/SMS/app/src/main/res/layout/fragment_gallery.xml" value="0.1921875" />
         <entry key="..\:/SMS/app/src/main/res/layout/fragment_home.xml" value="0.1921875" />
+        <entry key="..\:/SMS/app/src/main/res/layout/fragment_stock.xml" value="0.25" />
         <entry key="..\:/SMS/app/src/main/res/layout/item_notification.xml" value="0.33" />
         <entry key="..\:/SMS/app/src/main/res/layout/item_product_list.xml" value="0.33" />
         <entry key="..\:/SMS/app/src/main/res/layout/nav_header_main.xml" value="0.33" />

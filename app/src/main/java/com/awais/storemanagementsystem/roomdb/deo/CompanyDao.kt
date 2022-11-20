@@ -7,7 +7,7 @@ import com.awais.storemanagementsystem.roomdb.entity.CompanyEntity
 @Dao
 interface CompanyDao {
 
-    @Insert(entity = CompanyEntity::class, onConflict = IGNORE)
+    @Insert(entity = CompanyEntity::class, onConflict = OnConflictStrategy.REPLACE)
     fun insert(user: CompanyEntity?)
 
     @Query("DELETE FROM Company WHERE CompanyId =:Id")
@@ -25,7 +25,7 @@ interface CompanyDao {
     @Query("SELECT * FROM Company order by CompanyId")
     fun getAll(): List<CompanyEntity>
 
-    @Insert(entity = CompanyEntity::class, onConflict = IGNORE)
+    @Insert(entity = CompanyEntity::class, onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(users: List<CompanyEntity>)
 
     @Query("SELECT * FROM Company WHERE CompanyId = :pid")

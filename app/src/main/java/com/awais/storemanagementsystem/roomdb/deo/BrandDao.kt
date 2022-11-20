@@ -2,12 +2,13 @@ package com.awais.storemanagementsystem.roomdb.deo
 
 import androidx.room.*
 import androidx.room.OnConflictStrategy.Companion.IGNORE
+import androidx.room.OnConflictStrategy.Companion.REPLACE
 import com.awais.storemanagementsystem.roomdb.entity.BrandEntity
 
 @Dao
 interface BrandDao {
 
-    @Insert(entity = BrandEntity::class, onConflict = IGNORE)
+    @Insert(entity = BrandEntity::class, onConflict = REPLACE)
     fun insert(user: BrandEntity?)
 
     @Query("DELETE FROM Brands WHERE _id =:Id")
@@ -28,7 +29,7 @@ interface BrandDao {
     @Query("SELECT * FROM Brands WHERE _id = :pid")
     fun getById(pid: Int): BrandEntity
 
-    @Insert(entity = BrandEntity::class, onConflict = IGNORE)
+    @Insert(entity = BrandEntity::class, onConflict = REPLACE)
     fun insertAll(users: List<BrandEntity>)
 
 }

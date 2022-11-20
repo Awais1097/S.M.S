@@ -19,7 +19,7 @@ import com.awais.storemanagementsystem.adapter.SupplierAdapter
 import com.awais.storemanagementsystem.databinding.FragmentCustomerBinding
 import com.awais.storemanagementsystem.roomdb.AppDatabase
 import com.awais.storemanagementsystem.roomdb.entity.SupplierEntity
-import com.awais.storemanagementsystem.ui.slideshow.SupplierViewModel
+import com.awais.storemanagementsystem.viewmodel.SupplierViewModel
 import com.awais.storemanagementsystem.util.PDFConverter
 import com.awais.storemanagementsystem.util.Utilities
 import com.bumptech.glide.Glide
@@ -140,9 +140,10 @@ class SullpierFragment : Fragment() {
             mItem.col_country = binding.countryEditText.text.toString()
             mItem.col_city = binding.cityEditText.text.toString()
             mItem.col_address = binding.addressEditText.text.toString()
+            mItem.col_comp_name = binding.remarksEditText.text.toString()
             mItem.col_imge = Utilities.encode(binding.imageView.drawable.toBitmap())
             if (mItem.col_id == null) {
-                mItem.col_id = "CMP-${(binding.recyclerView.adapter?.itemCount ?: 0) + 1}"
+                mItem.col_id = "SUP-${(binding.recyclerView.adapter?.itemCount ?: 0) + 1}"
             }
             AppDatabase.get().supplierDao().insert(mItem)
             Utilities.showSnackbar(binding.root, "Supplier Saved", null, R.color.Green)

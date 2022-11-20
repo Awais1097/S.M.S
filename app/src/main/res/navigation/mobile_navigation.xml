@@ -30,6 +30,12 @@
         tools:layout="@layout/fragment_customer" />
 
     <fragment
+        android:id="@+id/nav_stock"
+        android:name="com.awais.storemanagementsystem.ui.AddStockFragment"
+        android:label="@string/menu_stock"
+        tools:layout="@layout/fragment_stock" />
+
+    <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.awais.storemanagementsystem.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_companies"
