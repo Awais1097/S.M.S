@@ -2,10 +2,11 @@ package com.awais.storemanagementsystem.ui.home
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
+import androidx.core.view.size
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.awais.storemanagementsystem.R
@@ -14,8 +15,10 @@ import com.awais.storemanagementsystem.ui.ProductsListFragment
 import com.awais.storemanagementsystem.util.ActivityUtils
 import com.awais.storemanagementsystem.util.UserData
 import com.awais.storemanagementsystem.util.Utilities
-import org.eazegraph.lib.charts.BarChart
-import org.eazegraph.lib.models.BarModel
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdSize
+import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.RequestConfiguration
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -37,6 +40,11 @@ class HomeFragment : Fragment() {
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
+        MobileAds.initialize(requireContext()){}
+      //  binding.adView.setAdSize(AdSize.BANNER) =
+        Log.d("Ads", "Google Mobile Ads SDK Version: " + MobileAds.getVersion())
+        val adRequest = AdRequest.Builder().build()
+        binding.adView.loadAd(adRequest)
         val user = UserData.getUser(requireContext())
         binding.userNameTv.text = user.ownerName
         binding.todayTv.text = SimpleDateFormat("EEEE, dd MMM, yyyy").format(Date()).toString()
@@ -74,6 +82,17 @@ class HomeFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        binding.adView.destroy()
         _binding = null
+    }
+
+    override fun onPause() {
+        binding.adView.pause()
+        super.onPause()
+    }
+
+    override fun onResume() {
+        binding.adView.resume()
+        super.onResume()
     }
 }
