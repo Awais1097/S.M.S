@@ -31,7 +31,7 @@ interface CustomerDao {
     @Insert(entity = CustomerEntity::class, onConflict = IGNORE)
     fun insertAll(users: List<CustomerEntity>)
 
-    @Query("SELECT * FROM Customers WHERE CustomersCompId = :pid")
-    fun getByCompanyId(pid: Int): List<CustomerEntity>
+   /* @Query("SELECT * FROM Customers WHERE CustomersCompId = :pid")
+    fun getByCompanyId(pid: Int): List<CustomerEntity>*/
 
 }

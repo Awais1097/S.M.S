@@ -34,7 +34,7 @@
                 android:id="@+id/ivRecentNotice"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/ic_fluent_note_24_filled"
+                android:background="@drawable/empty_img_icon"
                 android:scaleType="centerCrop" />
         </androidx.cardview.widget.CardView>
 

@@ -22,6 +22,11 @@
                     android:title="@string/menu_stock" />
 
                 <item
+                    android:id="@+id/nav_suppliers"
+                    android:icon="@drawable/supplier_img_icon"
+                    android:title="@string/menu_suppliers" />
+
+                <item
                     android:id="@+id/nav_products"
                     android:icon="@drawable/product_icon"
                     android:title="@string/menu_products" />

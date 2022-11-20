@@ -105,10 +105,12 @@
     <string name="menu_sever">Server</string>
     <string name="add_new_customer" >Add New Customer:</string>
     <string name="add_new_company" >Add New Company:</string>
+    <string name="add_new_supplier" >Add New Supplier:</string>
     <string name="cutomer_name">Name</string>
     <string name="cutomer_name_">Customer Name</string>
     <string name="all_cusromer" >All Customers:</string>
     <string name="all_companies" >All Companies:</string>
+    <string name="all_suppliers" >All Suppliers:</string>
     <string name="menu_category">Category</string>
     <string name="qty">QTY</string>
     <string name="product">Product</string>
@@ -127,5 +129,7 @@
     <string name="_0">0</string>
     <string name="toady_receipts">Toady Receipts:</string>
     <string name="no_record_found">No record found</string>
+    <string name="menu_suppliers">Suppliers</string>
+    <string name="remarks">Remarks</string>
 
 </resources>

@@ -13,7 +13,8 @@ import java.util.concurrent.Executors
 @Database(
     entities = [
         ProductEntity::class, BrandEntity::class, RacksEntity::class, CustomerEntity::class,
-        CompanyEntity::class, Categoryntity::class
+        CompanyEntity::class, Categoryntity::class, SupplierEntity::class,
+        StockInEntity::class, StockOutEntity::class
     ], version = 1, exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -30,9 +31,7 @@ abstract class AppDatabase : RoomDatabase() {
                     if (INSTANCE == null) {
                         INSTANCE = Room
                             .databaseBuilder(
-                                App.context,
-                                AppDatabase::class.java,
-                                "StoreAppDatabase"
+                                App.context, AppDatabase::class.java, "StoreAppDatabase"
                             )
                             .addCallback(sRoomDatabaseCallback)
                             .allowMainThreadQueries()
@@ -53,6 +52,9 @@ abstract class AppDatabase : RoomDatabase() {
                     INSTANCE?.customerDao()?.deleteAll()
                     INSTANCE?.companyDao()?.deleteAll()
                     INSTANCE?.categoryDao()?.deleteAll()
+                    INSTANCE?.supplierDao()?.deleteAll()
+                    INSTANCE?.stcockInDao()?.deleteAll()
+                    INSTANCE?.stcockOutDao()?.deleteAll()
                 }
             }
         }
@@ -64,6 +66,8 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun customerDao(): CustomerDao
     abstract fun companyDao(): CompanyDao
     abstract fun categoryDao(): CategoryDao
-
+    abstract fun supplierDao(): SupplierDao
+    abstract fun stcockInDao(): StockInDao
+    abstract fun stcockOutDao(): StockOutDao
 
 }

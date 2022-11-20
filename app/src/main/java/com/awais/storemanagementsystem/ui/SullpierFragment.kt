@@ -1,4 +1,4 @@
-package com.awais.storemanagementsystem.ui.slideshow
+package com.awais.storemanagementsystem.ui
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -15,15 +15,16 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.awais.route.imagepicker.ImagePicker
 import com.awais.storemanagementsystem.R
-import com.awais.storemanagementsystem.adapter.CompanyAdapter
+import com.awais.storemanagementsystem.adapter.SupplierAdapter
 import com.awais.storemanagementsystem.databinding.FragmentCustomerBinding
 import com.awais.storemanagementsystem.roomdb.AppDatabase
-import com.awais.storemanagementsystem.roomdb.entity.CompanyEntity
+import com.awais.storemanagementsystem.roomdb.entity.SupplierEntity
+import com.awais.storemanagementsystem.ui.slideshow.SupplierViewModel
 import com.awais.storemanagementsystem.util.PDFConverter
 import com.awais.storemanagementsystem.util.Utilities
 import com.bumptech.glide.Glide
 
-class SlideshowFragment : Fragment() {
+class SullpierFragment : Fragment() {
 
 
     private var _binding: FragmentCustomerBinding? = null
@@ -31,7 +32,7 @@ class SlideshowFragment : Fragment() {
     // This property is only valid between onCreateView and onDestroyView.
     private val binding get() = _binding!!
     private var uri: String? = null
-    var mItem = CompanyEntity()
+    var mItem = SupplierEntity()
 
     @SuppressLint("SetTextI18n")
     override fun onCreateView(
@@ -40,26 +41,26 @@ class SlideshowFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val galleryViewModel =
-            ViewModelProvider(this)[SlideshowViewModel::class.java]
+            ViewModelProvider(this)[SupplierViewModel::class.java]
 
         _binding = FragmentCustomerBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        binding.titleTextView.text = getString(R.string.add_new_company)
-        binding.brandMv.setImageDrawable(requireContext().getDrawable(R.drawable.company_img_icon_colr))
+        binding.titleTextView.text = getString(R.string.add_new_supplier)
+        binding.brandMv.setImageDrawable(requireContext().getDrawable(R.drawable.supplier_img_icon))
         binding.addImage.setOnClickListener {
             ImagePicker.with(this).cameraOnly().crop().start()
         }
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         galleryViewModel.list.observe(viewLifecycleOwner) {
-            binding.recyclerView.adapter = CompanyAdapter(it,
-                onItemClick = object : CompanyAdapter.OnItemClick {
+            binding.recyclerView.adapter = SupplierAdapter(it,
+                onItemClick = object : SupplierAdapter.OnItemClick {
 
-                    override fun onDelete(item: CompanyEntity) {
+                    override fun onDelete(item: SupplierEntity) {
                         delet(item)
                         galleryViewModel.getAll()
                     }
 
-                    override fun onClick(item: CompanyEntity) {
+                    override fun onClick(item: SupplierEntity) {
                         mItem = item
                         binding.brandNameEditText.setText(item.col_name)
                         binding.mobileNumberEditText.setText(item.col_mobile)
@@ -67,7 +68,7 @@ class SlideshowFragment : Fragment() {
                         binding.countryEditText.setText(item.col_country)
                         binding.cityEditText.setText(item.col_city)
                         binding.addressEditText.setText(item.col_address)
-                        binding.remarksEditText.setText(item.col_owner)
+                        binding.remarksEditText.setText(item.col_comp_name)
                         if (item.col_imge != null) {
                             Glide.with(requireContext()).load(Utilities.decode(item.col_imge!!))
                                 .centerCrop()
@@ -76,7 +77,7 @@ class SlideshowFragment : Fragment() {
                         uri = item.col_imge
                     }
 
-                    override fun onPrint(item: CompanyEntity) {
+                    override fun onPrint(item: SupplierEntity) {
                         val pdfConverter = PDFConverter()
                         pdfConverter.createPdf(
                             requireContext(),
@@ -87,7 +88,7 @@ class SlideshowFragment : Fragment() {
                 }
             )
             binding.countTv.text =
-                "${requireContext().getString(R.string.all_companies)} (${it.size})"
+                "${requireContext().getString(R.string.all_suppliers)} (${it.size})"
         }
         binding.saveButton.setOnClickListener {
             if (TextUtils.isEmpty(binding.brandNameEditText.text)) {
@@ -143,8 +144,8 @@ class SlideshowFragment : Fragment() {
             if (mItem.col_id == null) {
                 mItem.col_id = "CMP-${(binding.recyclerView.adapter?.itemCount ?: 0) + 1}"
             }
-            AppDatabase.get().companyDao().insert(mItem)
-            Utilities.showSnackbar(binding.root, "Company Saved", null, R.color.Green)
+            AppDatabase.get().supplierDao().insert(mItem)
+            Utilities.showSnackbar(binding.root, "Supplier Saved", null, R.color.Green)
             binding.brandNameEditText.text = null
             binding.mobileNumberEditText.text = null
             binding.phoneNumberEditText.text = null
@@ -154,14 +155,14 @@ class SlideshowFragment : Fragment() {
             binding.remarksEditText.text = null
             binding.imageView.setImageDrawable(requireContext().getDrawable(R.drawable.empty_img_icon))
         } catch (ex: Exception) {
-            Utilities.showSnackbar(binding.root, "Company Not Saved", null, R.color.Red)
+            Utilities.showSnackbar(binding.root, "Supplier Not Saved", null, R.color.Red)
         }
     }
 
-    private fun delet(item: CompanyEntity) {
+    private fun delet(item: SupplierEntity) {
         try {
-            AppDatabase.get().companyDao().delete(item)
-            Utilities.showSnackbar(binding.root, "Company Deleted", null, R.color.Green)
+            AppDatabase.get().supplierDao().delete(item)
+            Utilities.showSnackbar(binding.root, "Supplier Deleted", null, R.color.Green)
             binding.brandNameEditText.text = null
             binding.mobileNumberEditText.text = null
             binding.phoneNumberEditText.text = null
@@ -171,7 +172,7 @@ class SlideshowFragment : Fragment() {
             binding.remarksEditText.text = null
             binding.imageView.setImageDrawable(requireContext().getDrawable(R.drawable.empty_img_icon))
         } catch (ex: Exception) {
-            Utilities.showSnackbar(binding.root, "Company Not Deleted", null, R.color.Red)
+            Utilities.showSnackbar(binding.root, "Supplier Not Deleted", null, R.color.Red)
         }
     }
 

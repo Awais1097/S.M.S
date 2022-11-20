@@ -26,6 +26,7 @@ import com.bumptech.glide.Glide
 class GalleryFragment : Fragment() {
 
     private var _binding: FragmentCustomerBinding? = null
+
     // This property is only valid between onCreateView and onDestroyView.
     private val binding get() = _binding!!
     private var uri: String? = null
@@ -63,6 +64,7 @@ class GalleryFragment : Fragment() {
                         binding.countryEditText.setText(item.col_country)
                         binding.cityEditText.setText(item.col_city)
                         binding.addressEditText.setText(item.col_address)
+                        binding.remarksEditText.setText(item.col_remarks)
                         if (item.col_imge != null) {
                             Glide.with(requireContext()).load(Utilities.decode(item.col_imge!!))
                                 .centerCrop()
@@ -95,9 +97,7 @@ class GalleryFragment : Fragment() {
             }
             save()
             galleryViewModel.getAll()
-            binding.brandNameEditText.text = null
             uri = null
-            binding.imageView.setImageDrawable(null)
             mItem._id = null
         }
         return root
@@ -135,12 +135,21 @@ class GalleryFragment : Fragment() {
             mItem.col_country = binding.countryEditText.text.toString()
             mItem.col_city = binding.cityEditText.text.toString()
             mItem.col_address = binding.addressEditText.text.toString()
+            mItem.col_remarks = binding.remarksEditText.text.toString()
             mItem.col_imge = Utilities.encode(binding.imageView.drawable.toBitmap())
             if (mItem.col_id == null) {
                 mItem.col_id = "CUS-${(binding.recyclerView.adapter?.itemCount ?: 0) + 1}"
             }
             AppDatabase.get().customerDao().insert(mItem)
             Utilities.showSnackbar(binding.root, "Customer Saved", null, R.color.Green)
+            binding.brandNameEditText.text = null
+            binding.mobileNumberEditText.text = null
+            binding.phoneNumberEditText.text = null
+            binding.countryEditText.text = null
+            binding.cityEditText.text = null
+            binding.addressEditText.text = null
+            binding.remarksEditText.text = null
+            binding.imageView.setImageDrawable(requireContext().getDrawable(R.drawable.empty_img_icon))
         } catch (ex: Exception) {
             Utilities.showSnackbar(binding.root, "Customer Not Saved", null, R.color.Red)
         }
@@ -150,6 +159,14 @@ class GalleryFragment : Fragment() {
         try {
             AppDatabase.get().customerDao().delete(item)
             Utilities.showSnackbar(binding.root, "Customer Deleted", null, R.color.Green)
+            binding.brandNameEditText.text = null
+            binding.mobileNumberEditText.text = null
+            binding.phoneNumberEditText.text = null
+            binding.countryEditText.text = null
+            binding.cityEditText.text = null
+            binding.addressEditText.text = null
+            binding.remarksEditText.text = null
+            binding.imageView.setImageDrawable(requireContext().getDrawable(R.drawable.empty_img_icon))
         } catch (ex: Exception) {
             Utilities.showSnackbar(binding.root, "Customer Not Deleted", null, R.color.Red)
         }
