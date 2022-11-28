@@ -23,6 +23,7 @@ import com.awais.storemanagementsystem.util.ActivityUtils
 import com.awais.storemanagementsystem.util.BottomSheet
 import com.awais.storemanagementsystem.util.UserData
 import com.awais.storemanagementsystem.util.Utilities
+import com.google.android.gms.ads.MobileAds
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 
@@ -40,7 +41,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+      //  MobileAds.initialize(this){}
         setSupportActionBar(binding.appBarMain.toolbar)
 
         binding.appBarMain.fab.setOnClickListener {

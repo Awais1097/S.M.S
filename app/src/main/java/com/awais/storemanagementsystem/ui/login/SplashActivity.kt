@@ -10,10 +10,13 @@ import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import com.awais.storemanagementsystem.R
 import com.awais.storemanagementsystem.databinding.ActivitySplashBinding
 import com.awais.storemanagementsystem.util.ActivityUtils
 import com.awais.storemanagementsystem.util.UserData
+import com.awais.storemanagementsystem.util.Utilities
+import okio.Utf8
 
 
 @SuppressLint("CustomSplashScreen")
@@ -25,11 +28,18 @@ class SplashActivity : AppCompatActivity() {
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
         window.navigationBarColor = ContextCompat.getColor(this, R.color.white)
+        if(Utilities.isInternetConnected(this)){
+            binding.animationViewLOading.isVisible = true
+            binding.imageView.isVisible = false
+        }else{
+            binding.animationViewLOading.isVisible = false
+            binding.imageView.isVisible = true
+        }
         proceed()
     }
 
     private fun proceed() {
-        val secondsDelayed = 6
+        val secondsDelayed = 12
         Handler(Looper.getMainLooper()).postDelayed({
             if (Build.VERSION.SDK_INT.compareTo(Build.VERSION_CODES.M) > -1) {
                 if (checkAndRequestPermissions()) {
