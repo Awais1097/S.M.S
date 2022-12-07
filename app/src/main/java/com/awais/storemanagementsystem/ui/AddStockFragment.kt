@@ -7,6 +7,7 @@ import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -15,7 +16,9 @@ import com.awais.storemanagementsystem.R
 import com.awais.storemanagementsystem.adapter.StockInListAdapter
 import com.awais.storemanagementsystem.databinding.FragmentStockBinding
 import com.awais.storemanagementsystem.roomdb.AppDatabase
+import com.awais.storemanagementsystem.roomdb.entity.ProductEntity
 import com.awais.storemanagementsystem.roomdb.entity.StockInEntity
+import com.awais.storemanagementsystem.roomdb.entity.SupplierEntity
 import com.awais.storemanagementsystem.util.Utilities
 import com.awais.storemanagementsystem.viewmodel.StockViewModel
 import java.text.SimpleDateFormat
@@ -24,10 +27,13 @@ import java.util.*
 class AddStockFragment : Fragment() {
 
     private var _binding: FragmentStockBinding? = null
-
     // This property is only valid between onCreateView and onDestroyView.
     private val binding get() = _binding!!
     var mItem = StockInEntity()
+    private var productNames = ArrayList<String>()
+    private var supplierNames = ArrayList<String>()
+    private var producstList: List<ProductEntity> = ArrayList()
+    private var sullpierList: List<SupplierEntity> = ArrayList()
 
     @SuppressLint("SetTextI18n")
     override fun onCreateView(
@@ -51,6 +57,7 @@ class AddStockFragment : Fragment() {
                     override fun onDelete(item: StockInEntity) {
                         delet(item)
                         galleryViewModel.getAll()
+                        galleryViewModel.getAllProducts()
                     }
 
                     override fun onClick(item: StockInEntity) {
@@ -80,6 +87,28 @@ class AddStockFragment : Fragment() {
         binding.dateEditText.setOnClickListener {
             showDateDialog()
         }
+        galleryViewModel.list_pro.observe(viewLifecycleOwner) { list ->
+            productNames.clear()
+            list?.forEach {
+                productNames.add(it._id.toString() + " - " + it.col_productname)
+            }
+            producstList = list ?: emptyList()
+            val adpater =
+                ArrayAdapter(requireContext(), R.layout.text_item_layout, R.id.text1, productNames)
+            binding.productEditText.threshold = 1
+            binding.productEditText.setAdapter(adpater)
+        }
+        galleryViewModel.list_sup.observe(viewLifecycleOwner) { list ->
+            supplierNames.clear()
+            list?.forEach {
+                supplierNames.add(it._id.toString() + " - " + it.col_name)
+            }
+            sullpierList = list ?: emptyList()
+            val adpater =
+                ArrayAdapter(requireContext(), R.layout.text_item_layout, R.id.text1, supplierNames)
+            binding.supplierEditText.threshold = 1
+            binding.supplierEditText.setAdapter(adpater)
+        }
         return root
     }
 
@@ -102,6 +131,21 @@ class AddStockFragment : Fragment() {
                 binding.priceEditText.text.toString().toDouble()
             } catch (ex: Exception) {
                 0.0
+            }
+            val products = producstList.find {
+                it._id.toString() + " - " + it.col_productname == binding.productEditText.text.toString()
+            }
+            if (products != null) {
+                mItem.col_productId = products._id.toString()
+                mItem.col_productName = products.col_productname
+                mItem.col_img = products.col_img
+            }
+            val supplier = sullpierList.find {
+                it._id.toString() + " - " + it.col_name == binding.productEditText.text.toString()
+            }
+            if (supplier != null) {
+                mItem.col_supplierId = supplier._id.toString()
+                mItem.col_supplierName = supplier.col_name
             }
             mItem.col_remarks = binding.remarksEditText.text.toString()
             AppDatabase.get().stcockInDao().insert(mItem)

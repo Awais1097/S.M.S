@@ -3,6 +3,7 @@ package com.awais.storemanagementsystem.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.awais.storemanagementsystem.R
 import com.awais.storemanagementsystem.databinding.ItemNotificationBinding
 import com.awais.storemanagementsystem.roomdb.entity.BrandEntity
 import com.awais.storemanagementsystem.roomdb.entity.Categoryntity
@@ -26,6 +27,7 @@ class CategoryListAdapter(var list: List<Categoryntity>, var onItemClick: OnItem
         val item = list[position]
         holder.binding.tvNoticeTitle.text = item.col_name
         holder.binding.tvNoticeDate.text = item._id.toString()
+        holder.binding.imageView.setImageDrawable(holder.itemView.context.getDrawable(R.drawable.caregory_img_icon))
         if (item.col_imge != null) {
             Glide.with(holder.itemView.context).load(Utilities.decode(item.col_imge!!)).centerCrop()
                 .into(holder.binding.ivRecentNotice)

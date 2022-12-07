@@ -16,6 +16,7 @@ class StockInEntity(
     @ColumnInfo(name = COL_PRODUCT_ID) var col_productId: String? = null,
     @ColumnInfo(name = COL_PRODUCT_NAME) var col_productName: String? = null,
     @ColumnInfo(name = COL_REMARKS) var col_remarks: String? = null,
+    @ColumnInfo(name = ProductEntity.COL_IMG) var col_img: String? = null,
 ) {
     companion object {
         const val TABLE_STOCKIN = "StockIn"
