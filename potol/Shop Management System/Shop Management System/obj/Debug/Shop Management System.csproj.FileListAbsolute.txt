@@ -29,3 +29,23 @@ E:\Projects\Shop Management System\Shop Management System\obj\Debug\Shop_Managem
 E:\Projects\Shop Management System\Shop Management System\obj\Debug\Shop_Management_System.FormStockIn.resources
 E:\Projects\Shop Management System\Shop Management System\obj\Debug\Shop_Management_System.FormStockReport.resources
 E:\Projects\Shop Management System\Shop Management System\obj\Debug\Shop_Management_System.FormShopInfo.resources
+E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\obj\Debug\Shop Management System.csprojResolveAssemblyReference.cache
+E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\obj\Debug\Shop_Management_System.CompanyForm.resources
+E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\obj\Debug\Shop_Management_System.FormBrands.resources
+E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\obj\Debug\Shop_Management_System.FormCategory.resources
+E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\obj\Debug\Shop_Management_System.FormCustomer.resources
+E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\obj\Debug\Shop_Management_System.FormLogIn.resources
+E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\obj\Debug\Shop_Management_System.FormProducts.resources
+E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\obj\Debug\Shop_Management_System.FormRacks.resources
+E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\obj\Debug\Shop_Management_System.FormShopInfo.resources
+E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\obj\Debug\Shop_Management_System.FormStockIn.resources
+E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\obj\Debug\Shop_Management_System.FormStockReport.resources
+E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\obj\Debug\Shop_Management_System.FormSupplier.resources
+E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\obj\Debug\Shop_Management_System.MainForm.resources
+E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\obj\Debug\Shop Management System.csproj.GenerateResource.Cache
+E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\obj\Debug\Shop Management System.exe
+E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\bin\Debug\Shop Management System.exe.config
+E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\bin\Debug\Shop Management System.exe
+E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\bin\Debug\Shop Management System.pdb
+E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\obj\Debug\Shop Management System.pdb
+E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\obj\Debug\Shop_Management_System.FormCreateRecipt.resources

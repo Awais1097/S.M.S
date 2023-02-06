@@ -42,11 +42,22 @@ namespace Shop_Management_System
 			this.pictureBox7 = new System.Windows.Forms.PictureBox();
 			this.label8 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
-			this.textBox3 = new System.Windows.Forms.TextBox();
+			this.textBoxprice = new System.Windows.Forms.TextBox();
 			this.pictureBox5 = new System.Windows.Forms.PictureBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.textBoxqty = new System.Windows.Forms.TextBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.pictureBox9 = new System.Windows.Forms.PictureBox();
+			this.label3 = new System.Windows.Forms.Label();
+			this.textBoxremarks = new System.Windows.Forms.TextBox();
+			this.textBoxsupid = new System.Windows.Forms.TextBox();
+			this.textBoxpro = new System.Windows.Forms.TextBox();
+			this.button1 = new System.Windows.Forms.Button();
+			this.buttonDelete = new System.Windows.Forms.Button();
+			this.buttonSave = new System.Windows.Forms.Button();
+			this.buttonnEW = new System.Windows.Forms.Button();
+			this.comboBoxPro = new System.Windows.Forms.ComboBox();
+			this.label9 = new System.Windows.Forms.Label();
 			this.button2 = new System.Windows.Forms.Button();
 			this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
 			this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -58,23 +69,24 @@ namespace Shop_Management_System
 			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.label12 = new System.Windows.Forms.Label();
-			this.buttonDelete = new System.Windows.Forms.Button();
-			this.buttonSave = new System.Windows.Forms.Button();
 			this.pictureBox3 = new System.Windows.Forms.PictureBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
 			this.ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Columndate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Columnproid = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.ColumnMobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ColumnCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ColumnMobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ColumnSupid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ColumnSupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ColumnRemarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.label9 = new System.Windows.Forms.Label();
-			this.button3 = new System.Windows.Forms.Button();
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
 			this.groupBox1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -87,12 +99,13 @@ namespace Shop_Management_System
 			// 
 			// comboBox4
 			// 
-			this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
 			this.comboBox4.FormattingEnabled = true;
-			this.comboBox4.Location = new System.Drawing.Point(9, 236);
+			this.comboBox4.Location = new System.Drawing.Point(86, 212);
 			this.comboBox4.Name = "comboBox4";
-			this.comboBox4.Size = new System.Drawing.Size(352, 28);
-			this.comboBox4.TabIndex = 4;
+			this.comboBox4.Size = new System.Drawing.Size(280, 21);
+			this.comboBox4.TabIndex = 6;
+			this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.ComboBox4SelectedIndexChanged);
 			// 
 			// label6
 			// 
@@ -109,7 +122,7 @@ namespace Shop_Management_System
 			// pictureBox7
 			// 
 			this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-			this.pictureBox7.Location = new System.Drawing.Point(11, 205);
+			this.pictureBox7.Location = new System.Drawing.Point(11, 185);
 			this.pictureBox7.Name = "pictureBox7";
 			this.pictureBox7.Size = new System.Drawing.Size(25, 25);
 			this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -119,7 +132,7 @@ namespace Shop_Management_System
 			// label8
 			// 
 			this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label8.Location = new System.Drawing.Point(42, 207);
+			this.label8.Location = new System.Drawing.Point(42, 187);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(127, 23);
 			this.label8.TabIndex = 40;
@@ -129,26 +142,26 @@ namespace Shop_Management_System
 			// label4
 			// 
 			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label4.Location = new System.Drawing.Point(228, 145);
+			this.label4.Location = new System.Drawing.Point(228, 137);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(123, 23);
 			this.label4.TabIndex = 33;
 			this.label4.Text = "Price";
 			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// textBox3
+			// textBoxprice
 			// 
-			this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox3.Location = new System.Drawing.Point(193, 171);
-			this.textBox3.Name = "textBox3";
-			this.textBox3.Size = new System.Drawing.Size(173, 26);
-			this.textBox3.TabIndex = 3;
-			this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.textBoxprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+			this.textBoxprice.Location = new System.Drawing.Point(193, 161);
+			this.textBoxprice.Name = "textBoxprice";
+			this.textBoxprice.Size = new System.Drawing.Size(173, 20);
+			this.textBoxprice.TabIndex = 4;
+			this.textBoxprice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// pictureBox5
 			// 
 			this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-			this.pictureBox5.Location = new System.Drawing.Point(10, 145);
+			this.pictureBox5.Location = new System.Drawing.Point(10, 137);
 			this.pictureBox5.Name = "pictureBox5";
 			this.pictureBox5.Size = new System.Drawing.Size(25, 23);
 			this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -158,26 +171,34 @@ namespace Shop_Management_System
 			// label1
 			// 
 			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(41, 145);
+			this.label1.Location = new System.Drawing.Point(41, 137);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(127, 23);
 			this.label1.TabIndex = 30;
 			this.label1.Text = "QTY";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// textBox1
+			// textBoxqty
 			// 
-			this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox1.Location = new System.Drawing.Point(10, 171);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(173, 26);
-			this.textBox1.TabIndex = 2;
-			this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.textBoxqty.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+			this.textBoxqty.Location = new System.Drawing.Point(10, 161);
+			this.textBoxqty.Name = "textBoxqty";
+			this.textBoxqty.Size = new System.Drawing.Size(173, 20);
+			this.textBoxqty.TabIndex = 3;
+			this.textBoxqty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// groupBox1
 			// 
-			this.groupBox1.Controls.Add(this.comboBox1);
-			this.groupBox1.Controls.Add(this.button3);
+			this.groupBox1.Controls.Add(this.pictureBox9);
+			this.groupBox1.Controls.Add(this.label3);
+			this.groupBox1.Controls.Add(this.textBoxremarks);
+			this.groupBox1.Controls.Add(this.textBoxsupid);
+			this.groupBox1.Controls.Add(this.textBoxpro);
+			this.groupBox1.Controls.Add(this.button1);
+			this.groupBox1.Controls.Add(this.buttonDelete);
+			this.groupBox1.Controls.Add(this.buttonSave);
+			this.groupBox1.Controls.Add(this.buttonnEW);
+			this.groupBox1.Controls.Add(this.comboBoxPro);
 			this.groupBox1.Controls.Add(this.label9);
 			this.groupBox1.Controls.Add(this.button2);
 			this.groupBox1.Controls.Add(this.dateTimePicker3);
@@ -194,39 +215,163 @@ namespace Shop_Management_System
 			this.groupBox1.Controls.Add(this.pictureBox7);
 			this.groupBox1.Controls.Add(this.label8);
 			this.groupBox1.Controls.Add(this.label4);
-			this.groupBox1.Controls.Add(this.textBox3);
+			this.groupBox1.Controls.Add(this.textBoxprice);
 			this.groupBox1.Controls.Add(this.pictureBox5);
 			this.groupBox1.Controls.Add(this.label1);
-			this.groupBox1.Controls.Add(this.textBox1);
-			this.groupBox1.Controls.Add(this.buttonDelete);
-			this.groupBox1.Controls.Add(this.buttonSave);
+			this.groupBox1.Controls.Add(this.textBoxqty);
 			this.groupBox1.Controls.Add(this.pictureBox3);
 			this.groupBox1.Controls.Add(this.label2);
 			this.groupBox1.Location = new System.Drawing.Point(14, 117);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(380, 526);
-			this.groupBox1.TabIndex = 1;
+			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Add/Delete Product";
+			// 
+			// pictureBox9
+			// 
+			this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
+			this.pictureBox9.Location = new System.Drawing.Point(13, 236);
+			this.pictureBox9.Name = "pictureBox9";
+			this.pictureBox9.Size = new System.Drawing.Size(25, 25);
+			this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox9.TabIndex = 70;
+			this.pictureBox9.TabStop = false;
+			// 
+			// label3
+			// 
+			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label3.Location = new System.Drawing.Point(44, 236);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(127, 23);
+			this.label3.TabIndex = 69;
+			this.label3.Text = "Remarks";
+			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// textBoxremarks
+			// 
+			this.textBoxremarks.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+			this.textBoxremarks.Location = new System.Drawing.Point(11, 262);
+			this.textBoxremarks.Name = "textBoxremarks";
+			this.textBoxremarks.Size = new System.Drawing.Size(355, 20);
+			this.textBoxremarks.TabIndex = 7;
+			// 
+			// textBoxsupid
+			// 
+			this.textBoxsupid.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+			this.textBoxsupid.Location = new System.Drawing.Point(9, 213);
+			this.textBoxsupid.Name = "textBoxsupid";
+			this.textBoxsupid.Size = new System.Drawing.Size(72, 20);
+			this.textBoxsupid.TabIndex = 5;
+			this.textBoxsupid.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.textBoxsupid.TextChanged += new System.EventHandler(this.TextBoxsupidTextChanged);
+			// 
+			// textBoxpro
+			// 
+			this.textBoxpro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+			this.textBoxpro.Location = new System.Drawing.Point(9, 113);
+			this.textBoxpro.Name = "textBoxpro";
+			this.textBoxpro.Size = new System.Drawing.Size(72, 20);
+			this.textBoxpro.TabIndex = 1;
+			this.textBoxpro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.textBoxpro.TextChanged += new System.EventHandler(this.TextBox2TextChanged);
+			// 
+			// button1
+			// 
+			this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
+			this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+			this.button1.Location = new System.Drawing.Point(138, 474);
+			this.button1.Name = "button1";
+			this.button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+			this.button1.Size = new System.Drawing.Size(109, 38);
+			this.button1.TabIndex = 14;
+			this.button1.Text = "Export";
+			this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.Button1Click);
+			// 
+			// buttonDelete
+			// 
+			this.buttonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.buttonDelete.Image = ((System.Drawing.Image)(resources.GetObject("buttonDelete.Image")));
+			this.buttonDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.buttonDelete.Location = new System.Drawing.Point(260, 291);
+			this.buttonDelete.Name = "buttonDelete";
+			this.buttonDelete.Size = new System.Drawing.Size(103, 29);
+			this.buttonDelete.TabIndex = 10;
+			this.buttonDelete.Text = "Delete";
+			this.buttonDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.buttonDelete.UseVisualStyleBackColor = true;
+			this.buttonDelete.Click += new System.EventHandler(this.ButtonDeleteClick);
+			// 
+			// buttonSave
+			// 
+			this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.buttonSave.Image = ((System.Drawing.Image)(resources.GetObject("buttonSave.Image")));
+			this.buttonSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.buttonSave.Location = new System.Drawing.Point(9, 291);
+			this.buttonSave.Name = "buttonSave";
+			this.buttonSave.Size = new System.Drawing.Size(110, 29);
+			this.buttonSave.TabIndex = 8;
+			this.buttonSave.Text = "Save";
+			this.buttonSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.buttonSave.UseVisualStyleBackColor = true;
+			this.buttonSave.Click += new System.EventHandler(this.ButtonSaveClick);
+			// 
+			// buttonnEW
+			// 
+			this.buttonnEW.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.buttonnEW.Image = ((System.Drawing.Image)(resources.GetObject("buttonnEW.Image")));
+			this.buttonnEW.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.buttonnEW.Location = new System.Drawing.Point(131, 291);
+			this.buttonnEW.Name = "buttonnEW";
+			this.buttonnEW.Size = new System.Drawing.Size(119, 29);
+			this.buttonnEW.TabIndex = 9;
+			this.buttonnEW.Text = "Add New";
+			this.buttonnEW.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.buttonnEW.UseVisualStyleBackColor = true;
+			this.buttonnEW.Click += new System.EventHandler(this.ButtonnEWClick);
+			// 
+			// comboBoxPro
+			// 
+			this.comboBoxPro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+			this.comboBoxPro.FormattingEnabled = true;
+			this.comboBoxPro.Location = new System.Drawing.Point(86, 113);
+			this.comboBoxPro.Name = "comboBoxPro";
+			this.comboBoxPro.Size = new System.Drawing.Size(280, 21);
+			this.comboBoxPro.TabIndex = 2;
+			this.comboBoxPro.SelectedIndexChanged += new System.EventHandler(this.ComboBoxProSelectedIndexChanged);
+			// 
+			// label9
+			// 
+			this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label9.Location = new System.Drawing.Point(11, 328);
+			this.label9.Name = "label9";
+			this.label9.Size = new System.Drawing.Size(91, 23);
+			this.label9.TabIndex = 67;
+			this.label9.Text = "Report";
+			this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// button2
 			// 
 			this.button2.BackColor = System.Drawing.Color.LightSteelBlue;
+			this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
 			this.button2.Location = new System.Drawing.Point(253, 474);
 			this.button2.Name = "button2";
 			this.button2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
 			this.button2.Size = new System.Drawing.Size(109, 38);
-			this.button2.TabIndex = 66;
+			this.button2.TabIndex = 13;
 			this.button2.Text = "VIEW";
 			this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.button2.UseVisualStyleBackColor = true;
+			this.button2.Click += new System.EventHandler(this.Button2Click);
 			// 
 			// dateTimePicker3
 			// 
 			this.dateTimePicker3.Location = new System.Drawing.Point(11, 445);
 			this.dateTimePicker3.Name = "dateTimePicker3";
 			this.dateTimePicker3.Size = new System.Drawing.Size(348, 20);
-			this.dateTimePicker3.TabIndex = 9;
+			this.dateTimePicker3.TabIndex = 12;
 			// 
 			// pictureBox8
 			// 
@@ -253,7 +398,7 @@ namespace Shop_Management_System
 			this.dateTimePicker2.Location = new System.Drawing.Point(11, 388);
 			this.dateTimePicker2.Name = "dateTimePicker2";
 			this.dateTimePicker2.Size = new System.Drawing.Size(348, 20);
-			this.dateTimePicker2.TabIndex = 8;
+			this.dateTimePicker2.TabIndex = 11;
 			this.dateTimePicker2.ValueChanged += new System.EventHandler(this.DateTimePicker2ValueChanged);
 			// 
 			// pictureBox6
@@ -279,7 +424,7 @@ namespace Shop_Management_System
 			// pictureBox4
 			// 
 			this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-			this.pictureBox4.Location = new System.Drawing.Point(193, 145);
+			this.pictureBox4.Location = new System.Drawing.Point(193, 137);
 			this.pictureBox4.Name = "pictureBox4";
 			this.pictureBox4.Size = new System.Drawing.Size(25, 23);
 			this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -288,7 +433,7 @@ namespace Shop_Management_System
 			// 
 			// dateTimePicker1
 			// 
-			this.dateTimePicker1.Location = new System.Drawing.Point(9, 49);
+			this.dateTimePicker1.Location = new System.Drawing.Point(9, 61);
 			this.dateTimePicker1.Name = "dateTimePicker1";
 			this.dateTimePicker1.Size = new System.Drawing.Size(357, 20);
 			this.dateTimePicker1.TabIndex = 0;
@@ -296,7 +441,7 @@ namespace Shop_Management_System
 			// pictureBox2
 			// 
 			this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-			this.pictureBox2.Location = new System.Drawing.Point(10, 19);
+			this.pictureBox2.Location = new System.Drawing.Point(10, 31);
 			this.pictureBox2.Name = "pictureBox2";
 			this.pictureBox2.Size = new System.Drawing.Size(25, 25);
 			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -306,41 +451,17 @@ namespace Shop_Management_System
 			// label12
 			// 
 			this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label12.Location = new System.Drawing.Point(41, 20);
+			this.label12.Location = new System.Drawing.Point(41, 32);
 			this.label12.Name = "label12";
 			this.label12.Size = new System.Drawing.Size(91, 23);
 			this.label12.TabIndex = 56;
 			this.label12.Text = "Date";
 			this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// buttonDelete
-			// 
-			this.buttonDelete.BackColor = System.Drawing.Color.LightSteelBlue;
-			this.buttonDelete.Location = new System.Drawing.Point(249, 273);
-			this.buttonDelete.Name = "buttonDelete";
-			this.buttonDelete.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.buttonDelete.Size = new System.Drawing.Size(112, 38);
-			this.buttonDelete.TabIndex = 7;
-			this.buttonDelete.Text = "DELETE";
-			this.buttonDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.buttonDelete.UseVisualStyleBackColor = true;
-			// 
-			// buttonSave
-			// 
-			this.buttonSave.BackColor = System.Drawing.Color.LightSteelBlue;
-			this.buttonSave.Location = new System.Drawing.Point(134, 273);
-			this.buttonSave.Name = "buttonSave";
-			this.buttonSave.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.buttonSave.Size = new System.Drawing.Size(109, 38);
-			this.buttonSave.TabIndex = 5;
-			this.buttonSave.Text = "SAVE";
-			this.buttonSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.buttonSave.UseVisualStyleBackColor = true;
-			// 
 			// pictureBox3
 			// 
 			this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-			this.pictureBox3.Location = new System.Drawing.Point(10, 79);
+			this.pictureBox3.Location = new System.Drawing.Point(10, 85);
 			this.pictureBox3.Name = "pictureBox3";
 			this.pictureBox3.Size = new System.Drawing.Size(25, 25);
 			this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -350,7 +471,7 @@ namespace Shop_Management_System
 			// label2
 			// 
 			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(41, 79);
+			this.label2.Location = new System.Drawing.Point(41, 85);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(91, 23);
 			this.label2.TabIndex = 9;
@@ -365,21 +486,40 @@ namespace Shop_Management_System
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
 									this.ColumnID,
+									this.Columndate,
+									this.Columnproid,
 									this.ColumnName,
+									this.ColumnCity,
 									this.ColumnMobile,
-									this.ColumnCity});
+									this.ColumnSupid,
+									this.ColumnSupName,
+									this.ColumnRemarks});
 			this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dataGridView1.Location = new System.Drawing.Point(0, 0);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.ReadOnly = true;
 			this.dataGridView1.Size = new System.Drawing.Size(505, 494);
 			this.dataGridView1.TabIndex = 0;
+			this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1CellContentClick);
 			// 
 			// ColumnID
 			// 
 			this.ColumnID.HeaderText = "ID";
 			this.ColumnID.Name = "ColumnID";
 			this.ColumnID.ReadOnly = true;
+			this.ColumnID.Width = 40;
+			// 
+			// Columndate
+			// 
+			this.Columndate.HeaderText = "In Date";
+			this.Columndate.Name = "Columndate";
+			this.Columndate.ReadOnly = true;
+			// 
+			// Columnproid
+			// 
+			this.Columnproid.HeaderText = "Proid";
+			this.Columnproid.Name = "Columnproid";
+			this.Columnproid.ReadOnly = true;
 			// 
 			// ColumnName
 			// 
@@ -387,17 +527,35 @@ namespace Shop_Management_System
 			this.ColumnName.Name = "ColumnName";
 			this.ColumnName.ReadOnly = true;
 			// 
+			// ColumnCity
+			// 
+			this.ColumnCity.HeaderText = "QTY";
+			this.ColumnCity.Name = "ColumnCity";
+			this.ColumnCity.ReadOnly = true;
+			// 
 			// ColumnMobile
 			// 
 			this.ColumnMobile.HeaderText = "Price";
 			this.ColumnMobile.Name = "ColumnMobile";
 			this.ColumnMobile.ReadOnly = true;
 			// 
-			// ColumnCity
+			// ColumnSupid
 			// 
-			this.ColumnCity.HeaderText = "Brand";
-			this.ColumnCity.Name = "ColumnCity";
-			this.ColumnCity.ReadOnly = true;
+			this.ColumnSupid.HeaderText = "Supid";
+			this.ColumnSupid.Name = "ColumnSupid";
+			this.ColumnSupid.ReadOnly = true;
+			// 
+			// ColumnSupName
+			// 
+			this.ColumnSupName.HeaderText = "Sup Name";
+			this.ColumnSupName.Name = "ColumnSupName";
+			this.ColumnSupName.ReadOnly = true;
+			// 
+			// ColumnRemarks
+			// 
+			this.ColumnRemarks.HeaderText = "Remarks";
+			this.ColumnRemarks.Name = "ColumnRemarks";
+			this.ColumnRemarks.ReadOnly = true;
 			// 
 			// panel1
 			// 
@@ -418,37 +576,6 @@ namespace Shop_Management_System
 			this.pictureBox1.TabIndex = 36;
 			this.pictureBox1.TabStop = false;
 			// 
-			// label9
-			// 
-			this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label9.Location = new System.Drawing.Point(11, 328);
-			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(91, 23);
-			this.label9.TabIndex = 67;
-			this.label9.Text = "Report";
-			this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			// 
-			// button3
-			// 
-			this.button3.BackColor = System.Drawing.Color.LightSteelBlue;
-			this.button3.Location = new System.Drawing.Point(19, 273);
-			this.button3.Name = "button3";
-			this.button3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.button3.Size = new System.Drawing.Size(109, 38);
-			this.button3.TabIndex = 6;
-			this.button3.Text = "Add New";
-			this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.button3.UseVisualStyleBackColor = true;
-			// 
-			// comboBox1
-			// 
-			this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Location = new System.Drawing.Point(9, 110);
-			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(357, 28);
-			this.comboBox1.TabIndex = 1;
-			// 
 			// FormStockIn
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -466,6 +593,7 @@ namespace Shop_Management_System
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -476,8 +604,20 @@ namespace Shop_Management_System
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 		}
-		private System.Windows.Forms.ComboBox comboBox1;
-		private System.Windows.Forms.Button button3;
+		private System.Windows.Forms.Button buttonDelete;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ColumnRemarks;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSupName;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSupid;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Columnproid;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Columndate;
+		private System.Windows.Forms.TextBox textBoxremarks;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.PictureBox pictureBox9;
+		private System.Windows.Forms.TextBox textBoxpro;
+		private System.Windows.Forms.TextBox textBoxsupid;
+		private System.Windows.Forms.Button buttonnEW;
+		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.ComboBox comboBoxPro;
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.PictureBox pictureBox6;
@@ -500,12 +640,11 @@ namespace Shop_Management_System
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.PictureBox pictureBox3;
 		private System.Windows.Forms.Button buttonSave;
-		private System.Windows.Forms.Button buttonDelete;
 		private System.Windows.Forms.GroupBox groupBox1;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox textBoxqty;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.PictureBox pictureBox5;
-		private System.Windows.Forms.TextBox textBox3;
+		private System.Windows.Forms.TextBox textBoxprice;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.PictureBox pictureBox7;

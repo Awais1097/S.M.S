@@ -40,11 +40,6 @@ namespace Shop_Management_System
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.label6 = new System.Windows.Forms.Label();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.ColumnMobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.ColumnQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.ColumnCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridView3 = new System.Windows.Forms.DataGridView();
 			this.ColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +52,12 @@ namespace Shop_Management_System
 			this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.buttonSave = new System.Windows.Forms.Button();
+			this.ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column1Proid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column1SupId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column1SupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ColumnQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -94,47 +95,16 @@ namespace Shop_Management_System
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
 									this.ColumnID,
+									this.Column1Proid,
 									this.ColumnName,
-									this.ColumnMobile,
-									this.ColumnQty,
-									this.ColumnCity});
+									this.Column1SupId,
+									this.Column1SupName,
+									this.ColumnQty});
 			this.dataGridView1.Location = new System.Drawing.Point(12, 139);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.ReadOnly = true;
 			this.dataGridView1.Size = new System.Drawing.Size(696, 480);
 			this.dataGridView1.TabIndex = 15;
-			// 
-			// ColumnID
-			// 
-			this.ColumnID.HeaderText = "ID";
-			this.ColumnID.Name = "ColumnID";
-			this.ColumnID.ReadOnly = true;
-			// 
-			// ColumnName
-			// 
-			this.ColumnName.HeaderText = "Name";
-			this.ColumnName.Name = "ColumnName";
-			this.ColumnName.ReadOnly = true;
-			this.ColumnName.Width = 200;
-			// 
-			// ColumnMobile
-			// 
-			this.ColumnMobile.HeaderText = "Price";
-			this.ColumnMobile.Name = "ColumnMobile";
-			this.ColumnMobile.ReadOnly = true;
-			// 
-			// ColumnQty
-			// 
-			this.ColumnQty.HeaderText = "QTY";
-			this.ColumnQty.Name = "ColumnQty";
-			this.ColumnQty.ReadOnly = true;
-			// 
-			// ColumnCity
-			// 
-			this.ColumnCity.HeaderText = "Brand";
-			this.ColumnCity.Name = "ColumnCity";
-			this.ColumnCity.ReadOnly = true;
-			this.ColumnCity.Width = 150;
 			// 
 			// dataGridView3
 			// 
@@ -252,6 +222,44 @@ namespace Shop_Management_System
 			this.buttonSave.UseVisualStyleBackColor = true;
 			this.buttonSave.Click += new System.EventHandler(this.ButtonSaveClick);
 			// 
+			// ColumnID
+			// 
+			this.ColumnID.HeaderText = "ID";
+			this.ColumnID.Name = "ColumnID";
+			this.ColumnID.ReadOnly = true;
+			this.ColumnID.Width = 60;
+			// 
+			// Column1Proid
+			// 
+			this.Column1Proid.HeaderText = "ProId";
+			this.Column1Proid.Name = "Column1Proid";
+			this.Column1Proid.ReadOnly = true;
+			// 
+			// ColumnName
+			// 
+			this.ColumnName.HeaderText = "Product Name";
+			this.ColumnName.Name = "ColumnName";
+			this.ColumnName.ReadOnly = true;
+			this.ColumnName.Width = 200;
+			// 
+			// Column1SupId
+			// 
+			this.Column1SupId.HeaderText = "SupId";
+			this.Column1SupId.Name = "Column1SupId";
+			this.Column1SupId.ReadOnly = true;
+			// 
+			// Column1SupName
+			// 
+			this.Column1SupName.HeaderText = "Sup Name";
+			this.Column1SupName.Name = "Column1SupName";
+			this.Column1SupName.ReadOnly = true;
+			// 
+			// ColumnQty
+			// 
+			this.ColumnQty.HeaderText = "STOCK QTY";
+			this.ColumnQty.Name = "ColumnQty";
+			this.ColumnQty.ReadOnly = true;
+			// 
 			// FormStockReport
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -276,6 +284,9 @@ namespace Shop_Management_System
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column1SupName;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column1SupId;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column1Proid;
 		private System.Windows.Forms.Button buttonSave;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -288,9 +299,7 @@ namespace Shop_Management_System
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.DataGridView dataGridView3;
 		private System.Windows.Forms.DataGridView dataGridView2;
-		private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCity;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ColumnQty;
-		private System.Windows.Forms.DataGridViewTextBoxColumn ColumnMobile;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ColumnID;
 		private System.Windows.Forms.DataGridView dataGridView1;

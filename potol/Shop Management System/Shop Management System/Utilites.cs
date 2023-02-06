@@ -31,7 +31,7 @@ namespace Shop_Management_System
     	}
     	catch (Exception ex)
     	{
-        	return "Error converting image to base64!";
+        	return "Error converting image to base64! "+ex;
     	}
     	finally
     	{

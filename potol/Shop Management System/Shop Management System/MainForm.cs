@@ -66,7 +66,8 @@ namespace Shop_Management_System
 		protected override bool ProcessCmdKey(ref Message msg, Keys keyData){
 			switch (keyData) {
 				case Keys.C:
-					MessageBox.Show("Press Key C","Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					Form form = new FormCreateRecipt();
+					form.ShowDialog();
 					break;
 				case Keys.P:
 					MessageBox.Show("Press Key P","Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -155,7 +156,8 @@ namespace Shop_Management_System
 		}
 		void Button1Click(object sender, EventArgs e)
 		{
-	
+			Form form = new FormCreateRecipt();
+			form.ShowDialog();	
 		}
 		
 		void ToolStripButton1Click(object sender, EventArgs e)
