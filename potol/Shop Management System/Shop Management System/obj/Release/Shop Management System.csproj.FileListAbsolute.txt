@@ -16,3 +16,21 @@ E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\ob
 E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop_Management_System.MainForm.resources
 E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop Management System.csproj.GenerateResource.Cache
 E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop Management System.exe
+D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\bin\Release\Shop Management System.exe.config
+D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\bin\Release\Shop Management System.exe
+D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop Management System.csprojResolveAssemblyReference.cache
+D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop_Management_System.CompanyForm.resources
+D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop_Management_System.FormBrands.resources
+D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop_Management_System.FormCategory.resources
+D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop_Management_System.FormCreateRecipt.resources
+D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop_Management_System.FormCustomer.resources
+D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop_Management_System.FormLogIn.resources
+D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop_Management_System.FormProducts.resources
+D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop_Management_System.FormRacks.resources
+D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop_Management_System.FormShopInfo.resources
+D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop_Management_System.FormStockIn.resources
+D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop_Management_System.FormStockReport.resources
+D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop_Management_System.FormSupplier.resources
+D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop_Management_System.MainForm.resources
+D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop Management System.csproj.GenerateResource.Cache
+D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop Management System.exe

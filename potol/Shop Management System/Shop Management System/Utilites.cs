@@ -17,6 +17,8 @@ namespace Shop_Management_System
 	/// </summary>
 	public static class Utilites
 	{
+		public static string RECIEPT = "RECIEPT";
+		public static string ORDER = "ORDER";
 		
 		public static string ImageToBase64(Image image)
 		{

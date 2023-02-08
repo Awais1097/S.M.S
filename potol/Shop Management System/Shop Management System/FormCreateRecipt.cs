@@ -25,8 +25,6 @@ namespace Shop_Management_System
 		string type = "";
 		double price = 0.0;
 		int stockQty= 0;
-		int numberOfItemsPerPage = 0;  
-		 int numberOfItemsPrintedSoFar = 0; 
 		 
 		public FormCreateRecipt()
 		{
@@ -458,7 +456,6 @@ namespace Shop_Management_System
 		}
 		
 		void getStock(string pid){
-			//try{
 				SQLDataBase.conOpen();
 				SqlCommand get = new SqlCommand("SELECT  retailprice,Stock  FROM View_Product_Stock Where productid ='"+pid+"' ",SQLDataBase.connection);
 				SqlDataReader rdr = get.ExecuteReader();
@@ -471,10 +468,6 @@ namespace Shop_Management_System
 				}
 				SQLDataBase.conClose();
 				textBoxpro.Focus();
-			//}catch(Exception){
-			//	SQLDataBase.conClose();
-				//MessageBox.Show("Recoed not founded", "Error" , MessageBoxButtons.OK, MessageBoxIcon.Error);
-			//}
 		}
 		
 		
@@ -488,52 +481,7 @@ namespace Shop_Management_System
 		
 		void PrintDocument1PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
 		{
-			e.Graphics.DrawString("AWAIS TEST SHOP", new Font("Arial",14,FontStyle.Bold),Brushes.Black,new Point(50,100));
-			e.Graphics.DrawString("_______________________________________________________________ ", new Font("Arial",24,FontStyle.Bold),Brushes.Black,new Point(0,150));
-			e.Graphics.DrawString("Reciept", new Font("Arial",24,FontStyle.Bold),Brushes.Black,new Point(50,140));
-			
-			
-				
-				e.Graphics.DrawString("Reciept # : ", new Font("Arial",11,FontStyle.Bold),Brushes.Black,new Point(98,250));
-				e.Graphics.DrawString(new_id.ToString(), new Font("Arial",11,FontStyle.Underline),Brushes.Black,new Point(300,250));
-				
-				
-				e.Graphics.DrawString("Date : ", new Font("Arial",11,FontStyle.Bold),Brushes.Black,new Point(98,280));
-				e.Graphics.DrawString(dateTimePicker1.ToString(), new Font("Arial",11,FontStyle.Underline),Brushes.Black,new Point(300,280));
-				
-				e.Graphics.DrawString("Customer : ", new Font("Arial",11,FontStyle.Bold),Brushes.Black,new Point(98,310));
-				e.Graphics.DrawString(textBoxsupid.Text.ToUpper() + " - "+ comboBoxCus.Text.ToUpper(), new Font("Arial",11,FontStyle.Underline),Brushes.Black,new Point(300,310));
-		
-//		int height = 330;  
-//		for (int l = numberOfItemsPrintedSoFar; l < dataGridView1.Rows.Count; l++)  
-//		{  
-//   			numberOfItemsPerPage = numberOfItemsPerPage + 1;  
-//   		 	if (numberOfItemsPerPage <= 30)  
-//    		{  
-//        		numberOfItemsPrintedSoFar++;  
-//  
-//       			if (numberOfItemsPrintedSoFar <= dataGridView1.Rows.Count)  
-//        		{  
-//  
-//            		height += dataGridView1.Rows[0].Height;  
-//            		e.Graphics.DrawString(dataGridView1.Rows[l].Cells[0].FormattedValue.ToString(), dataGridView1.Font = new Font("Book Antiqua", 8), Brushes.Black, new RectangleF(30, height, dataGridView1.Columns[0].Width, dataGridView1.Rows[0].Height));  
-//            		e.Graphics.DrawString(dataGridView1.Rows[l].Cells[1].FormattedValue.ToString(), dataGridView1.Font = new Font("Book Antiqua", 8), Brushes.Black, new RectangleF(100, height, dataGridView1.Columns[1].Width, dataGridView1.Rows[1].Height)); 
-//					e.Graphics.DrawString(dataGridView1.Rows[l].Cells[2].FormattedValue.ToString(), dataGridView1.Font = new Font("Book Antiqua", 8), Brushes.Black, new RectangleF(170, height, dataGridView1.Columns[2].Width, dataGridView1.Rows[2].Height));
-//				}  
-//        	else  
-//        	{  
-//            	e.HasMorePages = false;  
-//        	}  
-//    		}  else  
-//    		{  
-//        		numberOfItemsPerPage = 0;  
-//        		e.HasMorePages = true;  
-//        		return;  
-//   		 	}
-//  
-//			}  
-			numberOfItemsPerPage = 0;  
-			numberOfItemsPrintedSoFar = 0;			
+			new PrintRepiept(new_id.ToString(),e);
 		}
 		
 	}

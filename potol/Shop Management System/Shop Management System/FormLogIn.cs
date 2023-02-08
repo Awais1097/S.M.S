@@ -9,6 +9,7 @@
 using System;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Shop_Management_System
@@ -19,6 +20,7 @@ namespace Shop_Management_System
 	public partial class FormLogIn : Form
 	{
 		int uId;
+
 		public FormLogIn()
 		{
 			//
@@ -29,6 +31,8 @@ namespace Shop_Management_System
 			//
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
+			
+			
 		}
 		void Label6Click(object sender, EventArgs e)
 		{

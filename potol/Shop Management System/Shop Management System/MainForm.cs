@@ -40,17 +40,10 @@ namespace Shop_Management_System
 			if(rdr.Read())
 			{
 				 label10.Text = rdr[0].ToString();
-				 //textBoxPassword.Text = rdr[1].ToString();
-				 //textBoxEmail.Text = rdr[2].ToString();//3img
 				 label5.Text = rdr[4].ToString() + " (SMS)";//5logo
-				 //textBoxAddress.Text = rdr[6].ToString();
-				 //textBoxMobile.Text = rdr[7].ToString();
-				 //textBoxMobile2.Text = rdr[8].ToString();
-				 //textBoxUserName.Text = rdr[9].ToString();
 				 label6.Text = rdr[10].ToString() +" To "+ rdr[11].ToString();
 				 try{
 				 	pictureBox1.Image = Utilites.LoadImage(rdr[3].ToString());
-				 	//pictureBox3.Image = Utilites.LoadImage(rdr[5].ToString());
 				 }catch(Exception){}
 			}
 			SQLDataBase.conClose();
@@ -174,6 +167,21 @@ namespace Shop_Management_System
 		{
 				Form form = new FormShopInfo();
 				form.ShowDialog();	
+		}
+		
+		void PrintDocument1PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+		{
+			new PrintRepiept(textBox1.Text.ToString(),e);
+		}
+		
+		void Button2Click(object sender, EventArgs e)
+		{
+			if(textBox1.Text.Trim() == string.Empty){
+				MessageBox.Show("Enter Recipt Id.!" , "Error" , MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			  }
+			printPreviewDialog1.Document =  printDocument1;
+			printPreviewDialog1.ShowDialog();			
 		}
 	}
 	
