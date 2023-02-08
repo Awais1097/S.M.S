@@ -26,6 +26,7 @@ namespace Shop_Management_System
 			//
 			InitializeComponent();
 			getData();
+			treeView1.AllowDrop = true;  
 			//
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//

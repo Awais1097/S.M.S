@@ -69,3 +69,4 @@ D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Debu
 D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Debug\Shop Management System.csproj.GenerateResource.Cache
 D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Debug\Shop Management System.exe
 D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Debug\Shop Management System.pdb
+D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Debug\Shop_Management_System.FROM.resources
