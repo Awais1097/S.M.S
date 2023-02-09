@@ -85,12 +85,12 @@ namespace Shop_Management_System
 				if(rdr.Read()){
 					textBoxsupid.Text = rdr[0].ToString();
 				}else{
-					MessageBox.Show("Recoed not founded", "Error" , MessageBoxButtons.OK, MessageBoxIcon.Error);
+					//MessageBox.Show("Recoed not founded", "Error" , MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 				SQLDataBase.conClose();
 			}catch(Exception){
 				SQLDataBase.conClose();
-				MessageBox.Show("Recoed not founded", "Error" , MessageBoxButtons.OK, MessageBoxIcon.Error);
+				//MessageBox.Show("Recoed not founded", "Error" , MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 			}
 			
@@ -245,12 +245,12 @@ namespace Shop_Management_System
 					price = Double.Parse(rdr[1].ToString());
 					stockQty = int.Parse(rdr[2].ToString());
 				}else{
-					MessageBox.Show("Recoed not founded", "Error" , MessageBoxButtons.OK, MessageBoxIcon.Error);
+					//MessageBox.Show("Recoed not founded", "Error" , MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 				SQLDataBase.conClose();
 			}catch(Exception){
 				SQLDataBase.conClose();
-				MessageBox.Show("Recoed not founded", "Error" , MessageBoxButtons.OK, MessageBoxIcon.Error);
+				//MessageBox.Show("Recoed not founded", "Error" , MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 				getStock(textBoxpro.Text);
 			}
@@ -279,10 +279,10 @@ namespace Shop_Management_System
 		
 		void Button2Click(object sender, EventArgs e)
 		{
-			//getStock(textBoxpro.Text.ToString());mQty > stockQty &&
+			//
 			try{
 				int mQty = int.Parse(textBoxqty.Text.ToString());
-				if( isNotAdded(textBoxpro.Text.ToString())){
+				if(mQty > 0 && mQty <= stockQty && isNotAdded(textBoxpro.Text.ToString())){
 					int n = dataGridView1.Rows.Add();
 					dataGridView1.Rows[n].Cells[0].Value = textBoxpro.Text.ToString();
 					dataGridView1.Rows[n].Cells[1].Value = comboBoxPro.Text.ToString();
@@ -387,10 +387,11 @@ namespace Shop_Management_System
 		
 		void saveMain(){
 			try{
-			string query = "INSERT INTO receipt_main (_id, date, supid, supname, remarks,qtys,price,type,mTime,payAmount,status) VALUES ( @_id, @date, @supid, @supname, @remarks,@qtys,@price,@type,@mTime ,@payAmount,@status)";  
+			string query = "INSERT INTO receipt_main (_id, date, supid, supname, remarks,qtys,price,type,mTime,payAmount,status,discount) VALUES ( @_id, @date, @supid, @supname, @remarks,@qtys,@price,@type,@mTime ,@payAmount,@status,@discount)";  
           	SqlCommand cmd = new SqlCommand(query, SQLDataBase.connection);  
-          	cmd.Parameters.AddWithValue("@_id", new_id);  
-          	cmd.Parameters.AddWithValue("@date", dateTimePicker1.Text);    
+          	cmd.Parameters.AddWithValue("@_id", new_id); 
+			DateTime date = DateTime.Parse(dateTimePicker1.Text);          	
+          	cmd.Parameters.AddWithValue("@date", date.ToString("yyyy-MM-dd"));    
           	cmd.Parameters.AddWithValue("@supid", textBoxsupid.Text); 
 			cmd.Parameters.AddWithValue("@supname", comboBoxCus.Text);  
 			cmd.Parameters.AddWithValue("@remarks", textBoxremarks.Text);
@@ -398,7 +399,8 @@ namespace Shop_Management_System
 			cmd.Parameters.AddWithValue("@price", textBoxremain.Text);
 			cmd.Parameters.AddWithValue("@status", comboBox1.Text);	
 			cmd.Parameters.AddWithValue("@type", type);				
-			cmd.Parameters.AddWithValue("@payAmount", textBox3.Text);					
+			cmd.Parameters.AddWithValue("@payAmount", textBox3.Text);	
+			cmd.Parameters.AddWithValue("@discount", textBox4.Text);				
 			cmd.Parameters.AddWithValue("@mTime", DateTime.Now.ToString("hh:mm:ss"));
   			SQLDataBase.conOpen();
             cmd.ExecuteScalar();  
@@ -417,7 +419,8 @@ namespace Shop_Management_System
 					string query = "INSERT INTO RecieptsDetail (recieptId, date, proId, proName,qty,price,id) VALUES (@recieptId, @date, @proId, @proName,@qty,@price,@id)";  
           			SqlCommand cmd = new SqlCommand(query, SQLDataBase.connection);  
           			cmd.Parameters.AddWithValue("@recieptId", new_id);  
-          			cmd.Parameters.AddWithValue("@date", dateTimePicker1.Text);    
+          			DateTime date = DateTime.Parse(dateTimePicker1.Text);
+          			cmd.Parameters.AddWithValue("@date", date.ToString("yyyy-MM-dd"));    
           			cmd.Parameters.AddWithValue("@proId", row.Cells[0].Value.ToString()); 
 					cmd.Parameters.AddWithValue("@proName", row.Cells[1].Value.ToString());  
 					cmd.Parameters.AddWithValue("@qty", row.Cells[2].Value.ToString());		
@@ -439,8 +442,9 @@ namespace Shop_Management_System
 		void updateStock(){
 			string query = "INSERT INTO StockOut (_id, inDate, inQty, productId,recieptid) VALUES ( @id,@inDate, @inQty, @productId,@recieptid)";  
           	SqlCommand cmd = new SqlCommand(query, SQLDataBase.connection); 
-			cmd.Parameters.AddWithValue("@recieptid", new_id);            	
-          	cmd.Parameters.AddWithValue("@inDate", dateTimePicker1.Text);    
+			cmd.Parameters.AddWithValue("@recieptid", new_id);  
+			DateTime date = DateTime.Parse(dateTimePicker1.Text);
+			cmd.Parameters.AddWithValue("@inDate", date.ToString("yyyy-MM-dd"));
           	cmd.Parameters.AddWithValue("@inQty", textBox2.Text); 
 			cmd.Parameters.AddWithValue("@productId", textBoxremain.Text); 
 			cmd.Parameters.AddWithValue("@id", DateTime.Now.ToString());			
@@ -453,11 +457,13 @@ namespace Shop_Management_System
 		void addReturns(){
 			double tAmount = double.Parse(textBoxremain.Text);
 			double payAmount = double.Parse(textBox3.Text);
+			double discount = double.Parse(textBox4.Text);
 			if(payAmount < tAmount){
-				double reAmount = tAmount - payAmount;
+				double reAmount = tAmount - (payAmount + discount);
 				string query = "INSERT INTO CustomerReturns (addedDate, cus_id, amount, recieptId) VALUES (@addedDate, @cus_id, @amount, @recieptId)";  
           	SqlCommand cmd = new SqlCommand(query, SQLDataBase.connection); 
-			cmd.Parameters.AddWithValue("@addedDate", dateTimePicker1.Text);            	
+          	DateTime date = DateTime.Parse(dateTimePicker1.Text);
+			cmd.Parameters.AddWithValue("@addedDate", date.ToString("yyyy-MM-dd"));            	
           	cmd.Parameters.AddWithValue("@cus_id", textBoxsupid.Text);    
           	cmd.Parameters.AddWithValue("@amount", reAmount); 
 			cmd.Parameters.AddWithValue("@recieptId", new_id); 
@@ -509,5 +515,10 @@ namespace Shop_Management_System
 			new PrintRepiept("2",e);
 		}
 		
+		
+		void TextBox3TextChanged(object sender, EventArgs e)
+		{
+			
+		}
 	}
 }

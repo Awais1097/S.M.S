@@ -198,7 +198,7 @@ namespace Shop_Management_System
 			this.dataGridView1.Location = new System.Drawing.Point(14, 181);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.ReadOnly = true;
-			this.dataGridView1.Size = new System.Drawing.Size(839, 440);
+			this.dataGridView1.Size = new System.Drawing.Size(839, 416);
 			this.dataGridView1.TabIndex = 74;
 			// 
 			// ColumnID
@@ -262,7 +262,7 @@ namespace Shop_Management_System
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.label6);
-			this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.Margin = new System.Windows.Forms.Padding(2);
 			this.Name = "FROM";
 			this.Text = "FormRecieptList";
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

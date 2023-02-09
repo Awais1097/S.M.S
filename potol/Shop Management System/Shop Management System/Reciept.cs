@@ -33,6 +33,8 @@ namespace Shop_Management_System
 		 public string type { get; set; }
 		 
 		 public string payamount { get; set; }
+		 
+		  public string discount { get; set; }
 		  
 		 public string status { get; set; }
 		 

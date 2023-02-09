@@ -172,12 +172,12 @@ namespace Shop_Management_System
 		
 		void PrintDocument1PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
 		{
-			new PrintRepiept(textBox1.Text.ToString(),e);
+			new PrintRepiept(textBoxID.Text.ToString(),e);
 		}
 		
 		void Button2Click(object sender, EventArgs e)
 		{
-			if(textBox1.Text.Trim() == string.Empty){
+			if(textBoxID.Text.Trim() == string.Empty){
 				MessageBox.Show("Enter Recipt Id.!" , "Error" , MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			  }

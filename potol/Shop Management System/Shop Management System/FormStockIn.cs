@@ -136,7 +136,9 @@ namespace Shop_Management_System
 		void getAll(){
 			try{
 			SQLDataBase.conOpen();
-			SqlCommand get = new SqlCommand("SELECT * FROM StockIn ORDER BY _id DESC WHERE inDate BETWEEN '"+dateTimePicker2.Text+"' AND '"+dateTimePicker3.Text+"'",SQLDataBase.connection);
+			DateTime sDate = DateTime.Parse(dateTimePicker2.Text);
+			DateTime eDate = DateTime.Parse(dateTimePicker3.Text);
+			SqlCommand get = new SqlCommand("SELECT * FROM StockIn  WHERE inDate BETWEEN '"+sDate+"' AND '"+eDate+"' ORDER BY _id DESC",SQLDataBase.connection);
 			SqlDataAdapter da = new SqlDataAdapter(get);
 			DataTable dt = new DataTable();
 			da.Fill(dt);
@@ -214,7 +216,8 @@ namespace Shop_Management_System
 			string query = "INSERT INTO StockIn (_id, inDate, productId, productName, inQty, unitCost, supplierId, supplierName, remarks) VALUES (@_id, @inDate, @productId, @productName, @inQty, @unitCost, @supplierId, @supplierName, @remarks)";  
           	SqlCommand cmd = new SqlCommand(query, SQLDataBase.connection);  
           	cmd.Parameters.AddWithValue("@_id", new_id);  
-          	cmd.Parameters.AddWithValue("@inDate", dateTimePicker1.Text);    
+          	DateTime sDate = DateTime.Parse(dateTimePicker1.Text);
+          	cmd.Parameters.AddWithValue("@inDate", sDate);    
           	cmd.Parameters.AddWithValue("@productId", textBoxpro.Text);  
           	cmd.Parameters.AddWithValue("@productName", comboBoxPro.Text); 
           	cmd.Parameters.AddWithValue("@inQty", textBoxqty.Text); 
@@ -325,11 +328,13 @@ namespace Shop_Management_System
 		void Button1Click(object sender, EventArgs e)
 		{
 			SQLDataBase.conOpen();
-			SqlCommand get = new SqlCommand("SELECT * FROM StockIn ORDER BY _id DESC WHERE inDate BETWEEN '"+dateTimePicker2.Text+"' AND '"+dateTimePicker3.Text+"'",SQLDataBase.connection);
+			DateTime sDate = DateTime.Parse(dateTimePicker2.Text);
+			DateTime eDate = DateTime.Parse(dateTimePicker3.Text);
+			SqlCommand get = new SqlCommand("SELECT * FROM StockIn  WHERE inDate BETWEEN '"+sDate+"' AND '"+eDate+"' ORDER BY _id DESC",SQLDataBase.connection);
 			SqlDataAdapter da = new SqlDataAdapter(get);
 			DataTable dt = new DataTable();
 			da.Fill(dt);
-			string data = "id,Date,Profuct id,Product Name, QTY, Price, Supplier Id, Supplier Name, Remarks\n";
+			string data = "id,Date,Product id,Product Name, QTY, Price, Supplier Id, Supplier Name, Remarks\n";
 			foreach(DataRow dr in dt.Rows)
 			{
 				data = data + 

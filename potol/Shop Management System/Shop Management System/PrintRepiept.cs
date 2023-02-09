@@ -79,7 +79,7 @@ namespace Shop_Management_System
 		void getData(){
 			try{
 				SQLDataBase.conOpen();
-				SqlCommand get = new SqlCommand("SELECT _id, date, supid, supname, remarks,qtys,price,type,mTime,payAmount,status FROM receipt_main ORDER BY _id DESC",SQLDataBase.connection);
+				SqlCommand get = new SqlCommand("SELECT m._id, m.date, m.supid, m.supname, m.remarks,m.qtys,m.price,m.type,m.mTime,m.payAmount,status,c.CustomersAddress,m.discount FROM receipt_main m , Customers c  Where m.supid = c.CustomersId ORDER BY m._id DESC",SQLDataBase.connection);
 				SqlDataReader rdr = get.ExecuteReader();
 				if (rdr == null){
 					SQLDataBase.conClose();
@@ -90,13 +90,14 @@ namespace Shop_Management_System
 					reciept.id = rdr[0].ToString();
 					reciept.rDate = rdr[1].ToString() +" "+ rdr[8].ToString();
 					reciept.supId = rdr[2].ToString();
-					reciept.supName = rdr[3].ToString();
+					reciept.supName = rdr[3].ToString() +" ( "+rdr[11].ToString()+" )";
 					reciept.remarks = rdr[4].ToString();
 					reciept.qty = rdr[5].ToString();
 					reciept.amount = rdr[6].ToString();
 					reciept.type = rdr[7].ToString();
 					reciept.payamount = rdr[9].ToString();
 					reciept.status = rdr[10].ToString();
+					reciept.discount = rdr[12].ToString();
 				}
 				SQLDataBase.conClose();
 				bindData();
@@ -157,10 +158,10 @@ namespace Shop_Management_System
 			e.Graphics.DrawString(reciept.id, new Font("Book Antiqua",11,FontStyle.Regular),Brushes.Black,new Point(175,200));
 				
 			e.Graphics.DrawString("Date : ", new Font("Book Antiqua",11,FontStyle.Bold),Brushes.Black,new Point(350,200));
-			e.Graphics.DrawString(reciept.rDate, new Font("Book Antiqua",11,FontStyle.Regular),Brushes.Black,new Point(420,200));
+			e.Graphics.DrawString(reciept.rDate , new Font("Book Antiqua",11,FontStyle.Regular),Brushes.Black,new Point(400,200));
 				
 			e.Graphics.DrawString("Customer : ", new Font("Book Antiqua",11,FontStyle.Bold),Brushes.Black,new Point(80,230));
-			e.Graphics.DrawString(reciept.supId + " \t "+ reciept.supName, new Font("Arial",11,FontStyle.Regular),Brushes.Black,new Point(175,230));
+			e.Graphics.DrawString(reciept.supName, new Font("Arial",11,FontStyle.Regular),Brushes.Black,new Point(175,230));
 			
 			e.Graphics.DrawString("Remarks : ", new Font("Book Antiqua",11,FontStyle.Bold),Brushes.Black,new Point(80,260));
 			e.Graphics.DrawString(reciept.remarks, new Font("Book Antiqua",11,FontStyle.Regular),Brushes.Black,new Point(175,260));
@@ -223,10 +224,17 @@ namespace Shop_Management_System
 			e.Graphics.DrawString(reciept.payamount, new Font("Book Antiqua", 10,FontStyle.Bold), Brushes.Black, new RectangleF(600, height, 150, 50));
 			height += 25;
 			e.Graphics.DrawLine(new Pen(Color.Gray, 1), new Point(500, height), new Point(700, height));
+			height += 5; 
+			e.Graphics.DrawString("Discount", new Font("Book Antiqua", 10,FontStyle.Bold), Brushes.Black, new RectangleF(500, height, 100, 50)); 
+			e.Graphics.DrawString(reciept.discount, new Font("Book Antiqua", 10,FontStyle.Bold), Brushes.Black, new RectangleF(600, height, 150, 50));
+			height += 25;
+			e.Graphics.DrawLine(new Pen(Color.Gray, 1), new Point(500, height), new Point(700, height));
+			height += 5;
 			double tAmount = double.Parse(reciept.amount);
 			double payAmount = double.Parse(reciept.payamount);
+			double discunt = double.Parse(reciept.discount);
 			e.Graphics.DrawString("Remianing", new Font("Book Antiqua", 10,FontStyle.Bold), Brushes.Black, new RectangleF(500, height, 100, 50)); 
-			e.Graphics.DrawString((tAmount - payAmount).ToString(), new Font("Book Antiqua", 10,FontStyle.Bold), Brushes.Black, new RectangleF(600, height, 150, 50));
+			e.Graphics.DrawString((tAmount - (payAmount+ discunt)).ToString(), new Font("Book Antiqua", 10,FontStyle.Bold), Brushes.Black, new RectangleF(600, height, 150, 50));
 			height += 25;
 			e.Graphics.DrawLine(new Pen(Color.Gray, 1), new Point(500, height), new Point(700, height));
 			height += 50;
