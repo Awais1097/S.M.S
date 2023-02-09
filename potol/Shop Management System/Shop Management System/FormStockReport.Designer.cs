@@ -40,6 +40,11 @@ namespace Shop_Management_System
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.label6 = new System.Windows.Forms.Label();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.Column1Proid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column1SupId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column1SupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ColumnQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridView3 = new System.Windows.Forms.DataGridView();
 			this.ColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,16 +57,15 @@ namespace Shop_Management_System
 			this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.buttonSave = new System.Windows.Forms.Button();
-			this.ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column1Proid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column1SupId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column1SupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.ColumnQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.button1 = new System.Windows.Forms.Button();
+			this.textBoxpro = new System.Windows.Forms.TextBox();
+			this.pictureBox3 = new System.Windows.Forms.PictureBox();
+			this.button3 = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// pictureBox1
@@ -77,6 +81,8 @@ namespace Shop_Management_System
 			// 
 			// label6
 			// 
+			this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+									| System.Windows.Forms.AnchorStyles.Right)));
 			this.label6.BackColor = System.Drawing.Color.SteelBlue;
 			this.label6.Font = new System.Drawing.Font("Stencil", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label6.ForeColor = System.Drawing.Color.White;
@@ -91,143 +97,22 @@ namespace Shop_Management_System
 			// 
 			this.dataGridView1.AllowUserToAddRows = false;
 			this.dataGridView1.AllowUserToDeleteRows = false;
+			this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+									| System.Windows.Forms.AnchorStyles.Left)));
 			this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-									this.ColumnID,
 									this.Column1Proid,
 									this.ColumnName,
 									this.Column1SupId,
 									this.Column1SupName,
 									this.ColumnQty});
-			this.dataGridView1.Location = new System.Drawing.Point(12, 139);
+			this.dataGridView1.Location = new System.Drawing.Point(12, 175);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.ReadOnly = true;
-			this.dataGridView1.Size = new System.Drawing.Size(696, 480);
+			this.dataGridView1.Size = new System.Drawing.Size(647, 444);
 			this.dataGridView1.TabIndex = 15;
-			// 
-			// dataGridView3
-			// 
-			this.dataGridView3.AllowUserToAddRows = false;
-			this.dataGridView3.AllowUserToDeleteRows = false;
-			this.dataGridView3.BackgroundColor = System.Drawing.Color.Gainsboro;
-			this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-									this.ColumnDate,
-									this.Qty,
-									this.ColumnSullpier});
-			this.dataGridView3.Location = new System.Drawing.Point(717, 201);
-			this.dataGridView3.Name = "dataGridView3";
-			this.dataGridView3.ReadOnly = true;
-			this.dataGridView3.Size = new System.Drawing.Size(433, 195);
-			this.dataGridView3.TabIndex = 17;
-			// 
-			// ColumnDate
-			// 
-			this.ColumnDate.HeaderText = "Date";
-			this.ColumnDate.Name = "ColumnDate";
-			this.ColumnDate.ReadOnly = true;
-			this.ColumnDate.Width = 150;
-			// 
-			// Qty
-			// 
-			this.Qty.HeaderText = "Qty";
-			this.Qty.Name = "Qty";
-			this.Qty.ReadOnly = true;
-			// 
-			// ColumnSullpier
-			// 
-			this.ColumnSullpier.HeaderText = "Supplier";
-			this.ColumnSullpier.Name = "ColumnSullpier";
-			this.ColumnSullpier.ReadOnly = true;
-			this.ColumnSullpier.Width = 200;
-			// 
-			// label1
-			// 
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(717, 175);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(240, 23);
-			this.label1.TabIndex = 26;
-			this.label1.Text = "In Record";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			// 
-			// label2
-			// 
-			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(717, 401);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(240, 23);
-			this.label2.TabIndex = 27;
-			this.label2.Text = "Out Record";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			// 
-			// label3
-			// 
-			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.ForeColor = System.Drawing.Color.DarkRed;
-			this.label3.Location = new System.Drawing.Point(717, 139);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(240, 23);
-			this.label3.TabIndex = 28;
-			this.label3.Text = "Selected Product History";
-			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			// 
-			// dataGridView2
-			// 
-			this.dataGridView2.AllowUserToAddRows = false;
-			this.dataGridView2.AllowUserToDeleteRows = false;
-			this.dataGridView2.BackgroundColor = System.Drawing.Color.Gainsboro;
-			this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-									this.dataGridViewTextBoxColumn1,
-									this.dataGridViewTextBoxColumn2,
-									this.dataGridViewTextBoxColumn3});
-			this.dataGridView2.Location = new System.Drawing.Point(717, 424);
-			this.dataGridView2.Name = "dataGridView2";
-			this.dataGridView2.ReadOnly = true;
-			this.dataGridView2.Size = new System.Drawing.Size(433, 195);
-			this.dataGridView2.TabIndex = 29;
-			// 
-			// dataGridViewTextBoxColumn1
-			// 
-			this.dataGridViewTextBoxColumn1.HeaderText = "Date";
-			this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-			this.dataGridViewTextBoxColumn1.ReadOnly = true;
-			this.dataGridViewTextBoxColumn1.Width = 150;
-			// 
-			// dataGridViewTextBoxColumn2
-			// 
-			this.dataGridViewTextBoxColumn2.HeaderText = "Qty";
-			this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-			this.dataGridViewTextBoxColumn2.ReadOnly = true;
-			// 
-			// dataGridViewTextBoxColumn3
-			// 
-			this.dataGridViewTextBoxColumn3.HeaderText = "Supplier";
-			this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-			this.dataGridViewTextBoxColumn3.ReadOnly = true;
-			this.dataGridViewTextBoxColumn3.Width = 200;
-			// 
-			// buttonSave
-			// 
-			this.buttonSave.BackColor = System.Drawing.Color.LightSteelBlue;
-			this.buttonSave.Location = new System.Drawing.Point(1041, 132);
-			this.buttonSave.Name = "buttonSave";
-			this.buttonSave.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.buttonSave.Size = new System.Drawing.Size(109, 38);
-			this.buttonSave.TabIndex = 30;
-			this.buttonSave.Text = "ADD STOCK";
-			this.buttonSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.buttonSave.UseVisualStyleBackColor = true;
-			this.buttonSave.Click += new System.EventHandler(this.ButtonSaveClick);
-			// 
-			// ColumnID
-			// 
-			this.ColumnID.HeaderText = "ID";
-			this.ColumnID.Name = "ColumnID";
-			this.ColumnID.ReadOnly = true;
-			this.ColumnID.Width = 60;
+			this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1CellContentClick);
 			// 
 			// Column1Proid
 			// 
@@ -260,11 +145,183 @@ namespace Shop_Management_System
 			this.ColumnQty.Name = "ColumnQty";
 			this.ColumnQty.ReadOnly = true;
 			// 
+			// dataGridView3
+			// 
+			this.dataGridView3.AllowUserToAddRows = false;
+			this.dataGridView3.AllowUserToDeleteRows = false;
+			this.dataGridView3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+									| System.Windows.Forms.AnchorStyles.Right)));
+			this.dataGridView3.BackgroundColor = System.Drawing.Color.Gainsboro;
+			this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+									this.ColumnDate,
+									this.Qty,
+									this.ColumnSullpier});
+			this.dataGridView3.Location = new System.Drawing.Point(665, 201);
+			this.dataGridView3.Name = "dataGridView3";
+			this.dataGridView3.ReadOnly = true;
+			this.dataGridView3.Size = new System.Drawing.Size(485, 195);
+			this.dataGridView3.TabIndex = 17;
+			// 
+			// ColumnDate
+			// 
+			this.ColumnDate.HeaderText = "Date";
+			this.ColumnDate.Name = "ColumnDate";
+			this.ColumnDate.ReadOnly = true;
+			this.ColumnDate.Width = 150;
+			// 
+			// Qty
+			// 
+			this.Qty.HeaderText = "Qty";
+			this.Qty.Name = "Qty";
+			this.Qty.ReadOnly = true;
+			// 
+			// ColumnSullpier
+			// 
+			this.ColumnSullpier.HeaderText = "Supplier";
+			this.ColumnSullpier.Name = "ColumnSullpier";
+			this.ColumnSullpier.ReadOnly = true;
+			this.ColumnSullpier.Width = 200;
+			// 
+			// label1
+			// 
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Location = new System.Drawing.Point(665, 175);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(240, 23);
+			this.label1.TabIndex = 26;
+			this.label1.Text = "In Record";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// label2
+			// 
+			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.Location = new System.Drawing.Point(665, 401);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(240, 23);
+			this.label2.TabIndex = 27;
+			this.label2.Text = "Out Record";
+			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// label3
+			// 
+			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label3.ForeColor = System.Drawing.Color.DarkRed;
+			this.label3.Location = new System.Drawing.Point(665, 139);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(240, 23);
+			this.label3.TabIndex = 28;
+			this.label3.Text = "Selected Product History";
+			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// dataGridView2
+			// 
+			this.dataGridView2.AllowUserToAddRows = false;
+			this.dataGridView2.AllowUserToDeleteRows = false;
+			this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+									| System.Windows.Forms.AnchorStyles.Left)));
+			this.dataGridView2.BackgroundColor = System.Drawing.Color.Gainsboro;
+			this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+									this.dataGridViewTextBoxColumn1,
+									this.dataGridViewTextBoxColumn2,
+									this.dataGridViewTextBoxColumn3});
+			this.dataGridView2.Location = new System.Drawing.Point(665, 424);
+			this.dataGridView2.Name = "dataGridView2";
+			this.dataGridView2.ReadOnly = true;
+			this.dataGridView2.Size = new System.Drawing.Size(485, 195);
+			this.dataGridView2.TabIndex = 29;
+			// 
+			// dataGridViewTextBoxColumn1
+			// 
+			this.dataGridViewTextBoxColumn1.HeaderText = "Date";
+			this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+			this.dataGridViewTextBoxColumn1.ReadOnly = true;
+			this.dataGridViewTextBoxColumn1.Width = 150;
+			// 
+			// dataGridViewTextBoxColumn2
+			// 
+			this.dataGridViewTextBoxColumn2.HeaderText = "Qty";
+			this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+			this.dataGridViewTextBoxColumn2.ReadOnly = true;
+			// 
+			// dataGridViewTextBoxColumn3
+			// 
+			this.dataGridViewTextBoxColumn3.HeaderText = "Reciept";
+			this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+			this.dataGridViewTextBoxColumn3.ReadOnly = true;
+			// 
+			// buttonSave
+			// 
+			this.buttonSave.BackColor = System.Drawing.Color.LightSteelBlue;
+			this.buttonSave.Image = ((System.Drawing.Image)(resources.GetObject("buttonSave.Image")));
+			this.buttonSave.Location = new System.Drawing.Point(986, 139);
+			this.buttonSave.Name = "buttonSave";
+			this.buttonSave.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+			this.buttonSave.Size = new System.Drawing.Size(164, 38);
+			this.buttonSave.TabIndex = 30;
+			this.buttonSave.Text = "ADD STOCK";
+			this.buttonSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.buttonSave.UseVisualStyleBackColor = true;
+			this.buttonSave.Click += new System.EventHandler(this.ButtonSaveClick);
+			// 
+			// button1
+			// 
+			this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
+			this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+			this.button1.Location = new System.Drawing.Point(871, 139);
+			this.button1.Name = "button1";
+			this.button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+			this.button1.Size = new System.Drawing.Size(109, 38);
+			this.button1.TabIndex = 31;
+			this.button1.Text = "Export";
+			this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.Button1Click);
+			// 
+			// textBoxpro
+			// 
+			this.textBoxpro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.textBoxpro.Location = new System.Drawing.Point(43, 141);
+			this.textBoxpro.Name = "textBoxpro";
+			this.textBoxpro.Size = new System.Drawing.Size(479, 22);
+			this.textBoxpro.TabIndex = 32;
+			this.textBoxpro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.textBoxpro.TextChanged += new System.EventHandler(this.TextBoxproTextChanged);
+			// 
+			// pictureBox3
+			// 
+			this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+			this.pictureBox3.Location = new System.Drawing.Point(12, 138);
+			this.pictureBox3.Name = "pictureBox3";
+			this.pictureBox3.Size = new System.Drawing.Size(25, 25);
+			this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox3.TabIndex = 34;
+			this.pictureBox3.TabStop = false;
+			// 
+			// button3
+			// 
+			this.button3.BackColor = System.Drawing.Color.LightSteelBlue;
+			this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+			this.button3.Location = new System.Drawing.Point(528, 138);
+			this.button3.Name = "button3";
+			this.button3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+			this.button3.Size = new System.Drawing.Size(131, 26);
+			this.button3.TabIndex = 37;
+			this.button3.Text = "VIEW ALL";
+			this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.button3.UseVisualStyleBackColor = true;
+			this.button3.Click += new System.EventHandler(this.Button3Click);
+			// 
 			// FormStockReport
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1162, 631);
+			this.Controls.Add(this.button3);
+			this.Controls.Add(this.textBoxpro);
+			this.Controls.Add(this.pictureBox3);
+			this.Controls.Add(this.button1);
 			this.Controls.Add(this.buttonSave);
 			this.Controls.Add(this.dataGridView2);
 			this.Controls.Add(this.label3);
@@ -282,8 +339,14 @@ namespace Shop_Management_System
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 		}
+		private System.Windows.Forms.Button button3;
+		private System.Windows.Forms.PictureBox pictureBox3;
+		private System.Windows.Forms.TextBox textBoxpro;
+		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column1SupName;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column1SupId;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column1Proid;
@@ -301,7 +364,6 @@ namespace Shop_Management_System
 		private System.Windows.Forms.DataGridView dataGridView2;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ColumnQty;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
-		private System.Windows.Forms.DataGridViewTextBoxColumn ColumnID;
 		private System.Windows.Forms.DataGridView dataGridView1;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.PictureBox pictureBox1;

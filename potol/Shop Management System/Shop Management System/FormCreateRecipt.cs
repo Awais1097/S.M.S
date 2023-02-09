@@ -26,13 +26,13 @@ namespace Shop_Management_System
 		double price = 0.0;
 		int stockQty= 0;
 		 
-		public FormCreateRecipt()
+		public FormCreateRecipt(string mType)
 		{
 			//
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
 			InitializeComponent();
-			
+			type = mType;
 			//
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
@@ -259,7 +259,7 @@ namespace Shop_Management_System
 		void getId(){
 			try{
 				SQLDataBase.conOpen();
-				SqlCommand get = new SqlCommand("SELECT _id FROM repeipt_main ORDER BY _id DESC",SQLDataBase.connection);
+				SqlCommand get = new SqlCommand("SELECT _id FROM receipt_main ORDER BY _id DESC",SQLDataBase.connection);
 				int i;
 				SqlDataReader rdr = get.ExecuteReader();
 				if(rdr.Read()){
@@ -351,7 +351,7 @@ namespace Shop_Management_System
 			}
 			
 			textBox2.Text = qty.ToString();
-			textBox1.Text = tPtice.ToString();
+			textBoxremain.Text = tPtice.ToString();
 		}
 		
 		
@@ -387,7 +387,7 @@ namespace Shop_Management_System
 		
 		void saveMain(){
 			try{
-			string query = "INSERT INTO repeipt_main (_id, date, supid, supname, remarks,qtys,price) VALUES ( @_id, @date, @supid, @supname, @remarks,@qtys,@price)";  
+			string query = "INSERT INTO receipt_main (_id, date, supid, supname, remarks,qtys,price,type,mTime) VALUES ( @_id, @date, @supid, @supname, @remarks,@qtys,@price,@type,@mTime)";  
           	SqlCommand cmd = new SqlCommand(query, SQLDataBase.connection);  
           	cmd.Parameters.AddWithValue("@_id", new_id);  
           	cmd.Parameters.AddWithValue("@date", dateTimePicker1.Text);    
@@ -395,7 +395,9 @@ namespace Shop_Management_System
 			cmd.Parameters.AddWithValue("@supname", comboBoxCus.Text);  
 			cmd.Parameters.AddWithValue("@remarks", textBoxremarks.Text);
 			cmd.Parameters.AddWithValue("@qtys", textBox2.Text);		
-			cmd.Parameters.AddWithValue("@price", textBox1.Text);			
+			cmd.Parameters.AddWithValue("@price", textBoxremain.Text);
+			cmd.Parameters.AddWithValue("@type", type);			
+			cmd.Parameters.AddWithValue("@mTime", DateTime.Now.ToString("hh:mm:ss"));
   			SQLDataBase.conOpen();
             cmd.ExecuteScalar();  
             SQLDataBase.conClose(); 
@@ -410,14 +412,15 @@ namespace Shop_Management_System
 			try{
 				
 				foreach(DataGridViewRow row in dataGridView1.Rows){
-					string query = "INSERT INTO RecieptDetail (recieptId, date, proId, proName,qty,price) VALUES (@recieptId, @date, @proId, @proName,@qty,@price)";  
+					string query = "INSERT INTO RecieptsDetail (recieptId, date, proId, proName,qty,price,id) VALUES (@recieptId, @date, @proId, @proName,@qty,@price,@id)";  
           			SqlCommand cmd = new SqlCommand(query, SQLDataBase.connection);  
           			cmd.Parameters.AddWithValue("@recieptId", new_id);  
           			cmd.Parameters.AddWithValue("@date", dateTimePicker1.Text);    
           			cmd.Parameters.AddWithValue("@proId", row.Cells[0].Value.ToString()); 
 					cmd.Parameters.AddWithValue("@proName", row.Cells[1].Value.ToString());  
 					cmd.Parameters.AddWithValue("@qty", row.Cells[2].Value.ToString());		
-					cmd.Parameters.AddWithValue("@price", row.Cells[3].Value.ToString());			
+					cmd.Parameters.AddWithValue("@price", row.Cells[3].Value.ToString());	
+					cmd.Parameters.AddWithValue("@id", DateTime.Now.ToString());
   					SQLDataBase.conOpen();
             		cmd.ExecuteScalar();  
             		SQLDataBase.conClose();
@@ -432,12 +435,13 @@ namespace Shop_Management_System
 		}
 		
 		void updateStock(){
-			string query = "INSERT INTO StockOut ( inDate, inQty, productId,recieptid) VALUES ( @inDate, @inQty, @productId,@recieptid)";  
+			string query = "INSERT INTO StockOut (_id, inDate, inQty, productId,recieptid) VALUES ( @id,@inDate, @inQty, @productId,@recieptid)";  
           	SqlCommand cmd = new SqlCommand(query, SQLDataBase.connection); 
 			cmd.Parameters.AddWithValue("@recieptid", new_id);            	
           	cmd.Parameters.AddWithValue("@inDate", dateTimePicker1.Text);    
           	cmd.Parameters.AddWithValue("@inQty", textBox2.Text); 
-			cmd.Parameters.AddWithValue("@productId", textBox1.Text);  
+			cmd.Parameters.AddWithValue("@productId", textBoxremain.Text); 
+			cmd.Parameters.AddWithValue("@id", DateTime.Now.ToString());			
   			SQLDataBase.conOpen();
             cmd.ExecuteScalar();  
             SQLDataBase.conClose(); 
@@ -448,7 +452,7 @@ namespace Shop_Management_System
 			textBoxsupid.Text = "";
 			comboBoxCus.Text ="";
 			textBoxremarks.Text ="";
-			textBox1.Text = "";
+			textBoxremain.Text = "";
 			textBox2.Text= "";
 			dataGridView1.Rows.Clear();
 			dataGridView2.Rows.Clear();
@@ -481,7 +485,8 @@ namespace Shop_Management_System
 		
 		void PrintDocument1PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
 		{
-			new PrintRepiept(new_id.ToString(),e);
+			//new_id.ToString()
+			new PrintRepiept("2",e);
 		}
 		
 	}
