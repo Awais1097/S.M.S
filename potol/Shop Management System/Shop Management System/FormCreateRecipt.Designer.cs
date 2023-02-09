@@ -88,6 +88,8 @@ namespace Shop_Management_System
 			this.pictureBox10 = new System.Windows.Forms.PictureBox();
 			this.textBoxremain = new System.Windows.Forms.Label();
 			this.textBox3 = new System.Windows.Forms.TextBox();
+			this.label7 = new System.Windows.Forms.Label();
+			this.comboBox1 = new System.Windows.Forms.ComboBox();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -201,7 +203,7 @@ namespace Shop_Management_System
 			this.textBoxpro.Location = new System.Drawing.Point(12, 239);
 			this.textBoxpro.Name = "textBoxpro";
 			this.textBoxpro.Size = new System.Drawing.Size(102, 20);
-			this.textBoxpro.TabIndex = 4;
+			this.textBoxpro.TabIndex = 5;
 			this.textBoxpro.TextChanged += new System.EventHandler(this.TextBoxproTextChanged);
 			// 
 			// comboBoxPro
@@ -211,7 +213,7 @@ namespace Shop_Management_System
 			this.comboBoxPro.Location = new System.Drawing.Point(122, 238);
 			this.comboBoxPro.Name = "comboBoxPro";
 			this.comboBoxPro.Size = new System.Drawing.Size(236, 21);
-			this.comboBoxPro.TabIndex = 5;
+			this.comboBoxPro.TabIndex = 6;
 			this.comboBoxPro.SelectedIndexChanged += new System.EventHandler(this.ComboBoxProSelectedIndexChanged);
 			this.comboBoxPro.TextChanged += new System.EventHandler(this.ComboBoxProTextChanged);
 			// 
@@ -261,7 +263,7 @@ namespace Shop_Management_System
 			this.textBoxprice.Location = new System.Drawing.Point(495, 238);
 			this.textBoxprice.Name = "textBoxprice";
 			this.textBoxprice.Size = new System.Drawing.Size(162, 20);
-			this.textBoxprice.TabIndex = 7;
+			this.textBoxprice.TabIndex = 8;
 			// 
 			// pictureBox6
 			// 
@@ -289,7 +291,7 @@ namespace Shop_Management_System
 			this.textBoxqty.Location = new System.Drawing.Point(365, 238);
 			this.textBoxqty.Name = "textBoxqty";
 			this.textBoxqty.Size = new System.Drawing.Size(124, 20);
-			this.textBoxqty.TabIndex = 6;
+			this.textBoxqty.TabIndex = 7;
 			this.textBoxqty.TextChanged += new System.EventHandler(this.TextBoxqtyTextChanged);
 			// 
 			// button1
@@ -327,7 +329,7 @@ namespace Shop_Management_System
 			this.button2.Location = new System.Drawing.Point(663, 233);
 			this.button2.Name = "button2";
 			this.button2.Size = new System.Drawing.Size(18, 23);
-			this.button2.TabIndex = 8;
+			this.button2.TabIndex = 9;
 			this.button2.UseVisualStyleBackColor = false;
 			this.button2.Click += new System.EventHandler(this.Button2Click);
 			// 
@@ -356,7 +358,7 @@ namespace Shop_Management_System
 			this.textBoxremarks.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
 			this.textBoxremarks.Location = new System.Drawing.Point(11, 187);
 			this.textBoxremarks.Name = "textBoxremarks";
-			this.textBoxremarks.Size = new System.Drawing.Size(670, 20);
+			this.textBoxremarks.Size = new System.Drawing.Size(478, 20);
 			this.textBoxremarks.TabIndex = 3;
 			// 
 			// dataGridView1
@@ -445,10 +447,10 @@ namespace Shop_Management_System
 			this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.buttonSave.Image = ((System.Drawing.Image)(resources.GetObject("buttonSave.Image")));
 			this.buttonSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.buttonSave.Location = new System.Drawing.Point(381, 580);
+			this.buttonSave.Location = new System.Drawing.Point(364, 580);
 			this.buttonSave.Name = "buttonSave";
-			this.buttonSave.Size = new System.Drawing.Size(92, 47);
-			this.buttonSave.TabIndex = 9;
+			this.buttonSave.Size = new System.Drawing.Size(109, 47);
+			this.buttonSave.TabIndex = 11;
 			this.buttonSave.Text = "Save";
 			this.buttonSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.buttonSave.UseVisualStyleBackColor = true;
@@ -462,7 +464,7 @@ namespace Shop_Management_System
 			this.buttonnEW.Location = new System.Drawing.Point(585, 580);
 			this.buttonnEW.Name = "buttonnEW";
 			this.buttonnEW.Size = new System.Drawing.Size(97, 47);
-			this.buttonnEW.TabIndex = 10;
+			this.buttonnEW.TabIndex = 13;
 			this.buttonnEW.Text = "Add New";
 			this.buttonnEW.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.buttonnEW.UseVisualStyleBackColor = true;
@@ -476,7 +478,7 @@ namespace Shop_Management_System
 			this.button5.Location = new System.Drawing.Point(476, 580);
 			this.button5.Name = "button5";
 			this.button5.Size = new System.Drawing.Size(105, 47);
-			this.button5.TabIndex = 11;
+			this.button5.TabIndex = 12;
 			this.button5.Text = "Print";
 			this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.button5.UseVisualStyleBackColor = true;
@@ -486,7 +488,7 @@ namespace Shop_Management_System
 			// 
 			this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label10.Location = new System.Drawing.Point(700, 121);
+			this.label10.Location = new System.Drawing.Point(700, 110);
 			this.label10.Name = "label10";
 			this.label10.Size = new System.Drawing.Size(127, 23);
 			this.label10.TabIndex = 93;
@@ -506,10 +508,10 @@ namespace Shop_Management_System
 									this.Column1Name,
 									this.Column1Price,
 									this.Column1Qty});
-			this.dataGridView2.Location = new System.Drawing.Point(699, 147);
+			this.dataGridView2.Location = new System.Drawing.Point(699, 138);
 			this.dataGridView2.Name = "dataGridView2";
 			this.dataGridView2.ReadOnly = true;
-			this.dataGridView2.Size = new System.Drawing.Size(288, 476);
+			this.dataGridView2.Size = new System.Drawing.Size(288, 485);
 			this.dataGridView2.TabIndex = 94;
 			this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView2CellContentClick);
 			// 
@@ -614,13 +616,38 @@ namespace Shop_Management_System
 			this.textBox3.Location = new System.Drawing.Point(196, 607);
 			this.textBox3.Name = "textBox3";
 			this.textBox3.Size = new System.Drawing.Size(162, 20);
-			this.textBox3.TabIndex = 100;
+			this.textBox3.TabIndex = 10;
+			this.textBox3.Text = "0";
+			// 
+			// label7
+			// 
+			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label7.Location = new System.Drawing.Point(492, 161);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(127, 23);
+			this.label7.TabIndex = 101;
+			this.label7.Text = "Status";
+			this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// comboBox1
+			// 
+			this.comboBox1.FormattingEnabled = true;
+			this.comboBox1.Items.AddRange(new object[] {
+									"Pending",
+									"Close"});
+			this.comboBox1.Location = new System.Drawing.Point(495, 185);
+			this.comboBox1.Name = "comboBox1";
+			this.comboBox1.Size = new System.Drawing.Size(185, 21);
+			this.comboBox1.TabIndex = 4;
+			this.comboBox1.Text = "Close";
 			// 
 			// FormCreateRecipt
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(999, 636);
+			this.Controls.Add(this.comboBox1);
+			this.Controls.Add(this.label7);
 			this.Controls.Add(this.textBox3);
 			this.Controls.Add(this.pictureBox10);
 			this.Controls.Add(this.textBoxremain);
@@ -683,6 +710,8 @@ namespace Shop_Management_System
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.ComboBox comboBox1;
+		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.TextBox textBox3;
 		private System.Windows.Forms.Label textBoxremain;
 		private System.Windows.Forms.PictureBox pictureBox10;

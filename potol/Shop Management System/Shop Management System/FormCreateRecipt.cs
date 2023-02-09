@@ -387,7 +387,7 @@ namespace Shop_Management_System
 		
 		void saveMain(){
 			try{
-			string query = "INSERT INTO receipt_main (_id, date, supid, supname, remarks,qtys,price,type,mTime) VALUES ( @_id, @date, @supid, @supname, @remarks,@qtys,@price,@type,@mTime)";  
+			string query = "INSERT INTO receipt_main (_id, date, supid, supname, remarks,qtys,price,type,mTime,payAmount,status) VALUES ( @_id, @date, @supid, @supname, @remarks,@qtys,@price,@type,@mTime ,@payAmount,@status)";  
           	SqlCommand cmd = new SqlCommand(query, SQLDataBase.connection);  
           	cmd.Parameters.AddWithValue("@_id", new_id);  
           	cmd.Parameters.AddWithValue("@date", dateTimePicker1.Text);    
@@ -396,7 +396,9 @@ namespace Shop_Management_System
 			cmd.Parameters.AddWithValue("@remarks", textBoxremarks.Text);
 			cmd.Parameters.AddWithValue("@qtys", textBox2.Text);		
 			cmd.Parameters.AddWithValue("@price", textBoxremain.Text);
-			cmd.Parameters.AddWithValue("@type", type);			
+			cmd.Parameters.AddWithValue("@status", comboBox1.Text);	
+			cmd.Parameters.AddWithValue("@type", type);				
+			cmd.Parameters.AddWithValue("@payAmount", textBox3.Text);					
 			cmd.Parameters.AddWithValue("@mTime", DateTime.Now.ToString("hh:mm:ss"));
   			SQLDataBase.conOpen();
             cmd.ExecuteScalar();  
@@ -445,6 +447,24 @@ namespace Shop_Management_System
   			SQLDataBase.conOpen();
             cmd.ExecuteScalar();  
             SQLDataBase.conClose(); 
+            addReturns();
+		}
+		
+		void addReturns(){
+			double tAmount = double.Parse(textBoxremain.Text);
+			double payAmount = double.Parse(textBox3.Text);
+			if(payAmount < tAmount){
+				double reAmount = tAmount - payAmount;
+				string query = "INSERT INTO CustomerReturns (addedDate, cus_id, amount, recieptId) VALUES (@addedDate, @cus_id, @amount, @recieptId)";  
+          	SqlCommand cmd = new SqlCommand(query, SQLDataBase.connection); 
+			cmd.Parameters.AddWithValue("@addedDate", dateTimePicker1.Text);            	
+          	cmd.Parameters.AddWithValue("@cus_id", textBoxsupid.Text);    
+          	cmd.Parameters.AddWithValue("@amount", reAmount); 
+			cmd.Parameters.AddWithValue("@recieptId", new_id); 
+  			SQLDataBase.conOpen();
+            cmd.ExecuteScalar();  
+            SQLDataBase.conClose(); 
+			}
 		}
 		
 		void refresh(){

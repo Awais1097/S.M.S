@@ -79,7 +79,7 @@ namespace Shop_Management_System
 		void getData(){
 			try{
 				SQLDataBase.conOpen();
-				SqlCommand get = new SqlCommand("SELECT _id, date, supid, supname, remarks,qtys,price,type,mTime FROM receipt_main ORDER BY _id DESC",SQLDataBase.connection);
+				SqlCommand get = new SqlCommand("SELECT _id, date, supid, supname, remarks,qtys,price,type,mTime,payAmount,status FROM receipt_main ORDER BY _id DESC",SQLDataBase.connection);
 				SqlDataReader rdr = get.ExecuteReader();
 				if (rdr == null){
 					SQLDataBase.conClose();
@@ -95,6 +95,8 @@ namespace Shop_Management_System
 					reciept.qty = rdr[5].ToString();
 					reciept.amount = rdr[6].ToString();
 					reciept.type = rdr[7].ToString();
+					reciept.payamount = rdr[9].ToString();
+					reciept.status = rdr[10].ToString();
 				}
 				SQLDataBase.conClose();
 				bindData();
@@ -208,6 +210,7 @@ namespace Shop_Management_System
 		}
 		
 		void drawFooter(int height){
+			
 			e.Graphics.DrawLine(new Pen(Color.Gray, 1), new Point(80, height), new Point(700, height));
             height += 5; 
             e.Graphics.DrawString("Total", new Font("Book Antiqua", 10,FontStyle.Bold), Brushes.Black, new RectangleF(80, height, 420, 50));  
@@ -215,6 +218,21 @@ namespace Shop_Management_System
 			e.Graphics.DrawString(reciept.amount, new Font("Book Antiqua", 10,FontStyle.Bold), Brushes.Black, new RectangleF(600, height, 150, 50));
 			height += 25;
 			e.Graphics.DrawLine(new Pen(Color.Gray, 1), new Point(80, height), new Point(700, height));
+			height += 5; 
+			e.Graphics.DrawString("Pay Amount", new Font("Book Antiqua", 10,FontStyle.Bold), Brushes.Black, new RectangleF(500, height, 100, 50)); 
+			e.Graphics.DrawString(reciept.payamount, new Font("Book Antiqua", 10,FontStyle.Bold), Brushes.Black, new RectangleF(600, height, 150, 50));
+			height += 25;
+			e.Graphics.DrawLine(new Pen(Color.Gray, 1), new Point(500, height), new Point(700, height));
+			double tAmount = double.Parse(reciept.amount);
+			double payAmount = double.Parse(reciept.payamount);
+			e.Graphics.DrawString("Remianing", new Font("Book Antiqua", 10,FontStyle.Bold), Brushes.Black, new RectangleF(500, height, 100, 50)); 
+			e.Graphics.DrawString((tAmount - payAmount).ToString(), new Font("Book Antiqua", 10,FontStyle.Bold), Brushes.Black, new RectangleF(600, height, 150, 50));
+			height += 25;
+			e.Graphics.DrawLine(new Pen(Color.Gray, 1), new Point(500, height), new Point(700, height));
+			height += 50;
+			e.Graphics.DrawLine(new Pen(Color.Gray, 1), new Point(80, height), new Point(180, height));
+			e.Graphics.DrawString("Signature", new Font("Book Antiqua", 10,FontStyle.Bold), Brushes.Black, new RectangleF(100, height, 420, 50));  
+           
 		}
 		
 		

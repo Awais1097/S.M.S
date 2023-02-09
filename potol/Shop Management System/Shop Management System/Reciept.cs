@@ -32,6 +32,10 @@ namespace Shop_Management_System
 		 
 		 public string type { get; set; }
 		 
+		 public string payamount { get; set; }
+		  
+		 public string status { get; set; }
+		 
 		 public List<Products> list = new List<Products>();
 		 
 		 

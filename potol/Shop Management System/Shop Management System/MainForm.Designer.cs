@@ -1,4 +1,5 @@
-﻿/*
+﻿using System.Windows.Forms;
+/*
  * Created by SharpDevelop.
  * User: NASIR
  * Date: 11/15/2022
@@ -785,6 +786,7 @@ namespace Shop_Management_System
 			this.stockDetailToolStripMenuItem.Name = "stockDetailToolStripMenuItem";
 			this.stockDetailToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.stockDetailToolStripMenuItem.Text = "&Stock Detail";
+			this.stockDetailToolStripMenuItem.Click += new System.EventHandler(this.StockDetailToolStripMenuItemClick);
 			// 
 			// toolStripSeparator2
 			// 
@@ -1043,6 +1045,12 @@ namespace Shop_Management_System
 		{
 			Form stockIn = new FormStockIn();
 			stockIn.ShowDialog();			
+		}
+		
+		void StockDetailToolStripMenuItemClick(object sender, System.EventArgs e)
+		{
+			Form stockReportForm = new FormStockReport();
+					stockReportForm.ShowDialog();			
 		}
 	}
 }
