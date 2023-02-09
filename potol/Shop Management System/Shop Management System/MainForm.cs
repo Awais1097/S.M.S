@@ -172,7 +172,7 @@ namespace Shop_Management_System
 		
 		void PrintDocument1PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
 		{
-			new PrintRepiept("",e);
+			new PrintRepiept(textBox1.Text.ToString(),e);
 		}
 		
 		void Button2Click(object sender, EventArgs e)
