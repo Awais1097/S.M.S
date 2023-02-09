@@ -79,10 +79,9 @@ namespace Shop_Management_System
 			this.label6.BackColor = System.Drawing.Color.WhiteSmoke;
 			this.label6.Font = new System.Drawing.Font("Stencil", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label6.ForeColor = System.Drawing.Color.SteelBlue;
-			this.label6.Location = new System.Drawing.Point(352, 0);
-			this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label6.Location = new System.Drawing.Point(264, 0);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(576, 127);
+			this.label6.Size = new System.Drawing.Size(432, 103);
 			this.label6.TabIndex = 6;
 			this.label6.Text = "Shop Management System";
 			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -93,11 +92,10 @@ namespace Shop_Management_System
 			this.button2.BackColor = System.Drawing.Color.LightSteelBlue;
 			this.button2.Cursor = System.Windows.Forms.Cursors.WaitCursor;
 			this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-			this.button2.Location = new System.Drawing.Point(280, 234);
-			this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.button2.Location = new System.Drawing.Point(210, 190);
 			this.button2.Name = "button2";
 			this.button2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.button2.Size = new System.Drawing.Size(181, 47);
+			this.button2.Size = new System.Drawing.Size(136, 38);
 			this.button2.TabIndex = 6;
 			this.button2.Text = "Exit";
 			this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -109,11 +107,10 @@ namespace Shop_Management_System
 			// 
 			this.buttonExit.BackColor = System.Drawing.Color.LightSteelBlue;
 			this.buttonExit.Image = ((System.Drawing.Image)(resources.GetObject("buttonExit.Image")));
-			this.buttonExit.Location = new System.Drawing.Point(59, 234);
-			this.buttonExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.buttonExit.Location = new System.Drawing.Point(44, 190);
 			this.buttonExit.Name = "buttonExit";
 			this.buttonExit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.buttonExit.Size = new System.Drawing.Size(179, 47);
+			this.buttonExit.Size = new System.Drawing.Size(134, 38);
 			this.buttonExit.TabIndex = 5;
 			this.buttonExit.Text = "LOG IN";
 			this.buttonExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -123,22 +120,20 @@ namespace Shop_Management_System
 			// textBoxPassword
 			// 
 			this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBoxPassword.Location = new System.Drawing.Point(59, 162);
-			this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.textBoxPassword.Location = new System.Drawing.Point(44, 132);
 			this.textBoxPassword.Multiline = true;
 			this.textBoxPassword.Name = "textBoxPassword";
 			this.textBoxPassword.PasswordChar = '*';
-			this.textBoxPassword.Size = new System.Drawing.Size(401, 31);
+			this.textBoxPassword.Size = new System.Drawing.Size(302, 26);
 			this.textBoxPassword.TabIndex = 2;
 			this.textBoxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// textBoxName
 			// 
 			this.textBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBoxName.Location = new System.Drawing.Point(59, 75);
-			this.textBoxName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.textBoxName.Location = new System.Drawing.Point(44, 61);
 			this.textBoxName.Name = "textBoxName";
-			this.textBoxName.Size = new System.Drawing.Size(401, 30);
+			this.textBoxName.Size = new System.Drawing.Size(302, 26);
 			this.textBoxName.TabIndex = 1;
 			this.textBoxName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
@@ -152,9 +147,8 @@ namespace Shop_Management_System
 			this.panel1.Controls.Add(this.label6);
 			this.panel1.Controls.Add(this.groupBox1);
 			this.panel1.Location = new System.Drawing.Point(0, 1);
-			this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(931, 485);
+			this.panel1.Size = new System.Drawing.Size(698, 394);
 			this.panel1.TabIndex = 5;
 			// 
 			// panel2
@@ -163,18 +157,16 @@ namespace Shop_Management_System
 			this.panel2.Controls.Add(this.pictureBox2);
 			this.panel2.Controls.Add(this.pictureBox1);
 			this.panel2.Location = new System.Drawing.Point(0, 0);
-			this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(344, 481);
+			this.panel2.Size = new System.Drawing.Size(258, 391);
 			this.panel2.TabIndex = 10;
 			// 
 			// pictureBox2
 			// 
 			this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-			this.pictureBox2.Location = new System.Drawing.Point(49, 50);
-			this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.pictureBox2.Location = new System.Drawing.Point(37, 41);
 			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(249, 390);
+			this.pictureBox2.Size = new System.Drawing.Size(187, 317);
 			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox2.TabIndex = 9;
 			this.pictureBox2.TabStop = false;
@@ -182,10 +174,9 @@ namespace Shop_Management_System
 			// pictureBox1
 			// 
 			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(32, 22);
-			this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.pictureBox1.Location = new System.Drawing.Point(24, 18);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(285, 442);
+			this.pictureBox1.Size = new System.Drawing.Size(214, 359);
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox1.TabIndex = 8;
 			this.pictureBox1.TabStop = false;
@@ -202,11 +193,9 @@ namespace Shop_Management_System
 			this.groupBox1.Controls.Add(this.textBoxPassword);
 			this.groupBox1.Controls.Add(this.label3);
 			this.groupBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.groupBox1.Location = new System.Drawing.Point(383, 130);
-			this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.groupBox1.Location = new System.Drawing.Point(287, 106);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-			this.groupBox1.Size = new System.Drawing.Size(524, 324);
+			this.groupBox1.Size = new System.Drawing.Size(393, 263);
 			this.groupBox1.TabIndex = 7;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "LOGIN";
@@ -214,10 +203,9 @@ namespace Shop_Management_System
 			// pictureBox4
 			// 
 			this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-			this.pictureBox4.Location = new System.Drawing.Point(61, 130);
-			this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.pictureBox4.Location = new System.Drawing.Point(46, 106);
 			this.pictureBox4.Name = "pictureBox4";
-			this.pictureBox4.Size = new System.Drawing.Size(33, 31);
+			this.pictureBox4.Size = new System.Drawing.Size(25, 25);
 			this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox4.TabIndex = 8;
 			this.pictureBox4.TabStop = false;
@@ -225,10 +213,9 @@ namespace Shop_Management_System
 			// pictureBox3
 			// 
 			this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-			this.pictureBox3.Location = new System.Drawing.Point(61, 39);
-			this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.pictureBox3.Location = new System.Drawing.Point(46, 32);
 			this.pictureBox3.Name = "pictureBox3";
-			this.pictureBox3.Size = new System.Drawing.Size(33, 31);
+			this.pictureBox3.Size = new System.Drawing.Size(25, 25);
 			this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox3.TabIndex = 7;
 			this.pictureBox3.TabStop = false;
@@ -236,10 +223,9 @@ namespace Shop_Management_System
 			// label2
 			// 
 			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(105, 41);
-			this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label2.Location = new System.Drawing.Point(79, 33);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(353, 28);
+			this.label2.Size = new System.Drawing.Size(265, 23);
 			this.label2.TabIndex = 3;
 			this.label2.Text = "User ID";
 			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -247,22 +233,19 @@ namespace Shop_Management_System
 			// label3
 			// 
 			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.Location = new System.Drawing.Point(103, 130);
-			this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label3.Location = new System.Drawing.Point(77, 106);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(359, 28);
+			this.label3.Size = new System.Drawing.Size(269, 23);
 			this.label3.TabIndex = 4;
 			this.label3.Text = "User Password";
 			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// FormLogIn
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(928, 486);
+			this.ClientSize = new System.Drawing.Size(696, 395);
 			this.Controls.Add(this.panel1);
-			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "FormLogIn";
