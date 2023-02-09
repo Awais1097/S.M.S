@@ -34,4 +34,9 @@ D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Rele
 D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop_Management_System.MainForm.resources
 D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop Management System.csproj.GenerateResource.Cache
 D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop Management System.exe
+<<<<<<< HEAD
 D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop_Management_System.FROM.resources
+=======
+D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop_Management_System.FormRecieptList.resources
+E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop_Management_System.FROM.resources
+>>>>>>> b8c9d1ab660ef9166321cbdd8511d0731c98f8c4

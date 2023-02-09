@@ -60,7 +60,7 @@ namespace Shop_Management_System
 		protected override bool ProcessCmdKey(ref Message msg, Keys keyData){
 			switch (keyData) {
 				case Keys.C:
-					Form form = new FormCreateRecipt();
+					Form form = new FormCreateRecipt(Utilites.RECIEPT);
 					form.ShowDialog();
 					break;
 				case Keys.P:
@@ -150,7 +150,7 @@ namespace Shop_Management_System
 		}
 		void Button1Click(object sender, EventArgs e)
 		{
-			Form form = new FormCreateRecipt();
+			Form form = new FormCreateRecipt(Utilites.RECIEPT);
 			form.ShowDialog();	
 		}
 		

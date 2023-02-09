@@ -79,7 +79,7 @@ namespace Shop_Management_System
 		void getData(){
 			try{
 				SQLDataBase.conOpen();
-				SqlCommand get = new SqlCommand("SELECT _id, date, supid, supname, remarks,qtys,price FROM repeipt_main ORDER BY _id DESC",SQLDataBase.connection);
+				SqlCommand get = new SqlCommand("SELECT _id, date, supid, supname, remarks,qtys,price,type,mTime FROM receipt_main ORDER BY _id DESC",SQLDataBase.connection);
 				SqlDataReader rdr = get.ExecuteReader();
 				if (rdr == null){
 					SQLDataBase.conClose();
@@ -88,12 +88,13 @@ namespace Shop_Management_System
 				}
 				if(rdr.Read()){
 					reciept.id = rdr[0].ToString();
-					reciept.rDate = rdr[1].ToString();
+					reciept.rDate = rdr[1].ToString() +" "+ rdr[8].ToString();
 					reciept.supId = rdr[2].ToString();
 					reciept.supName = rdr[3].ToString();
 					reciept.remarks = rdr[4].ToString();
 					reciept.qty = rdr[5].ToString();
 					reciept.amount = rdr[6].ToString();
+					reciept.type = rdr[7].ToString();
 				}
 				SQLDataBase.conClose();
 				bindData();
@@ -105,7 +106,7 @@ namespace Shop_Management_System
 		void bindData(){
 			try{
 				SQLDataBase.conOpen();
-				SqlCommand get = new SqlCommand("SELECT proId, proName,qty,price FROM RecieptDetail WHERE recieptId = '"+reciept.id+"'",SQLDataBase.connection);
+				SqlCommand get = new SqlCommand("SELECT proId, proName,qty,price FROM RecieptsDetail WHERE recieptId = '"+reciept.id+"'",SQLDataBase.connection);
 				SqlDataAdapter da = new SqlDataAdapter(get);
 				DataTable dt = new DataTable();
 				da.Fill(dt);
@@ -136,39 +137,44 @@ namespace Shop_Management_System
 		
 		
 		void drawHeader(){
-			e.Graphics.DrawImage(Utilites.LoadImage(shopInfo.shoplogo),50,100,100,100);
-			e.Graphics.DrawString(shopInfo.shopname, new Font("Arial",14,FontStyle.Bold),Brushes.Black,new Point(110,100));
-			e.Graphics.DrawString(shopInfo.address, new Font("Arial",10,FontStyle.Regular),Brushes.Black,new Point(150,100));
-			e.Graphics.DrawString(shopInfo.mobile1 +" | "+shopInfo.mobile2, new Font("Arial",10,FontStyle.Regular),Brushes.Black,new Point(200,100));
+			e.Graphics.DrawImage(Utilites.LoadImage(shopInfo.shoplogo),80,15,100,100);
+			e.Graphics.DrawString(shopInfo.shopname, new Font("Book Antiqua",22,FontStyle.Bold),Brushes.Black,new Point(200,15));
+			e.Graphics.DrawString(shopInfo.address, new Font("Book Antiqua",14,FontStyle.Bold),Brushes.Black,new Point(200,55));
+			e.Graphics.DrawString(shopInfo.mobile1 +" | "+shopInfo.mobile2, new Font("Book Antiqua",14,FontStyle.Bold),Brushes.Black,new Point(200,90));
 			//e.Graphics.DrawString("_______________________________________________________________ ", new Font("Arial",24,FontStyle.Bold),Brushes.Black,new Point(0,250));
-			e.Graphics.DrawLine(new Pen(Color.Gray, 1), new Point(10, 250), new Point(700, 250));
-			e.Graphics.DrawString(reciept.type, new Font("Arial",24,FontStyle.Bold),Brushes.Black,new Point(50,240));
+			e.Graphics.DrawLine(new Pen(Color.Gray, 1), new Point(80, 130), new Point(700, 130));
+			e.Graphics.DrawString(reciept.type, new Font("Book Antiqua",24,FontStyle.Bold),Brushes.Black,new Point(300,135));
 			drawRecieptInfo();
 		}
 		
 		void drawRecieptInfo(){
-			e.Graphics.DrawString("Reciept # : ", new Font("Arial",11,FontStyle.Bold),Brushes.Black,new Point(98,300));
-			e.Graphics.DrawString(reciept.id, new Font("Arial",11,FontStyle.Underline),Brushes.Black,new Point(300,300));
-				
-			e.Graphics.DrawString("Date : ", new Font("Arial",11,FontStyle.Bold),Brushes.Black,new Point(98,340));
-			e.Graphics.DrawString(reciept.rDate, new Font("Arial",11,FontStyle.Underline),Brushes.Black,new Point(300,340));
-				
-			e.Graphics.DrawString("Customer : ", new Font("Arial",11,FontStyle.Bold),Brushes.Black,new Point(98,380));
-			e.Graphics.DrawString(reciept.supId + " - "+ reciept.supName, new Font("Arial",11,FontStyle.Underline),Brushes.Black,new Point(300,380));
 			
-			e.Graphics.DrawString("Remarks : ", new Font("Arial",11,FontStyle.Bold),Brushes.Black,new Point(98,380));
-			e.Graphics.DrawString(reciept.remarks, new Font("Arial",11,FontStyle.Underline),Brushes.Black,new Point(300,420));
+			e.Graphics.DrawLine(new Pen(Color.Gray, 1), new Point(80, 180), new Point(700, 180));
+			
+			e.Graphics.DrawString("Reciept # : ", new Font("Book Antiqua",11,FontStyle.Bold),Brushes.Black,new Point(80,200));
+			e.Graphics.DrawString(reciept.id, new Font("Book Antiqua",11,FontStyle.Regular),Brushes.Black,new Point(175,200));
+				
+			e.Graphics.DrawString("Date : ", new Font("Book Antiqua",11,FontStyle.Bold),Brushes.Black,new Point(350,200));
+			e.Graphics.DrawString(reciept.rDate, new Font("Book Antiqua",11,FontStyle.Regular),Brushes.Black,new Point(420,200));
+				
+			e.Graphics.DrawString("Customer : ", new Font("Book Antiqua",11,FontStyle.Bold),Brushes.Black,new Point(80,230));
+			e.Graphics.DrawString(reciept.supId + " \t "+ reciept.supName, new Font("Arial",11,FontStyle.Regular),Brushes.Black,new Point(175,230));
+			
+			e.Graphics.DrawString("Remarks : ", new Font("Book Antiqua",11,FontStyle.Bold),Brushes.Black,new Point(80,260));
+			e.Graphics.DrawString(reciept.remarks, new Font("Book Antiqua",11,FontStyle.Regular),Brushes.Black,new Point(175,260));
 		
 			drawProducts();
 		}
 		
 		void drawProducts(){
-			int height = 460;  
-			height += 50;  
-			e.Graphics.DrawLine(new Pen(Color.Gray, 1), new Point(30, height), new Point(700, height));
-            e.Graphics.DrawString(VERTICAL_LINE+ " Product", new Font("Book Antiqua", 8), Brushes.Black, new RectangleF(30, height, 420, 50));  
-            e.Graphics.DrawString(VERTICAL_LINE+ " QTY", new Font("Book Antiqua", 8), Brushes.Black, new RectangleF(450, height, 100, 50)); 
-			e.Graphics.DrawString(VERTICAL_LINE+ " Price", new Font("Book Antiqua", 8), Brushes.Black, new RectangleF(550, height, 150, 50));
+			int height = 260;  
+			height += 40;  
+			e.Graphics.DrawLine(new Pen(Color.Gray, 1), new Point(80, height), new Point(700, height));
+			height += 5; 
+            e.Graphics.DrawString("Product", new Font("Book Antiqua", 10,FontStyle.Bold), Brushes.Black, new RectangleF(80, height, 420, 50));  
+            e.Graphics.DrawString( "QTY", new Font("Book Antiqua", 10,FontStyle.Bold), Brushes.Black, new RectangleF(500, height, 100, 50)); 
+			e.Graphics.DrawString( "Price", new Font("Book Antiqua", 10,FontStyle.Bold), Brushes.Black, new RectangleF(600, height, 100, 50));
+
 			for (int l = numberOfItemsPrintedSoFar; l < reciept.products.Count; l++)  
 			{  
    				numberOfItemsPerPage = numberOfItemsPerPage + 1;  
@@ -178,11 +184,12 @@ namespace Shop_Management_System
        				if (numberOfItemsPrintedSoFar <= reciept.products.Count)  
         			{  
        					Products product = reciept.products[l];
-            			height += 50;  
-            			e.Graphics.DrawLine(new Pen(Color.Gray, 1), new Point(30, height), new Point(700, height));
-            			e.Graphics.DrawString(VERTICAL_LINE+ " "+product.proId+ " - "+ product.proName, new Font("Book Antiqua", 8), Brushes.Black, new RectangleF(30, height, 420, 50));  
-            			e.Graphics.DrawString(VERTICAL_LINE+ " "+product.qty, new Font("Book Antiqua", 8), Brushes.Black, new RectangleF(450, height, 100, 50)); 
-						e.Graphics.DrawString(VERTICAL_LINE+ " "+product.price, new Font("Book Antiqua", 8), Brushes.Black, new RectangleF(550, height, 150, 50));
+            			height += 25;  
+            			e.Graphics.DrawLine(new Pen(Color.Gray, 1), new Point(80, height), new Point(700, height));
+            			height += 5; 
+            			e.Graphics.DrawString(product.proId+ "\t"+ product.proName, new Font("Book Antiqua", 10), Brushes.Black, new RectangleF(80, height, 420, 50));  
+            			e.Graphics.DrawString(product.qty, new Font("Book Antiqua", 10), Brushes.Black, new RectangleF(500, height, 100, 50)); 
+						e.Graphics.DrawString(product.price, new Font("Book Antiqua", 10), Brushes.Black, new RectangleF(600, height, 150, 50));
 					}  
         			else  
         			{  
@@ -197,18 +204,17 @@ namespace Shop_Management_System
         			height =150;
    		 		}
 			}
-			drawFooter(height += 50);
+			drawFooter(height += 25);
 		}
 		
 		void drawFooter(int height){
-			//e.Graphics.DrawString("____________________________________ ", new Font("Arial",24,FontStyle.Bold),Brushes.Black,new Point(250,height));
-			e.Graphics.DrawLine(new Pen(Color.Gray, 1), new Point(250, height), new Point(700, height));
-			height += 50;
-			e.Graphics.DrawString("Total QTY : ", new Font("Arial",12,FontStyle.Bold),Brushes.Black,new Point(250,height));
-			e.Graphics.DrawString(reciept.id, new Font("Arial",12,FontStyle.Underline),Brushes.Black,new Point(350,height));
-			height += 50;
-			e.Graphics.DrawString("Total Price : ", new Font("Arial",12,FontStyle.Bold),Brushes.Black,new Point(250,height));
-			e.Graphics.DrawString(reciept.rDate, new Font("Arial",12,FontStyle.Underline),Brushes.Black,new Point(350,height));	
+			e.Graphics.DrawLine(new Pen(Color.Gray, 1), new Point(80, height), new Point(700, height));
+            height += 5; 
+            e.Graphics.DrawString("Total", new Font("Book Antiqua", 10,FontStyle.Bold), Brushes.Black, new RectangleF(80, height, 420, 50));  
+            e.Graphics.DrawString(reciept.qty, new Font("Book Antiqua", 10,FontStyle.Bold), Brushes.Black, new RectangleF(500, height, 100, 50)); 
+			e.Graphics.DrawString(reciept.amount, new Font("Book Antiqua", 10,FontStyle.Bold), Brushes.Black, new RectangleF(600, height, 150, 50));
+			height += 25;
+			e.Graphics.DrawLine(new Pen(Color.Gray, 1), new Point(80, height), new Point(700, height));
 		}
 		
 		

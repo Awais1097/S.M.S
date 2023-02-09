@@ -28,5 +28,11 @@ namespace Shop_Management_System
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
 		}
+		
+		void Button3Click(object sender, EventArgs e)
+		{
+			Form form = new FormCreateRecipt(Utilites.RECIEPT);
+			form.ShowDialog();			
+		}
 	}
 }

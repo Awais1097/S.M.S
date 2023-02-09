@@ -68,11 +68,9 @@ namespace Shop_Management_System
 			this.ColumnQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ColumnPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.pictureBox7 = new System.Windows.Forms.PictureBox();
-			this.label7 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.textBox1 = new System.Windows.Forms.Label();
 			this.pictureBox8 = new System.Windows.Forms.PictureBox();
-			this.label9 = new System.Windows.Forms.Label();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.textBox2 = new System.Windows.Forms.Label();
 			this.buttonSave = new System.Windows.Forms.Button();
 			this.buttonnEW = new System.Windows.Forms.Button();
 			this.button5 = new System.Windows.Forms.Button();
@@ -87,6 +85,9 @@ namespace Shop_Management_System
 			this.printDocument1 = new System.Drawing.Printing.PrintDocument();
 			this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
 			this.label5 = new System.Windows.Forms.Label();
+			this.pictureBox10 = new System.Windows.Forms.PictureBox();
+			this.textBoxremain = new System.Windows.Forms.Label();
+			this.textBox3 = new System.Windows.Forms.TextBox();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -98,6 +99,7 @@ namespace Shop_Management_System
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// label6
@@ -435,6 +437,7 @@ namespace Shop_Management_System
 			this.pictureBox7.TabIndex = 89;
 			this.pictureBox7.TabStop = false;
 			// 
+<<<<<<< HEAD
 			// label7
 			// 
 			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -455,18 +458,34 @@ namespace Shop_Management_System
 			this.textBox1.Name = "textBox1";
 			this.textBox1.Size = new System.Drawing.Size(215, 23);
 			this.textBox1.TabIndex = 85;
+=======
+			// textBox1
+			// 
+			this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.textBox1.Location = new System.Drawing.Point(232, 579);
+			this.textBox1.Name = "textBox1";
+			this.textBox1.Size = new System.Drawing.Size(99, 23);
+			this.textBox1.TabIndex = 88;
+			this.textBox1.Text = "Pay Amount";
+			this.textBox1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+>>>>>>> b8c9d1ab660ef9166321cbdd8511d0731c98f8c4
 			// 
 			// pictureBox8
 			// 
 			this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+<<<<<<< HEAD
 			this.pictureBox8.Location = new System.Drawing.Point(15, 713);
 			this.pictureBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+=======
+			this.pictureBox8.Location = new System.Drawing.Point(12, 579);
+>>>>>>> b8c9d1ab660ef9166321cbdd8511d0731c98f8c4
 			this.pictureBox8.Name = "pictureBox8";
 			this.pictureBox8.Size = new System.Drawing.Size(33, 28);
 			this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox8.TabIndex = 87;
 			this.pictureBox8.TabStop = false;
 			// 
+<<<<<<< HEAD
 			// label9
 			// 
 			this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -487,16 +506,33 @@ namespace Shop_Management_System
 			this.textBox2.Name = "textBox2";
 			this.textBox2.Size = new System.Drawing.Size(239, 23);
 			this.textBox2.TabIndex = 84;
+=======
+			// textBox2
+			// 
+			this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.textBox2.Location = new System.Drawing.Point(45, 579);
+			this.textBox2.Name = "textBox2";
+			this.textBox2.Size = new System.Drawing.Size(145, 23);
+			this.textBox2.TabIndex = 86;
+			this.textBox2.Text = "Total QTY";
+			this.textBox2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+>>>>>>> b8c9d1ab660ef9166321cbdd8511d0731c98f8c4
 			// 
 			// buttonSave
 			// 
 			this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.buttonSave.Image = ((System.Drawing.Image)(resources.GetObject("buttonSave.Image")));
 			this.buttonSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+<<<<<<< HEAD
 			this.buttonSave.Location = new System.Drawing.Point(488, 731);
 			this.buttonSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.buttonSave.Name = "buttonSave";
 			this.buttonSave.Size = new System.Drawing.Size(123, 36);
+=======
+			this.buttonSave.Location = new System.Drawing.Point(381, 580);
+			this.buttonSave.Name = "buttonSave";
+			this.buttonSave.Size = new System.Drawing.Size(92, 47);
+>>>>>>> b8c9d1ab660ef9166321cbdd8511d0731c98f8c4
 			this.buttonSave.TabIndex = 9;
 			this.buttonSave.Text = "Save";
 			this.buttonSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -508,10 +544,16 @@ namespace Shop_Management_System
 			this.buttonnEW.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.buttonnEW.Image = ((System.Drawing.Image)(resources.GetObject("buttonnEW.Image")));
 			this.buttonnEW.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+<<<<<<< HEAD
 			this.buttonnEW.Location = new System.Drawing.Point(619, 731);
 			this.buttonnEW.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.buttonnEW.Name = "buttonnEW";
 			this.buttonnEW.Size = new System.Drawing.Size(129, 36);
+=======
+			this.buttonnEW.Location = new System.Drawing.Point(585, 580);
+			this.buttonnEW.Name = "buttonnEW";
+			this.buttonnEW.Size = new System.Drawing.Size(97, 47);
+>>>>>>> b8c9d1ab660ef9166321cbdd8511d0731c98f8c4
 			this.buttonnEW.TabIndex = 10;
 			this.buttonnEW.Text = "Add New";
 			this.buttonnEW.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -523,10 +565,16 @@ namespace Shop_Management_System
 			this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
 			this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+<<<<<<< HEAD
 			this.button5.Location = new System.Drawing.Point(756, 731);
 			this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.button5.Name = "button5";
 			this.button5.Size = new System.Drawing.Size(161, 36);
+=======
+			this.button5.Location = new System.Drawing.Point(476, 580);
+			this.button5.Name = "button5";
+			this.button5.Size = new System.Drawing.Size(105, 47);
+>>>>>>> b8c9d1ab660ef9166321cbdd8511d0731c98f8c4
 			this.button5.TabIndex = 11;
 			this.button5.Text = "Print";
 			this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -644,11 +692,46 @@ namespace Shop_Management_System
 			this.label5.Text = "id";
 			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
+			// pictureBox10
+			// 
+			this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
+			this.pictureBox10.Location = new System.Drawing.Point(13, 604);
+			this.pictureBox10.Name = "pictureBox10";
+			this.pictureBox10.Size = new System.Drawing.Size(25, 23);
+			this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox10.TabIndex = 99;
+			this.pictureBox10.TabStop = false;
+			// 
+			// textBoxremain
+			// 
+			this.textBoxremain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.textBoxremain.Location = new System.Drawing.Point(46, 604);
+			this.textBoxremain.Name = "textBoxremain";
+			this.textBoxremain.Size = new System.Drawing.Size(144, 23);
+			this.textBoxremain.TabIndex = 98;
+			this.textBoxremain.Text = "Total Price";
+			this.textBoxremain.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// textBox3
+			// 
+			this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+			this.textBox3.Location = new System.Drawing.Point(196, 607);
+			this.textBox3.Name = "textBox3";
+			this.textBox3.Size = new System.Drawing.Size(162, 20);
+			this.textBox3.TabIndex = 100;
+			// 
 			// FormCreateRecipt
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
 			this.ClientSize = new System.Drawing.Size(1332, 783);
+=======
+			this.ClientSize = new System.Drawing.Size(999, 636);
+			this.Controls.Add(this.textBox3);
+			this.Controls.Add(this.pictureBox10);
+			this.Controls.Add(this.textBoxremain);
+>>>>>>> b8c9d1ab660ef9166321cbdd8511d0731c98f8c4
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.button4);
 			this.Controls.Add(this.labelStock);
@@ -658,10 +741,8 @@ namespace Shop_Management_System
 			this.Controls.Add(this.buttonnEW);
 			this.Controls.Add(this.buttonSave);
 			this.Controls.Add(this.pictureBox7);
-			this.Controls.Add(this.label7);
 			this.Controls.Add(this.textBox1);
 			this.Controls.Add(this.pictureBox8);
-			this.Controls.Add(this.label9);
 			this.Controls.Add(this.textBox2);
 			this.Controls.Add(this.dataGridView1);
 			this.Controls.Add(this.pictureBox9);
@@ -689,8 +770,13 @@ namespace Shop_Management_System
 			this.Controls.Add(this.label12);
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.pictureBox1);
+<<<<<<< HEAD
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+=======
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
+>>>>>>> b8c9d1ab660ef9166321cbdd8511d0731c98f8c4
 			this.Name = "FormCreateRecipt";
 			this.Text = "S.M.S";
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -706,9 +792,13 @@ namespace Shop_Management_System
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.TextBox textBox3;
+		private System.Windows.Forms.Label textBoxremain;
+		private System.Windows.Forms.PictureBox pictureBox10;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
 		private System.Drawing.Printing.PrintDocument printDocument1;
@@ -727,11 +817,9 @@ namespace Shop_Management_System
 		private System.Windows.Forms.Button button5;
 		private System.Windows.Forms.Button buttonnEW;
 		private System.Windows.Forms.Button buttonSave;
-		private System.Windows.Forms.TextBox textBox2;
-		private System.Windows.Forms.Label label9;
+		private System.Windows.Forms.Label textBox2;
 		private System.Windows.Forms.PictureBox pictureBox8;
-		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.Label textBox1;
 		private System.Windows.Forms.PictureBox pictureBox7;
 		private System.Windows.Forms.DataGridView dataGridView1;
 		private System.Windows.Forms.TextBox textBoxremarks;
