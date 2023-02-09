@@ -262,9 +262,13 @@ namespace Shop_Management_System
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.label6);
+<<<<<<< HEAD
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+=======
 			this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> b8c9d1ab660ef9166321cbdd8511d0731c98f8c4
 			this.Name = "FROM";
-			this.Text = "FormRecieptList";
+			this.Text = "S.M.S";
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
