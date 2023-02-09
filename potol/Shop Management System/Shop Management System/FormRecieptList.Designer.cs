@@ -288,8 +288,9 @@ namespace Shop_Management_System
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.label6);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "FROM";
-			this.Text = "FormRecieptList";
+			this.Text = "S.M.S";
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
