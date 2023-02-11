@@ -8,6 +8,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
@@ -26,7 +27,7 @@ namespace Shop_Management_System
 			//
 			InitializeComponent();
 			getData();
-			treeView1.AllowDrop = true;  
+			treeView1.ExpandAll();
 			//
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
@@ -46,8 +47,51 @@ namespace Shop_Management_System
 				 try{
 				 	pictureBox1.Image = Utilites.LoadImage(rdr[3].ToString());
 				 }catch(Exception){}
+				 
+				 try{
+				 	pictureBox7.Image = Utilites.LoadImage(rdr[5].ToString());
+				 }catch(Exception){}
 			}
 			SQLDataBase.conClose();
+			getProgress();
+		}
+		
+		void getProgress(){		
+			SQLDataBase.conOpen();
+			SqlCommand get = new SqlCommand("select * from ViewProgress where date = '"+DateTime.Now.ToString("yyyy-MM-dd")+"'",SQLDataBase.connection);
+			SqlDataReader rdr = get.ExecuteReader();
+			if(rdr.Read())
+			{
+				 label2.Text = rdr[0].ToString()+ "+";
+				 label3.Text = rdr[1].ToString() + "+";
+				 label8.Text = Math.Round(double.Parse(rdr[3].ToString()),1).ToString() +"%";
+			}
+			SQLDataBase.conClose();
+			getAllProgresss();
+		}
+		
+		void getAllProgresss(){
+		try{
+			SQLDataBase.conOpen();
+			SqlCommand get = new SqlCommand("select TOP (100) * from ViewProgress order by date DESC",SQLDataBase.connection);
+			SqlDataAdapter da = new SqlDataAdapter(get);
+			DataTable dt = new DataTable();
+			da.Fill(dt);
+			dataGridView1.Rows.Clear();
+			foreach(DataRow dr in dt.Rows)
+			{
+				int n = dataGridView1.Rows.Add();
+				dataGridView1.Rows[n].Cells[0].Value =  DateTime.Parse(dr[4].ToString()).ToString("yyyy-MM-dd") ;
+				dataGridView1.Rows[n].Cells[1].Value = dr[1].ToString();
+				dataGridView1.Rows[n].Cells[2].Value = dr[0].ToString();
+				dataGridView1.Rows[n].Cells[3].Value =Math.Round(double.Parse(dr[3].ToString()),1).ToString();
+			}
+		
+			SQLDataBase.conClose();
+			}catch(Exception){
+			SQLDataBase.conClose();
+			}
+		
 		}
 		void Label2Click(object sender, EventArgs e)
 		{
@@ -117,6 +161,22 @@ namespace Shop_Management_System
 					Form settingReportForm = new FormShopInfo();
 					settingReportForm.ShowDialog();
 					break;
+				case "RecieptReport":
+					Form recListForm = new FormRecieptList(Utilites.RECIEPT);
+					recListForm .ShowDialog();
+					break;
+				case "Reciept":
+					Form racForm = new FormCreateRecipt(Utilites.RECIEPT);
+					racForm.ShowDialog();
+					break;
+				case "Orders":
+					Form orderForm = new FormCreateRecipt(Utilites.ORDER);
+					orderForm.ShowDialog();
+					break;
+				case "ReportOrder":
+					Form ordListForm = new FormRecieptList(Utilites.ORDER);
+					ordListForm .ShowDialog();
+					break;
 				case "Calculator":
 					try {
 						System.Diagnostics.Process p = null;
@@ -146,7 +206,7 @@ namespace Shop_Management_System
 					}
 					break;
 			}
-			treeView1.SelectedNode = this.treeView1.Nodes[0];
+			//treeView1.SelectedNode = this.treeView1.Nodes[0];
 		}
 		void Button1Click(object sender, EventArgs e)
 		{
@@ -172,17 +232,22 @@ namespace Shop_Management_System
 		
 		void PrintDocument1PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
 		{
-			new PrintRepiept(textBoxID.Text.ToString(),e);
+
 		}
 		
 		void Button2Click(object sender, EventArgs e)
 		{
-			if(textBoxID.Text.Trim() == string.Empty){
-				MessageBox.Show("Enter Recipt Id.!" , "Error" , MessageBoxButtons.OK, MessageBoxIcon.Error);
-				return;
-			  }
-			printPreviewDialog1.Document =  printDocument1;
-			printPreviewDialog1.ShowDialog();			
+						
+		}
+		
+		void Label13Click(object sender, EventArgs e)
+		{
+			
+		}
+		
+		void PictureBox8Click(object sender, EventArgs e)
+		{	
+			getData();
 		}
 	}
 	

@@ -36,7 +36,9 @@ namespace Shop_Management_System
 		}
 		void Label6Click(object sender, EventArgs e)
 		{
-			
+			// System.IO.File.WriteAllText(@"D:\myfile.txt","Hello this is my File");		
+			//Utilites.save("info.csv","Shop Management System\nFor infromation and in case of any problem\nName: Awais ul Hassan\n(Call-WhatsApp-SMS) On: 03066395565\nEmail on: awaisbagga@gmail.com, ");
+			Utilites.readEcxalFile();
 		}
 		void ButtonExitClick(object sender, EventArgs e)
 		{
@@ -69,7 +71,6 @@ namespace Shop_Management_System
 			if(cont == 1)
 			{
 				SQLDataBase.conClose();
-				//MessageBox.Show("User Name & Password is correct ","Infromation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					
 				Form df = new MainForm();
 				this.Hide();
@@ -89,6 +90,7 @@ namespace Shop_Management_System
 			}
 		
 		}
+		
 	
 	}
 }

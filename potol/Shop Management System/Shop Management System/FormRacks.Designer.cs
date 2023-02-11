@@ -86,9 +86,10 @@ namespace Shop_Management_System
 			this.label6.BackColor = System.Drawing.Color.SteelBlue;
 			this.label6.Font = new System.Drawing.Font("Stencil", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label6.ForeColor = System.Drawing.Color.White;
-			this.label6.Location = new System.Drawing.Point(108, 0);
+			this.label6.Location = new System.Drawing.Point(144, 0);
+			this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(626, 103);
+			this.label6.Size = new System.Drawing.Size(835, 127);
 			this.label6.TabIndex = 7;
 			this.label6.Text = "Racks";
 			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -98,8 +99,9 @@ namespace Shop_Management_System
 			this.pictureBox1.BackColor = System.Drawing.Color.SteelBlue;
 			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
 			this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+			this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(109, 102);
+			this.pictureBox1.Size = new System.Drawing.Size(145, 126);
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox1.TabIndex = 8;
 			this.pictureBox1.TabStop = false;
@@ -107,9 +109,10 @@ namespace Shop_Management_System
 			// panel1
 			// 
 			this.panel1.Controls.Add(this.dataGridView1);
-			this.panel1.Location = new System.Drawing.Point(335, 142);
+			this.panel1.Location = new System.Drawing.Point(447, 175);
+			this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(374, 357);
+			this.panel1.Size = new System.Drawing.Size(499, 439);
 			this.panel1.TabIndex = 10;
 			// 
 			// dataGridView1
@@ -125,9 +128,10 @@ namespace Shop_Management_System
 									this.Image});
 			this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+			this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.ReadOnly = true;
-			this.dataGridView1.Size = new System.Drawing.Size(374, 357);
+			this.dataGridView1.Size = new System.Drawing.Size(499, 439);
 			this.dataGridView1.TabIndex = 0;
 			this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1CellContentClick);
 			// 
@@ -159,9 +163,10 @@ namespace Shop_Management_System
 			// 
 			this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-			this.pictureBox2.Location = new System.Drawing.Point(55, 60);
+			this.pictureBox2.Location = new System.Drawing.Point(73, 74);
+			this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(149, 149);
+			this.pictureBox2.Size = new System.Drawing.Size(198, 183);
 			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox2.TabIndex = 0;
 			this.pictureBox2.TabStop = false;
@@ -170,17 +175,19 @@ namespace Shop_Management_System
 			// textBoxName
 			// 
 			this.textBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBoxName.Location = new System.Drawing.Point(18, 246);
+			this.textBoxName.Location = new System.Drawing.Point(24, 303);
+			this.textBoxName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.textBoxName.Name = "textBoxName";
-			this.textBoxName.Size = new System.Drawing.Size(227, 26);
+			this.textBoxName.Size = new System.Drawing.Size(301, 30);
 			this.textBoxName.TabIndex = 8;
 			// 
 			// label2
 			// 
 			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(53, 218);
+			this.label2.Location = new System.Drawing.Point(71, 268);
+			this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(181, 23);
+			this.label2.Size = new System.Drawing.Size(241, 28);
 			this.label2.TabIndex = 9;
 			this.label2.Text = "Rack Title";
 			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -188,9 +195,10 @@ namespace Shop_Management_System
 			// pictureBox3
 			// 
 			this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-			this.pictureBox3.Location = new System.Drawing.Point(20, 217);
+			this.pictureBox3.Location = new System.Drawing.Point(27, 267);
+			this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.pictureBox3.Name = "pictureBox3";
-			this.pictureBox3.Size = new System.Drawing.Size(25, 25);
+			this.pictureBox3.Size = new System.Drawing.Size(33, 31);
 			this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox3.TabIndex = 10;
 			this.pictureBox3.TabStop = false;
@@ -201,9 +209,10 @@ namespace Shop_Management_System
 			this.button1.FlatAppearance.BorderSize = 0;
 			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-			this.button1.Location = new System.Drawing.Point(214, 25);
+			this.button1.Location = new System.Drawing.Point(285, 31);
+			this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(31, 23);
+			this.button1.Size = new System.Drawing.Size(41, 28);
 			this.button1.TabIndex = 23;
 			this.button1.UseVisualStyleBackColor = false;
 			this.button1.Click += new System.EventHandler(this.Button1Click);
@@ -211,9 +220,10 @@ namespace Shop_Management_System
 			// textBox1
 			// 
 			this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox1.Location = new System.Drawing.Point(53, 25);
+			this.textBox1.Location = new System.Drawing.Point(71, 31);
+			this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(155, 26);
+			this.textBox1.Size = new System.Drawing.Size(205, 30);
 			this.textBox1.TabIndex = 24;
 			// 
 			// groupBox1
@@ -229,9 +239,11 @@ namespace Shop_Management_System
 			this.groupBox1.Controls.Add(this.label2);
 			this.groupBox1.Controls.Add(this.textBoxName);
 			this.groupBox1.Controls.Add(this.pictureBox2);
-			this.groupBox1.Location = new System.Drawing.Point(30, 131);
+			this.groupBox1.Location = new System.Drawing.Point(40, 161);
+			this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(266, 368);
+			this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.groupBox1.Size = new System.Drawing.Size(355, 453);
 			this.groupBox1.TabIndex = 9;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Add/Delete Reck";
@@ -241,9 +253,10 @@ namespace Shop_Management_System
 			this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
 			this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.button3.Location = new System.Drawing.Point(135, 321);
+			this.button3.Location = new System.Drawing.Point(180, 395);
+			this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(110, 29);
+			this.button3.Size = new System.Drawing.Size(147, 36);
 			this.button3.TabIndex = 26;
 			this.button3.Text = "Update";
 			this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -255,9 +268,10 @@ namespace Shop_Management_System
 			this.buttonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.buttonDelete.Image = ((System.Drawing.Image)(resources.GetObject("buttonDelete.Image")));
 			this.buttonDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.buttonDelete.Location = new System.Drawing.Point(135, 283);
+			this.buttonDelete.Location = new System.Drawing.Point(180, 348);
+			this.buttonDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.buttonDelete.Name = "buttonDelete";
-			this.buttonDelete.Size = new System.Drawing.Size(110, 29);
+			this.buttonDelete.Size = new System.Drawing.Size(147, 36);
 			this.buttonDelete.TabIndex = 13;
 			this.buttonDelete.Text = "Delete";
 			this.buttonDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -267,9 +281,10 @@ namespace Shop_Management_System
 			// label1
 			// 
 			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(22, 26);
+			this.label1.Location = new System.Drawing.Point(29, 32);
+			this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(29, 23);
+			this.label1.Size = new System.Drawing.Size(39, 28);
 			this.label1.TabIndex = 25;
 			this.label1.Text = "ID";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -279,9 +294,10 @@ namespace Shop_Management_System
 			this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.buttonSave.Image = ((System.Drawing.Image)(resources.GetObject("buttonSave.Image")));
 			this.buttonSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.buttonSave.Location = new System.Drawing.Point(18, 283);
+			this.buttonSave.Location = new System.Drawing.Point(24, 348);
+			this.buttonSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.buttonSave.Name = "buttonSave";
-			this.buttonSave.Size = new System.Drawing.Size(111, 29);
+			this.buttonSave.Size = new System.Drawing.Size(148, 36);
 			this.buttonSave.TabIndex = 11;
 			this.buttonSave.Text = "Save";
 			this.buttonSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -293,9 +309,10 @@ namespace Shop_Management_System
 			this.buttonnEW.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.buttonnEW.Image = ((System.Drawing.Image)(resources.GetObject("buttonnEW.Image")));
 			this.buttonnEW.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.buttonnEW.Location = new System.Drawing.Point(18, 321);
+			this.buttonnEW.Location = new System.Drawing.Point(24, 395);
+			this.buttonnEW.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.buttonnEW.Name = "buttonnEW";
-			this.buttonnEW.Size = new System.Drawing.Size(111, 29);
+			this.buttonnEW.Size = new System.Drawing.Size(148, 36);
 			this.buttonnEW.TabIndex = 12;
 			this.buttonnEW.Text = "Add New";
 			this.buttonnEW.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -304,13 +321,15 @@ namespace Shop_Management_System
 			// 
 			// FormRacks
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(733, 511);
+			this.ClientSize = new System.Drawing.Size(977, 629);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.label6);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "FormRacks";

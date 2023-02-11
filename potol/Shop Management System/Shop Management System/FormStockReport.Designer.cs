@@ -73,8 +73,9 @@ namespace Shop_Management_System
 			this.pictureBox1.BackColor = System.Drawing.Color.SteelBlue;
 			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
 			this.pictureBox1.Location = new System.Drawing.Point(-1, 1);
+			this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(109, 102);
+			this.pictureBox1.Size = new System.Drawing.Size(145, 126);
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox1.TabIndex = 14;
 			this.pictureBox1.TabStop = false;
@@ -86,9 +87,10 @@ namespace Shop_Management_System
 			this.label6.BackColor = System.Drawing.Color.SteelBlue;
 			this.label6.Font = new System.Drawing.Font("Stencil", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label6.ForeColor = System.Drawing.Color.White;
-			this.label6.Location = new System.Drawing.Point(107, 1);
+			this.label6.Location = new System.Drawing.Point(143, 1);
+			this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(1061, 103);
+			this.label6.Size = new System.Drawing.Size(1415, 127);
 			this.label6.TabIndex = 13;
 			this.label6.Text = "Stock";
 			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -107,10 +109,11 @@ namespace Shop_Management_System
 									this.Column1SupId,
 									this.Column1SupName,
 									this.ColumnQty});
-			this.dataGridView1.Location = new System.Drawing.Point(12, 175);
+			this.dataGridView1.Location = new System.Drawing.Point(16, 215);
+			this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.ReadOnly = true;
-			this.dataGridView1.Size = new System.Drawing.Size(647, 444);
+			this.dataGridView1.Size = new System.Drawing.Size(863, 546);
 			this.dataGridView1.TabIndex = 15;
 			this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1CellContentClick);
 			// 
@@ -157,10 +160,11 @@ namespace Shop_Management_System
 									this.ColumnDate,
 									this.Qty,
 									this.ColumnSullpier});
-			this.dataGridView3.Location = new System.Drawing.Point(665, 201);
+			this.dataGridView3.Location = new System.Drawing.Point(887, 247);
+			this.dataGridView3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.dataGridView3.Name = "dataGridView3";
 			this.dataGridView3.ReadOnly = true;
-			this.dataGridView3.Size = new System.Drawing.Size(485, 195);
+			this.dataGridView3.Size = new System.Drawing.Size(647, 240);
 			this.dataGridView3.TabIndex = 17;
 			// 
 			// ColumnDate
@@ -186,9 +190,10 @@ namespace Shop_Management_System
 			// label1
 			// 
 			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(665, 175);
+			this.label1.Location = new System.Drawing.Point(887, 215);
+			this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(240, 23);
+			this.label1.Size = new System.Drawing.Size(320, 28);
 			this.label1.TabIndex = 26;
 			this.label1.Text = "In Record";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -196,9 +201,10 @@ namespace Shop_Management_System
 			// label2
 			// 
 			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(665, 401);
+			this.label2.Location = new System.Drawing.Point(887, 494);
+			this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(240, 23);
+			this.label2.Size = new System.Drawing.Size(320, 28);
 			this.label2.TabIndex = 27;
 			this.label2.Text = "Out Record";
 			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -207,9 +213,10 @@ namespace Shop_Management_System
 			// 
 			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label3.ForeColor = System.Drawing.Color.DarkRed;
-			this.label3.Location = new System.Drawing.Point(665, 139);
+			this.label3.Location = new System.Drawing.Point(887, 171);
+			this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(240, 23);
+			this.label3.Size = new System.Drawing.Size(320, 28);
 			this.label3.TabIndex = 28;
 			this.label3.Text = "Selected Product History";
 			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -226,10 +233,11 @@ namespace Shop_Management_System
 									this.dataGridViewTextBoxColumn1,
 									this.dataGridViewTextBoxColumn2,
 									this.dataGridViewTextBoxColumn3});
-			this.dataGridView2.Location = new System.Drawing.Point(665, 424);
+			this.dataGridView2.Location = new System.Drawing.Point(887, 522);
+			this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.dataGridView2.Name = "dataGridView2";
 			this.dataGridView2.ReadOnly = true;
-			this.dataGridView2.Size = new System.Drawing.Size(485, 195);
+			this.dataGridView2.Size = new System.Drawing.Size(647, 240);
 			this.dataGridView2.TabIndex = 29;
 			// 
 			// dataGridViewTextBoxColumn1
@@ -255,10 +263,11 @@ namespace Shop_Management_System
 			// 
 			this.buttonSave.BackColor = System.Drawing.Color.LightSteelBlue;
 			this.buttonSave.Image = ((System.Drawing.Image)(resources.GetObject("buttonSave.Image")));
-			this.buttonSave.Location = new System.Drawing.Point(986, 139);
+			this.buttonSave.Location = new System.Drawing.Point(1315, 171);
+			this.buttonSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.buttonSave.Name = "buttonSave";
 			this.buttonSave.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.buttonSave.Size = new System.Drawing.Size(164, 38);
+			this.buttonSave.Size = new System.Drawing.Size(219, 47);
 			this.buttonSave.TabIndex = 30;
 			this.buttonSave.Text = "ADD STOCK";
 			this.buttonSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -269,10 +278,11 @@ namespace Shop_Management_System
 			// 
 			this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
 			this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-			this.button1.Location = new System.Drawing.Point(871, 139);
+			this.button1.Location = new System.Drawing.Point(1161, 171);
+			this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.button1.Name = "button1";
 			this.button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.button1.Size = new System.Drawing.Size(109, 38);
+			this.button1.Size = new System.Drawing.Size(145, 47);
 			this.button1.TabIndex = 31;
 			this.button1.Text = "Export";
 			this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -282,9 +292,10 @@ namespace Shop_Management_System
 			// textBoxpro
 			// 
 			this.textBoxpro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBoxpro.Location = new System.Drawing.Point(43, 141);
+			this.textBoxpro.Location = new System.Drawing.Point(57, 174);
+			this.textBoxpro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.textBoxpro.Name = "textBoxpro";
-			this.textBoxpro.Size = new System.Drawing.Size(479, 22);
+			this.textBoxpro.Size = new System.Drawing.Size(637, 26);
 			this.textBoxpro.TabIndex = 32;
 			this.textBoxpro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.textBoxpro.TextChanged += new System.EventHandler(this.TextBoxproTextChanged);
@@ -292,9 +303,10 @@ namespace Shop_Management_System
 			// pictureBox3
 			// 
 			this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-			this.pictureBox3.Location = new System.Drawing.Point(12, 138);
+			this.pictureBox3.Location = new System.Drawing.Point(16, 170);
+			this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.pictureBox3.Name = "pictureBox3";
-			this.pictureBox3.Size = new System.Drawing.Size(25, 25);
+			this.pictureBox3.Size = new System.Drawing.Size(33, 31);
 			this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox3.TabIndex = 34;
 			this.pictureBox3.TabStop = false;
@@ -303,10 +315,11 @@ namespace Shop_Management_System
 			// 
 			this.button3.BackColor = System.Drawing.Color.LightSteelBlue;
 			this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-			this.button3.Location = new System.Drawing.Point(528, 138);
+			this.button3.Location = new System.Drawing.Point(704, 170);
+			this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.button3.Name = "button3";
 			this.button3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.button3.Size = new System.Drawing.Size(131, 26);
+			this.button3.Size = new System.Drawing.Size(175, 32);
 			this.button3.TabIndex = 37;
 			this.button3.Text = "VIEW ALL";
 			this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -315,9 +328,9 @@ namespace Shop_Management_System
 			// 
 			// FormStockReport
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1162, 631);
+			this.ClientSize = new System.Drawing.Size(1549, 777);
 			this.Controls.Add(this.button3);
 			this.Controls.Add(this.textBoxpro);
 			this.Controls.Add(this.pictureBox3);
@@ -331,10 +344,12 @@ namespace Shop_Management_System
 			this.Controls.Add(this.dataGridView1);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.label6);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "FormStockReport";
-			this.Text = "FormStockReport";
+			this.Text = "S.M.S";
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
