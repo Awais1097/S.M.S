@@ -39,3 +39,4 @@ E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\ob
 E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop_Management_System.FormUpdateOrderStatus.resources
 D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop_Management_System.FormUpdateOrderStatus.resources
 D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop_Management_System.FormSearch.resources
+D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop_Management_System.FormOutstanding.resources

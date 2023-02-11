@@ -4089,18 +4089,6 @@
   <metadata name="ColumnPrice.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Columnid.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Columnname.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnQty.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnPrice.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="pictureBox7.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAieFJREFUeF7t
@@ -5455,30 +5443,17 @@
   <metadata name="Column1Qty.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Column1id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column1Name.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column1Price.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column1Qty.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="button4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAG1SURBVDhPnZLZSwJBHMf9r3orKSorqMCn7ADTICnooZMQ
-        kR76B/KhAyKioH3oINQOhCSC6PBYq80ofQitJHZDFI9k99s4rqWrHfSB3Z2ZnfnwO0aFn5BEefA9FYJ3
-        8mT5MBKuGcT3xpDyOCHYrEi6tgobFJQJHl+usbJnxrlnDamtQcTtw0i6N/Ckb0BsVAvB4UD8zCvvLvAp
-        SGezcJ0twcYYcME5SRgJQMyRNCTkoiGk/ae46TLAV6tBkr2ST8mCdCaNmYVZMAcMYvwD/VEN3nkIn7oF
-        nK4f0ns+WVlwdOGGbqoP6w6GLv5ExLYIT40arzt2OqcCPi7g2HtCv7+RiUTBNrYjPG2lc5VEcixFOVci
-        iSK4bgOCxiE6LuvCnygKDP8UVKRA3wQpR1qmpEo6kbn5yiLmyQlvCI2b8by8ioT/q8+lCK4j+Oo0lW0s
-        cj8yQe1scye5cZeFRRJFJvpE2rdAD+fDTygvUpEYswl/fRtYTScCrVpwPUbc9g6AbeqgYq5LT6ILyLsL
-        lAmyzy9I3d2Dd+wjNGVBUG9CsN+E0KQFr9u7EMl1V/IlqFKwfGGrFvcT4AO/BqaQJfr9CQAAAABJRU5E
-        rkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
+        dAAAEnQB3mYfeAAAAbVJREFUOE+dktlLAkEcx/2veispKiuowKfsANMgKeihkxCRHvoH8qEDIqKgfegg
+        1A6EJILo8FirzSh9CK0kdkMUj2T32ziupasd9IHdnZmd+fA7RoWfkER58D0VgnfyZPkwEq4ZxPfGkPI4
+        IdisSLq2ChsUlAkeX66xsmfGuWcNqa1BxO3DSLo38KRvQGxUC8HhQPzMK+8u8ClIZ7NwnS3BxhhwwTlJ
+        GAlAzJE0JOSiIaT9p7jpMsBXq0GSvZJPyYJ0Jo2ZhVkwBwxi/AP9UQ3eeQifugWcrh/Sez5ZWXB04YZu
+        qg/rDoYu/kTEtghPjRqvO3Y6pwI+LuDYe0K/v5GJRME2tiM8baVzlURyLEU5VyKJIrhuA4LGITou68Kf
+        KAoM/xRUpEDfBClHWqakSjqRufnKIubJCW8IjZvxvLyKhP+rz6UIriP46jSVbSxyPzJB7WxzJ7lxl4VF
+        EkUm+kTat0AP58NPKC9SkRizCX99G1hNJwKtWnA9Rtz2DoBt6qBirktPogvIuwuUCbLPL0jd3YN37CM0
+        ZUFQb0Kw34TQpAWv27sQyXVX8iWoUrB8YasW9xPgA78GppAl+v0JAAAAAElFTkSuQmCC
 </value>
   </data>
   <metadata name="printDocument1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
