@@ -121,6 +121,10 @@
     <Compile Include="FormSupplier.Designer.cs">
       <DependentUpon>FormSupplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormUpdateOrderStatus.cs" />
+    <Compile Include="FormUpdateOrderStatus.Designer.cs">
+      <DependentUpon>FormUpdateOrderStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs" />
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -176,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSupplier.resx">
       <DependentUpon>FormSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpdateOrderStatus.resx">
+      <DependentUpon>FormUpdateOrderStatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.Designer.cs</DependentUpon>

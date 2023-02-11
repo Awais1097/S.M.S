@@ -48,8 +48,6 @@ namespace Shop_Management_System
 		private System.Windows.Forms.PictureBox pictureBox7;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button button5;
-		private System.Windows.Forms.Label label13;
-		private System.Windows.Forms.Button button2;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -73,52 +71,54 @@ namespace Shop_Management_System
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Reciept");
-			System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Orders");
-			System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Stock");
-			System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Suppliers");
-			System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Products");
-			System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Customers");
-			System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Companies");
-			System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Categories");
-			System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Brands");
-			System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Racks");
-			System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("S.M.S", new System.Windows.Forms.TreeNode[] {
-									treeNode1,
-									treeNode2,
-									treeNode3,
-									treeNode4,
-									treeNode5,
-									treeNode6,
-									treeNode7,
-									treeNode8,
-									treeNode9,
-									treeNode10});
-			System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Reciept");
-			System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Sale");
-			System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Stock");
-			System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Short Products");
-			System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Target Vs Achivement");
-			System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Reports", new System.Windows.Forms.TreeNode[] {
-									treeNode12,
-									treeNode13,
-									treeNode14,
-									treeNode15,
-									treeNode16});
-			System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Back up");
-			System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Info");
-			System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Database", new System.Windows.Forms.TreeNode[] {
-									treeNode18,
-									treeNode19});
-			System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Settings");
-			System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Calculator");
-			System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Log Out");
-			System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Exit");
-			System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Tools", new System.Windows.Forms.TreeNode[] {
-									treeNode21,
-									treeNode22,
-									treeNode23,
-									treeNode24});
+			System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Reciept");
+			System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Orders");
+			System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Stock");
+			System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Suppliers");
+			System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Products");
+			System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Customers");
+			System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Companies");
+			System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Categories");
+			System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("Brands");
+			System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("Racks");
+			System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("S.M.S", new System.Windows.Forms.TreeNode[] {
+									treeNode27,
+									treeNode28,
+									treeNode29,
+									treeNode30,
+									treeNode31,
+									treeNode32,
+									treeNode33,
+									treeNode34,
+									treeNode35,
+									treeNode36});
+			System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Reciept");
+			System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("Sale");
+			System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("Stock");
+			System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("Short Products");
+			System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("Target Vs Achivement");
+			System.Windows.Forms.TreeNode treeNode43 = new System.Windows.Forms.TreeNode("Orders");
+			System.Windows.Forms.TreeNode treeNode44 = new System.Windows.Forms.TreeNode("Reports", new System.Windows.Forms.TreeNode[] {
+									treeNode38,
+									treeNode39,
+									treeNode40,
+									treeNode41,
+									treeNode42,
+									treeNode43});
+			System.Windows.Forms.TreeNode treeNode45 = new System.Windows.Forms.TreeNode("Back up");
+			System.Windows.Forms.TreeNode treeNode46 = new System.Windows.Forms.TreeNode("Info");
+			System.Windows.Forms.TreeNode treeNode47 = new System.Windows.Forms.TreeNode("Database", new System.Windows.Forms.TreeNode[] {
+									treeNode45,
+									treeNode46});
+			System.Windows.Forms.TreeNode treeNode48 = new System.Windows.Forms.TreeNode("Settings");
+			System.Windows.Forms.TreeNode treeNode49 = new System.Windows.Forms.TreeNode("Calculator");
+			System.Windows.Forms.TreeNode treeNode50 = new System.Windows.Forms.TreeNode("Log Out");
+			System.Windows.Forms.TreeNode treeNode51 = new System.Windows.Forms.TreeNode("Exit");
+			System.Windows.Forms.TreeNode treeNode52 = new System.Windows.Forms.TreeNode("Tools", new System.Windows.Forms.TreeNode[] {
+									treeNode48,
+									treeNode49,
+									treeNode50,
+									treeNode51});
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.label5 = new System.Windows.Forms.Label();
 			this.treeView1 = new System.Windows.Forms.TreeView();
@@ -184,9 +184,7 @@ namespace Shop_Management_System
 			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
 			this.printDocument1 = new System.Drawing.Printing.PrintDocument();
 			this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-			this.label13 = new System.Windows.Forms.Label();
-			this.textBoxID = new System.Windows.Forms.TextBox();
-			this.button2 = new System.Windows.Forms.Button();
+			this.pictureBox8 = new System.Windows.Forms.PictureBox();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -199,6 +197,7 @@ namespace Shop_Management_System
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
 			this.toolStrip1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// label5
@@ -224,86 +223,89 @@ namespace Shop_Management_System
 			this.treeView1.ItemHeight = 40;
 			this.treeView1.Location = new System.Drawing.Point(21, 131);
 			this.treeView1.Name = "treeView1";
-			treeNode1.ImageKey = "reciept_img_icon.png";
-			treeNode1.Name = "Reciept";
-			treeNode1.Text = "Reciept";
-			treeNode2.ImageKey = "purchase_order_img_icon.png";
-			treeNode2.Name = "Orders";
-			treeNode2.Text = "Orders";
-			treeNode3.ImageKey = "stock_img_icon.png";
-			treeNode3.Name = "Stock";
-			treeNode3.Text = "Stock";
-			treeNode4.ImageKey = "supplier_img_icon.png";
-			treeNode4.Name = "Suppliers";
-			treeNode4.Text = "Suppliers";
-			treeNode5.ImageKey = "product_icon.png";
-			treeNode5.Name = "Products";
-			treeNode5.Text = "Products";
-			treeNode6.ImageKey = "customers_img_icon.png";
-			treeNode6.Name = "Customers";
-			treeNode6.Text = "Customers";
-			treeNode7.ImageKey = "company_img_icon.png";
-			treeNode7.Name = "Companies";
-			treeNode7.Text = "Companies";
-			treeNode8.ImageKey = "caregory_img_icon.png";
-			treeNode8.Name = "Categories";
-			treeNode8.Text = "Categories";
-			treeNode9.ImageKey = "brand_img_icon.png";
-			treeNode9.Name = "Brands";
-			treeNode9.Text = "Brands";
-			treeNode10.ImageKey = "rack_img_icon.png";
-			treeNode10.Name = "Racks";
-			treeNode10.Text = "Racks";
-			treeNode11.ImageKey = "shop-icon.png";
-			treeNode11.Name = "S.M.S";
-			treeNode11.Text = "S.M.S";
-			treeNode12.ImageKey = "reciept_img_icon.png";
-			treeNode12.Name = "RecieptReport";
-			treeNode12.Text = "Reciept";
-			treeNode13.ImageKey = "roday_sale_img_2_icon.png";
-			treeNode13.Name = "Sale";
-			treeNode13.Text = "Sale";
-			treeNode14.ImageKey = "stock_img_icon.png";
-			treeNode14.Name = "StockReport";
-			treeNode14.Text = "Stock";
-			treeNode15.ImageKey = "short_products_img_icon.png";
-			treeNode15.Name = "Short Products";
-			treeNode15.Text = "Short Products";
-			treeNode16.ImageKey = "target_img_icon.png";
-			treeNode16.Name = "Target Vs Achivement";
-			treeNode16.Text = "Target Vs Achivement";
-			treeNode17.ImageKey = "report.png";
-			treeNode17.Name = "Reports";
-			treeNode17.Text = "Reports";
-			treeNode18.ImageKey = "databse_backup_icon_img.png";
-			treeNode18.Name = "Back up";
-			treeNode18.Text = "Back up";
-			treeNode19.ImageKey = "data_gear.png";
-			treeNode19.Name = "Info";
-			treeNode19.Text = "Info";
-			treeNode20.ImageKey = "download (4).jpg";
-			treeNode20.Name = "Database";
-			treeNode20.Text = "Database";
-			treeNode21.ImageKey = "setting_img_icon.png";
-			treeNode21.Name = "Settings";
-			treeNode21.Text = "Settings";
-			treeNode22.ImageKey = "images__9_-removebg-preview.png";
-			treeNode22.Name = "Calculator";
-			treeNode22.Text = "Calculator";
-			treeNode23.ImageKey = "Logout.png";
-			treeNode23.Name = "Log Out";
-			treeNode23.Text = "Log Out";
-			treeNode24.ImageKey = "exit_icon.png";
-			treeNode24.Name = "Exit";
-			treeNode24.Text = "Exit";
-			treeNode25.ImageKey = "download__5_-removebg-preview.png";
-			treeNode25.Name = "Tools";
-			treeNode25.Text = "Tools";
+			treeNode27.ImageKey = "reciept_img_icon.png";
+			treeNode27.Name = "Reciept";
+			treeNode27.Text = "Reciept";
+			treeNode28.ImageKey = "purchase_order_img_icon.png";
+			treeNode28.Name = "Orders";
+			treeNode28.Text = "Orders";
+			treeNode29.ImageKey = "stock_img_icon.png";
+			treeNode29.Name = "Stock";
+			treeNode29.Text = "Stock";
+			treeNode30.ImageKey = "supplier_img_icon.png";
+			treeNode30.Name = "Suppliers";
+			treeNode30.Text = "Suppliers";
+			treeNode31.ImageKey = "product_icon.png";
+			treeNode31.Name = "Products";
+			treeNode31.Text = "Products";
+			treeNode32.ImageKey = "customers_img_icon.png";
+			treeNode32.Name = "Customers";
+			treeNode32.Text = "Customers";
+			treeNode33.ImageKey = "company_img_icon.png";
+			treeNode33.Name = "Companies";
+			treeNode33.Text = "Companies";
+			treeNode34.ImageKey = "caregory_img_icon.png";
+			treeNode34.Name = "Categories";
+			treeNode34.Text = "Categories";
+			treeNode35.ImageKey = "brand_img_icon.png";
+			treeNode35.Name = "Brands";
+			treeNode35.Text = "Brands";
+			treeNode36.ImageKey = "rack_img_icon.png";
+			treeNode36.Name = "Racks";
+			treeNode36.Text = "Racks";
+			treeNode37.ImageKey = "shop-icon.png";
+			treeNode37.Name = "S.M.S";
+			treeNode37.Text = "S.M.S";
+			treeNode38.ImageKey = "reciept_img_icon.png";
+			treeNode38.Name = "RecieptReport";
+			treeNode38.Text = "Reciept";
+			treeNode39.ImageKey = "roday_sale_img_2_icon.png";
+			treeNode39.Name = "Sale";
+			treeNode39.Text = "Sale";
+			treeNode40.ImageKey = "stock_img_icon.png";
+			treeNode40.Name = "StockReport";
+			treeNode40.Text = "Stock";
+			treeNode41.ImageKey = "short_products_img_icon.png";
+			treeNode41.Name = "Short Products";
+			treeNode41.Text = "Short Products";
+			treeNode42.ImageKey = "target_img_icon.png";
+			treeNode42.Name = "Target Vs Achivement";
+			treeNode42.Text = "Target Vs Achivement";
+			treeNode43.ImageKey = "purchase_order_img_icon.png";
+			treeNode43.Name = "ReportOrder";
+			treeNode43.Text = "Orders";
+			treeNode44.ImageKey = "report.png";
+			treeNode44.Name = "Reports";
+			treeNode44.Text = "Reports";
+			treeNode45.ImageKey = "databse_backup_icon_img.png";
+			treeNode45.Name = "Back up";
+			treeNode45.Text = "Back up";
+			treeNode46.ImageKey = "data_gear.png";
+			treeNode46.Name = "Info";
+			treeNode46.Text = "Info";
+			treeNode47.ImageKey = "download (4).jpg";
+			treeNode47.Name = "Database";
+			treeNode47.Text = "Database";
+			treeNode48.ImageKey = "setting_img_icon.png";
+			treeNode48.Name = "Settings";
+			treeNode48.Text = "Settings";
+			treeNode49.ImageKey = "images__9_-removebg-preview.png";
+			treeNode49.Name = "Calculator";
+			treeNode49.Text = "Calculator";
+			treeNode50.ImageKey = "Logout.png";
+			treeNode50.Name = "Log Out";
+			treeNode50.Text = "Log Out";
+			treeNode51.ImageKey = "exit_icon.png";
+			treeNode51.Name = "Exit";
+			treeNode51.Text = "Exit";
+			treeNode52.ImageKey = "download__5_-removebg-preview.png";
+			treeNode52.Name = "Tools";
+			treeNode52.Text = "Tools";
 			this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-									treeNode11,
-									treeNode17,
-									treeNode20,
-									treeNode25});
+									treeNode37,
+									treeNode44,
+									treeNode47,
+									treeNode52});
 			this.treeView1.SelectedImageKey = "shop-icon.png";
 			this.treeView1.ShowNodeToolTips = true;
 			this.treeView1.Size = new System.Drawing.Size(261, 513);
@@ -451,6 +453,7 @@ namespace Shop_Management_System
 			// 
 			this.panel2.BackColor = System.Drawing.Color.SteelBlue;
 			this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.panel2.Controls.Add(this.pictureBox8);
 			this.panel2.Controls.Add(this.label8);
 			this.panel2.Controls.Add(this.label9);
 			this.panel2.Controls.Add(this.pictureBox5);
@@ -924,35 +927,16 @@ namespace Shop_Management_System
 			this.printPreviewDialog1.Name = "printPreviewDialog1";
 			this.printPreviewDialog1.Visible = false;
 			// 
-			// label13
+			// pictureBox8
 			// 
-			this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label13.Location = new System.Drawing.Point(918, 102);
-			this.label13.Name = "label13";
-			this.label13.Size = new System.Drawing.Size(181, 23);
-			this.label13.TabIndex = 28;
-			this.label13.Text = "Search Reciept By ID";
-			this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			// 
-			// textBoxID
-			// 
-			this.textBoxID.Location = new System.Drawing.Point(1068, 104);
-			this.textBoxID.Name = "textBoxID";
-			this.textBoxID.Size = new System.Drawing.Size(226, 20);
-			this.textBoxID.TabIndex = 30;
-			// 
-			// button2
-			// 
-			this.button2.BackColor = System.Drawing.SystemColors.Control;
-			this.button2.FlatAppearance.BorderSize = 0;
-			this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-			this.button2.Location = new System.Drawing.Point(1300, 102);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(31, 23);
-			this.button2.TabIndex = 1;
-			this.button2.UseVisualStyleBackColor = false;
-			this.button2.Click += new System.EventHandler(this.Button2Click);
+			this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+			this.pictureBox8.Location = new System.Drawing.Point(708, 10);
+			this.pictureBox8.Name = "pictureBox8";
+			this.pictureBox8.Size = new System.Drawing.Size(29, 28);
+			this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox8.TabIndex = 17;
+			this.pictureBox8.TabStop = false;
+			this.pictureBox8.Click += new System.EventHandler(this.PictureBox8Click);
 			// 
 			// MainForm
 			// 
@@ -960,10 +944,7 @@ namespace Shop_Management_System
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.Control;
 			this.ClientSize = new System.Drawing.Size(1343, 679);
-			this.Controls.Add(this.textBoxID);
-			this.Controls.Add(this.button2);
 			this.Controls.Add(this.toolStrip1);
-			this.Controls.Add(this.label13);
 			this.Controls.Add(this.pictureBox7);
 			this.Controls.Add(this.panel3);
 			this.Controls.Add(this.panel2);
@@ -986,10 +967,11 @@ namespace Shop_Management_System
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
 			this.toolStrip1.ResumeLayout(false);
 			this.toolStrip1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
-		private System.Windows.Forms.TextBox textBoxID;
+		private System.Windows.Forms.PictureBox pictureBox8;
 		private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
 		private System.Drawing.Printing.PrintDocument printDocument1;
 		private System.Windows.Forms.ToolStripLabel toolStripLabel1;
