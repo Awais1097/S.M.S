@@ -140,7 +140,6 @@ namespace Shop_Management_System
 			this.dateTimePicker1.Name = "dateTimePicker1";
 			this.dateTimePicker1.Size = new System.Drawing.Size(227, 20);
 			this.dateTimePicker1.TabIndex = 0;
-			this.dateTimePicker1.ValueChanged += new System.EventHandler(this.DateTimePicker1ValueChanged);
 			// 
 			// pictureBox2
 			// 
@@ -161,7 +160,6 @@ namespace Shop_Management_System
 			this.label12.TabIndex = 59;
 			this.label12.Text = "Date";
 			this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
 			// 
 			// textBoxsupid
 			// 
@@ -636,7 +634,6 @@ namespace Shop_Management_System
 			this.label7.TabIndex = 101;
 			this.label7.Text = "Status";
 			this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
 			// 
 			// comboBox1
 			// 

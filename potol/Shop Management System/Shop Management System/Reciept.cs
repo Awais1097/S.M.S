@@ -34,17 +34,18 @@ namespace Shop_Management_System
 		 
 		 public string payamount { get; set; }
 		 
-		 public string discount { get; set; }
+		  public string discount { get; set; }
 		  
 		 public string status { get; set; }
 		 
 		 public List<Products> list = new List<Products>();
 		 
-		 public List<Products> products
-   		 {
+		 
+		public List<Products> products
+   		{
         	get { return list; }
         	set {list = value;}
-    	 }
+    	}
 		 
 	}
 	

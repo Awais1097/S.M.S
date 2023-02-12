@@ -79,7 +79,7 @@ namespace Shop_Management_System
 		void getData(){
 			try{
 				SQLDataBase.conOpen();
-				SqlCommand get = new SqlCommand("SELECT m._id, m.date, m.supid, m.supname, m.remarks,m.qtys,m.price,m.type,m.mTime,m.payAmount,status,c.CustomersAddress,m.discount FROM receipt_main m , Customers c  Where m.supid = c.CustomersId AND m._id ='"+rid+"' ORDER BY m._id DESC",SQLDataBase.connection);
+				SqlCommand get = new SqlCommand("SELECT m._id, m.date, m.supid, m.supname, m.remarks,m.qtys,m.price,m.type,m.mTime,m.payAmount,status,c.CustomersAddress,m.discount FROM receipt_main m , Customers c  Where m.supid = c.CustomersId ORDER BY m._id DESC",SQLDataBase.connection);
 				SqlDataReader rdr = get.ExecuteReader();
 				if (rdr == null){
 					SQLDataBase.conClose();
@@ -88,7 +88,7 @@ namespace Shop_Management_System
 				}
 				if(rdr.Read()){
 					reciept.id = rdr[0].ToString();
-					reciept.rDate = DateTime.Parse(rdr[1].ToString()).ToString("yyyy-MM-dd")  +" "+ rdr[8].ToString();
+					reciept.rDate = rdr[1].ToString() +" "+ rdr[8].ToString();
 					reciept.supId = rdr[2].ToString();
 					reciept.supName = rdr[3].ToString() +" ( "+rdr[11].ToString()+" )";
 					reciept.remarks = rdr[4].ToString();

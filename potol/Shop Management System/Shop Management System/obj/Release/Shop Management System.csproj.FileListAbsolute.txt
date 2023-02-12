@@ -35,5 +35,4 @@ D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Rele
 D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop Management System.csproj.GenerateResource.Cache
 D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop Management System.exe
 D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop_Management_System.FormRecieptList.resources
-E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop_Management_System.FormRecieptList.resources
-E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop_Management_System.FormUpdateOrderStatus.resources
+E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\obj\Release\Shop_Management_System.FROM.resources
