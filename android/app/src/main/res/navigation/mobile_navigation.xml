@@ -13,9 +13,9 @@
 
     <fragment
         android:id="@+id/nav_products"
-        android:name="com.awais.storemanagementsystem.ui.AddProductFragment"
+        android:name="com.awais.storemanagementsystem.ui.ProductsListFragment"
         android:label="@string/menu_products"
-        tools:layout="@layout/fragment_add_products" />
+        tools:layout="@layout/base_fragment_list" />
 
     <fragment
         android:id="@+id/nav_gallery"

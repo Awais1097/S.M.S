@@ -13,7 +13,7 @@ class StockListFragment : BaseListFragment() {
             ViewModelProvider(this)[ProductsViewModel::class.java]
         viewModel.getAllProducts()
         viewModel.list.observe(viewLifecycleOwner) {
-            binding.list.adapter = ProductsListAdapter(it,
+           /* binding.list.adapter = ProductsListAdapter(it,
                 onItemClick = object : ProductsListAdapter.OnItemClick {
 
                     override fun onDelete(item: ProductEntity) {
@@ -24,7 +24,7 @@ class StockListFragment : BaseListFragment() {
 
                     }
                 }
-            )
+            )*/
         }
     }
 

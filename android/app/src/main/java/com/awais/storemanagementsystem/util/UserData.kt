@@ -5,6 +5,12 @@ import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
 import android.util.Log
+import com.awais.storemanagementsystem.database.DataBaseConnection.Companion.DATABASE_NAME
+import com.awais.storemanagementsystem.database.DataBaseConnection.Companion.IP_ADDRESS
+import com.awais.storemanagementsystem.database.DataBaseConnection.Companion.ORACLE
+import com.awais.storemanagementsystem.database.DataBaseConnection.Companion.PASSWORD
+import com.awais.storemanagementsystem.database.DataBaseConnection.Companion.USER
+import com.awais.storemanagementsystem.database.ServerData
 import com.awais.storemanagementsystem.model.ShopDetailResponse
 import com.google.gson.Gson
 import java.text.SimpleDateFormat
@@ -18,6 +24,11 @@ object UserData {
     private const val USER_LOGIN = "userLogIn"
     private const val USER_ON_OFF = "shopOnOff"
     private const val USER_IMAGE = "userImage"
+    private const val SERVER_IP = "serverIP"
+    private const val SERVER_DATABASE = "serverDatabase"
+    private const val SERVER_USER = "serverUser"
+    private const val SERVER_PASSWORD = "serverPassword"
+    private const val SERVER_TYPE = "serverType"
 
     @SuppressLint("ConstantLocale")
     val simpleDateFormat = SimpleDateFormat("yyyy/MM/dd HH:mm:ss", Locale.getDefault())
@@ -52,7 +63,7 @@ object UserData {
     @SuppressLint("ConstantLocale")
     val simpleDateFormat9 = SimpleDateFormat("EEEE dd MMMM yyyy", Locale.getDefault())
 
-    fun saveUser(context: Context, user: ShopDetailResponse, ) {
+    fun saveUser(context: Context, user: ShopDetailResponse) {
         val editor = getSharedPreferencesEditor(context)
         editor.putString(USER_NAME, Gson().toJson(user))
         editor.commit()
@@ -115,6 +126,32 @@ object UserData {
 
     private fun getSharedPreferencesEditor(context: Context): SharedPreferences.Editor {
         return getSharedPreferences(context).edit()
+    }
+
+    fun saveIP(context: Context, ip: ServerData) {
+        val editor = getSharedPreferencesEditor(context)
+        editor.putString(SERVER_IP, ip.ip)
+        editor.putString(SERVER_DATABASE, ip.database)
+        editor.putString(SERVER_USER, ip.user)
+        editor.putString(SERVER_PASSWORD, ip.password)
+        editor.putString(SERVER_TYPE, ip.type)
+        editor.commit()
+    }
+
+    fun getIP(context: Context): ServerData {
+        val editor = getSharedPreferences(context)
+        return ServerData(
+            editor.getString(SERVER_IP, IP_ADDRESS)
+                ?:IP_ADDRESS,
+            editor.getString(SERVER_DATABASE, DATABASE_NAME)
+                ?: DATABASE_NAME,
+            editor.getString(SERVER_USER, USER)
+                ?: USER,
+            editor.getString(SERVER_PASSWORD, PASSWORD)
+                ?: PASSWORD,
+            editor.getString(SERVER_TYPE, ORACLE)
+                ?: ORACLE
+        )
     }
 
 }

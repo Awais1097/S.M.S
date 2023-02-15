@@ -103,7 +103,7 @@ class AddProductFragment : Fragment() {
             binding.companyEditText.setAdapter(adpater)
         }
         viewModel.list.observe(viewLifecycleOwner) {
-            binding.recyclerView.adapter = ProductsListAdapter(it,
+          /*  binding.recyclerView.adapter = ProductsListAdapter(it,
                 onItemClick = object : ProductsListAdapter.OnItemClick {
 
                     override fun onDelete(item: ProductEntity) {
@@ -132,7 +132,7 @@ class AddProductFragment : Fragment() {
                 }
             )
             binding.countTv.text =
-                "${requireContext().getString(R.string.all_products)} (${it.size})"
+                "${requireContext().getString(R.string.all_products)} (${it.size})"*/
         }
         binding.saveButton.setOnClickListener {
             if (TextUtils.isEmpty(binding.productNameEditText.text)) {

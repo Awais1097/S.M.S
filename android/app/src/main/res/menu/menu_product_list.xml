@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/action_category"
+        android:orderInCategory="100"
+        android:title="@string/group_by_catergory"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_company"
+        android:orderInCategory="100"
+        android:title="@string/group_by_company"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_rack"
+        android:orderInCategory="100"
+        android:title="@string/group_by_rack"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_brand"
+        android:orderInCategory="100"
+        android:title="@string/group_by_brand"
+        app:showAsAction="never" />
+
+</menu>
