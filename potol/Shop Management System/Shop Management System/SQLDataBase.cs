@@ -26,7 +26,8 @@ namespace Shop_Management_System
 		public static SqlConnection conOpen()
 		{
 			//SqlConnection cs = new SqlConnection(@"Data Source=(IP Address)\SQLEXPRESS,1433;Network Library=DBMSSOCN;Initial Catalog=dbase;User ID=sa;Password=password");
-			connection.ConnectionString = "data source  = DESKTOP-DAVEUPR\\SQLEXPRESS; database = ShopDataBase; integrated security = true";
+			//connection.ConnectionString = "data source  = DESKTOP-DAVEUPR\\SQLEXPRESS; database = ShopDataBase; integrated security = true";
+			connection.ConnectionString = "data source  = DESKTOP-HMNK4L1; database = ShopDataBase; integrated security = true";
 			connection.Open();
 			return connection;
 		}

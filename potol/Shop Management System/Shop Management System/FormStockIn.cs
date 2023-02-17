@@ -13,6 +13,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
+
 namespace Shop_Management_System
 {
 	/// <summary>
@@ -349,10 +350,10 @@ namespace Shop_Management_System
 					dr[8].ToString()+"\n";
 			}
 			SQLDataBase.conClose();
-            string filePath = @"StockInDetail.csv";
-            File.WriteAllText(filePath, data);
-            string dataFromRead = File.ReadAllText(filePath);
-            Console.WriteLine(dataFromRead);
+            Boolean msg = Utilites.save("StockIn-"+DateTime.Now.ToString("yyyy-MM-dd")+".csv",data);
+			if(msg == false){
+				MessageBox.Show("File not saved. Try again","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
 		
 		

@@ -33,6 +33,8 @@ namespace Shop_Management_System
 			//
 			InitializeComponent();
 			type = mType;
+			label6.Text = type == Utilites.ORDER ? "Create New Order" : "Create New Reciept";
+			comboBox1.Text = type == Utilites.ORDER ? "Pending" : "Close";
 			//
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
@@ -352,6 +354,7 @@ namespace Shop_Management_System
 			
 			textBox2.Text = qty.ToString();
 			textBoxremain.Text = tPtice.ToString();
+			textBox3.Text = tPtice.ToString();
 		}
 		
 		
@@ -508,11 +511,10 @@ namespace Shop_Management_System
 		}
 		
 		
-		
 		void PrintDocument1PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
 		{
-			//new_id.ToString()
-			new PrintRepiept("2",e);
+			//
+			new PrintRepiept(new_id.ToString(),e);
 		}
 		
 		
@@ -520,5 +522,11 @@ namespace Shop_Management_System
 		{
 			
 		}
+		
+		void DateTimePicker1ValueChanged(object sender, EventArgs e)
+		{
+			
+		}
+		
 	}
 }

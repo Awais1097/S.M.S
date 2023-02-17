@@ -1,3 +1,4 @@
 Stock Detail
 Profuct id,Product Name, Supplier Id, Supplier Name, QTY
-PRO-1,Test Product,,,0,
+PRO-1,Test Product,SUP-1,Awais,6,
+PRO-2,PRODUCT 2,SUP-1,Awais,0,

@@ -8,6 +8,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
@@ -19,6 +20,7 @@ namespace Shop_Management_System
 	/// </summary>
 	public partial class MainForm : Form
 	{
+		string target = "0";
 		public MainForm()
 		{
 			//
@@ -26,7 +28,7 @@ namespace Shop_Management_System
 			//
 			InitializeComponent();
 			getData();
-			treeView1.AllowDrop = true;  
+			//treeView1.ExpandAll();
 			//
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
@@ -43,11 +45,67 @@ namespace Shop_Management_System
 				 label10.Text = rdr[0].ToString();
 				 label5.Text = rdr[4].ToString() + " (SMS)";//5logo
 				 label6.Text = rdr[10].ToString() +" To "+ rdr[11].ToString();
+				 target =  rdr[11].ToString();
 				 try{
 				 	pictureBox1.Image = Utilites.LoadImage(rdr[3].ToString());
 				 }catch(Exception){}
+				 
+				 try{
+				 	pictureBox7.Image = Utilites.LoadImage(rdr[5].ToString());
+				 }catch(Exception){}
 			}
 			SQLDataBase.conClose();
+			getProgress();
+		}
+		
+		void getProgress(){		
+			SQLDataBase.conOpen();
+			SqlCommand get = new SqlCommand("select * from ViewProgress where date = '"+DateTime.Now.ToString("yyyy-MM-dd")+"'",SQLDataBase.connection);
+			SqlDataReader rdr = get.ExecuteReader();
+			if(rdr.Read())
+			{
+				 label2.Text = rdr[0].ToString()+ "+";
+				 label3.Text = rdr[1].ToString() + "+";
+				 label8.Text = Math.Round(double.Parse(rdr[3].ToString()),1).ToString() +"%";
+			}
+			SQLDataBase.conClose();
+			getAllProgresss();
+		}
+		
+		void getOrdrs(){		
+			SQLDataBase.conOpen();
+			SqlCommand get = new SqlCommand("select COUNT(_id) as Pending from receipt_main where type = 'ORDER' and status = 'Pending'",SQLDataBase.connection);
+			SqlDataReader rdr = get.ExecuteReader();
+			if(rdr.Read())
+			{
+				 label13.Text = rdr[0].ToString()+ "+";
+			}
+			SQLDataBase.conClose();
+		}
+		
+		void getAllProgresss(){
+		try{
+			SQLDataBase.conOpen();
+			SqlCommand get = new SqlCommand("select TOP (40) * from ViewProgress order by date DESC",SQLDataBase.connection);
+			SqlDataAdapter da = new SqlDataAdapter(get);
+			DataTable dt = new DataTable();
+			da.Fill(dt);
+			dataGridView1.Rows.Clear();
+			foreach(DataRow dr in dt.Rows)
+			{
+				int n = dataGridView1.Rows.Add();
+				dataGridView1.Rows[n].Cells[0].Value =  DateTime.Parse(dr[4].ToString()).ToString("yyyy-MM-dd") ;
+				dataGridView1.Rows[n].Cells[1].Value = dr[1].ToString();
+				dataGridView1.Rows[n].Cells[2].Value = dr[0].ToString();
+				dataGridView1.Rows[n].Cells[3].Value = target.ToString();
+				dataGridView1.Rows[n].Cells[4].Value =Math.Round(double.Parse(dr[3].ToString()),1).ToString();
+			}
+		
+			SQLDataBase.conClose();
+			}catch(Exception){
+			SQLDataBase.conClose();
+			}
+			getOrdrs();
 		}
 		void Label2Click(object sender, EventArgs e)
 		{
@@ -110,12 +168,47 @@ namespace Shop_Management_System
 					prof.ShowDialog();
 					break;
 				case "Stock":
+					Form stockIn = new FormStockIn();
+					stockIn.ShowDialog();
+					break;
+				case "Info":
+					Utilites.save("DatBaseInfo.csv","Shop Management System\nFor infromation and in case of any problem\nName: Awais ul Hassan\n(Call-WhatsApp-SMS) On: 03066395565\nEmail on: awaisbagga@gmail.com\nDatBaseName: ShopDataBase\nBackUp-File: C:\\Backup\\ShopDataBase.bak");
+					break;
+				case "StockReport":
 					Form stockReportForm = new FormStockReport();
 					stockReportForm.ShowDialog();
 					break;
 				case "Settings":
 					Form settingReportForm = new FormShopInfo();
 					settingReportForm.ShowDialog();
+					break;
+				case "RecieptReport":
+					Form recListForm = new FormRecieptList(Utilites.RECIEPT);
+					recListForm .ShowDialog();
+					break;
+				case "Reciept":
+					Form racForm = new FormCreateRecipt(Utilites.RECIEPT);
+					racForm.ShowDialog();
+					break;
+				case "Orders":
+					Form orderForm = new FormCreateRecipt(Utilites.ORDER);
+					orderForm.ShowDialog();
+					break;
+				case "ReportOrder":
+					Form ordListForm = new FormRecieptList(Utilites.ORDER);
+					ordListForm .ShowDialog();
+					break;
+				case "OutstandingReport":
+					Form OutstandingReport = new FormOutstanding("ALL");
+					OutstandingReport .ShowDialog();
+					break;
+				case "Short Products":
+					Form FormShortProducts = new FormShortProducts();
+					FormShortProducts .ShowDialog();
+					break;
+				case "Target Vs Achivement":
+					Form FormTargetAch = new FormTargetAch(target);
+					FormTargetAch .ShowDialog();
 					break;
 				case "Calculator":
 					try {
@@ -134,7 +227,7 @@ namespace Shop_Management_System
 					break;
 				case "Back up":
 					try{
-						string query = "BACKUP DATABASE ShopDataBase TO DISK = 'C:\\Backup\\ShopDataBase-"+DateTime.Now.ToString("ddMMMMyyyy") + ".bak'";  
+						string query = "BACKUP DATABASE ShopDataBase TO DISK = 'E:\\Backup\\ShopDataBase-"+DateTime.Now.ToString("ddMMMMyyyy") + ".bak'";  
 						SqlCommand cmd = new SqlCommand(query,SQLDataBase.getConnection());
 						SQLDataBase.conOpen();
 						cmd.ExecuteScalar();
@@ -172,17 +265,80 @@ namespace Shop_Management_System
 		
 		void PrintDocument1PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
 		{
-			new PrintRepiept(textBoxID.Text.ToString(),e);
+
 		}
 		
 		void Button2Click(object sender, EventArgs e)
 		{
-			if(textBoxID.Text.Trim() == string.Empty){
-				MessageBox.Show("Enter Recipt Id.!" , "Error" , MessageBoxButtons.OK, MessageBoxIcon.Error);
-				return;
-			  }
-			printPreviewDialog1.Document =  printDocument1;
-			printPreviewDialog1.ShowDialog();			
+						
+		}
+		
+		void Label13Click(object sender, EventArgs e)
+		{
+			
+		}
+		
+		void PictureBox8Click(object sender, EventArgs e)
+		{	
+			getData();
+		}
+		
+		void ToolStripButton2Click(object sender, EventArgs e)
+		{
+				Form form = new FormSearch();
+				form.ShowDialog();		
+		}
+		
+		
+		void Button5Click(object sender, EventArgs e)
+		{
+			Form ordListForm = new FormRecieptList(Utilites.RECIEPT);
+					ordListForm .ShowDialog();			
+		}
+		
+		void PendingToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			Form OutstandingReport = new FormOutstanding("PENDING");
+					OutstandingReport .ShowDialog();			
+		}
+		
+		void ReportToolStripMenuItem1Click(object sender, EventArgs e)
+		{
+			Form OutstandingReport = new FormOutstanding("ALL");
+					OutstandingReport .ShowDialog();			
+		}
+		
+		void BackupToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			try{
+						string query = "BACKUP DATABASE ShopDataBase TO DISK = 'E:\\Backup\\ShopDataBase-"+DateTime.Now.ToString("dd-MMMM-yyyy") + ".bak'";  
+						SqlCommand cmd = new SqlCommand(query,SQLDataBase.getConnection());
+						SQLDataBase.conOpen();
+						cmd.ExecuteScalar();
+						SQLDataBase.conClose();  
+            			MessageBox.Show("Update Dateabse BackUp Successsfully..! ","Infromation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					}catch(Exception){
+						SQLDataBase.conClose();
+						MessageBox.Show("Update Dateabse BackUp Not Successsfully..!  ","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}		
+		}
+		
+		void RestoreToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			Utilites.save("DatBaseInfo.csv","Shop Management System\nFor infromation and in case of any problem\nName: Awais ul Hassan\n(Call-WhatsApp-SMS) On: 03066395565\nEmail on: awaisbagga@gmail.com\nDatBaseName: ShopDataBase\nBackUp-File: C:\\Backup\\ShopDataBase.bak");			
+		}
+		
+		
+		void ShortsProductsToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			Form FormShortProducts = new FormShortProducts();
+					FormShortProducts .ShowDialog();			
+		}
+		
+		void TargetVSAchToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			Form FormTargetAch = new FormTargetAch(target);
+					FormTargetAch .ShowDialog();			
 		}
 	}
 	

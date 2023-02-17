@@ -22,6 +22,7 @@
     <WarningLevel>4</WarningLevel>
     <RunCodeAnalysis>False</RunCodeAnalysis>
     <SourceAnalysisOverrideSettingsFile>C:\Users\mohsi\AppData\Roaming\ICSharpCode/SharpDevelop4\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <ApplicationIcon>main_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -52,6 +53,7 @@
     <Reference Include="Microsoft.CSharp">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel" />
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -73,6 +75,10 @@
     <Compile Include="CompanyForm.Designer.cs">
       <DependentUpon>CompanyForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAddPayment.cs" />
+    <Compile Include="FormAddPayment.Designer.cs">
+      <DependentUpon>FormAddPayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBrands.cs" />
     <Compile Include="FormBrands.Designer.cs">
       <DependentUpon>FormBrands.cs</DependentUpon>
@@ -93,6 +99,10 @@
     <Compile Include="FormLogIn.Designer.cs">
       <DependentUpon>FormLogIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOutstanding.cs" />
+    <Compile Include="FormOutstanding.Designer.cs">
+      <DependentUpon>FormOutstanding.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormProducts.cs" />
     <Compile Include="FormProducts.Designer.cs">
       <DependentUpon>FormProducts.cs</DependentUpon>
@@ -105,9 +115,17 @@
     <Compile Include="FormRecieptList.Designer.cs">
       <DependentUpon>FormRecieptList.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSearch.cs" />
+    <Compile Include="FormSearch.Designer.cs">
+      <DependentUpon>FormSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormShopInfo.cs" />
     <Compile Include="FormShopInfo.Designer.cs">
       <DependentUpon>FormShopInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormShortProducts.cs" />
+    <Compile Include="FormShortProducts.Designer.cs">
+      <DependentUpon>FormShortProducts.cs</DependentUpon>
     </Compile>
     <Compile Include="FormStockIn.cs" />
     <Compile Include="FormStockIn.Designer.cs">
@@ -121,10 +139,20 @@
     <Compile Include="FormSupplier.Designer.cs">
       <DependentUpon>FormSupplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTargetAch.cs" />
+    <Compile Include="FormTargetAch.Designer.cs">
+      <DependentUpon>FormTargetAch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdateOrderStatus.cs" />
+    <Compile Include="FormUpdateOrderStatus.Designer.cs">
+      <DependentUpon>FormUpdateOrderStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs" />
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Payment.cs" />
+    <Compile Include="PrintPayment.cs" />
     <Compile Include="PrintRepiept.cs" />
     <Compile Include="Products.cs" />
     <Compile Include="Program.cs" />
@@ -141,6 +169,9 @@
     <EmbeddedResource Include="CompanyForm.resx">
       <DependentUpon>CompanyForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAddPayment.resx">
+      <DependentUpon>FormAddPayment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBrands.resx">
       <DependentUpon>FormBrands.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +187,9 @@
     <EmbeddedResource Include="FormLogIn.resx">
       <DependentUpon>FormLogIn.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormOutstanding.resx">
+      <DependentUpon>FormOutstanding.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormProducts.resx">
       <DependentUpon>FormProducts.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,8 +199,14 @@
     <EmbeddedResource Include="FormRecieptList.resx">
       <DependentUpon>FormRecieptList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormSearch.resx">
+      <DependentUpon>FormSearch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormShopInfo.resx">
       <DependentUpon>FormShopInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormShortProducts.resx">
+      <DependentUpon>FormShortProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormStockIn.resx">
       <DependentUpon>FormStockIn.cs</DependentUpon>
@@ -176,6 +216,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSupplier.resx">
       <DependentUpon>FormSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTargetAch.resx">
+      <DependentUpon>FormTargetAch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpdateOrderStatus.resx">
+      <DependentUpon>FormUpdateOrderStatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.Designer.cs</DependentUpon>

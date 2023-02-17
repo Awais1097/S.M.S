@@ -69,5 +69,11 @@ D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Debu
 D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Debug\Shop Management System.csproj.GenerateResource.Cache
 D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Debug\Shop Management System.exe
 D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Debug\Shop Management System.pdb
-D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Debug\Shop_Management_System.FROM.resources
-E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\obj\Debug\Shop_Management_System.FROM.resources
+D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Debug\Shop_Management_System.FormRecieptList.resources
+D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Debug\Shop_Management_System.FormSearch.resources
+D:\New folder\S.M.S\potol\Shop Management System\Shop Management System\obj\Debug\Shop_Management_System.FormUpdateOrderStatus.resources
+E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\obj\Debug\Shop_Management_System.FormAddPayment.resources
+E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\obj\Debug\Shop_Management_System.FormOutstanding.resources
+E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\obj\Debug\Shop_Management_System.FormRecieptList.resources
+E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\obj\Debug\Shop_Management_System.FormSearch.resources
+E:\Projects\android\S.M.S\potol\Shop Management System\Shop Management System\obj\Debug\Shop_Management_System.FormUpdateOrderStatus.resources

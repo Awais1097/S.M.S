@@ -48,8 +48,6 @@ namespace Shop_Management_System
 		private System.Windows.Forms.PictureBox pictureBox7;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button button5;
-		private System.Windows.Forms.Label label13;
-		private System.Windows.Forms.Button button2;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -73,52 +71,54 @@ namespace Shop_Management_System
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Reciept");
-			System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Orders");
-			System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Stock");
-			System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Suppliers");
-			System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Products");
-			System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Customers");
-			System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Companies");
-			System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Categories");
-			System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Brands");
-			System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Racks");
-			System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("S.M.S", new System.Windows.Forms.TreeNode[] {
-									treeNode1,
-									treeNode2,
-									treeNode3,
-									treeNode4,
-									treeNode5,
-									treeNode6,
-									treeNode7,
-									treeNode8,
-									treeNode9,
-									treeNode10});
-			System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Reciept");
-			System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Sale");
-			System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Stock");
-			System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Short Products");
-			System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Target Vs Achivement");
-			System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Reports", new System.Windows.Forms.TreeNode[] {
-									treeNode12,
-									treeNode13,
-									treeNode14,
-									treeNode15,
-									treeNode16});
-			System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Back up");
-			System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Info");
-			System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Database", new System.Windows.Forms.TreeNode[] {
-									treeNode18,
-									treeNode19});
-			System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Settings");
-			System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Calculator");
-			System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Log Out");
-			System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Exit");
-			System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Tools", new System.Windows.Forms.TreeNode[] {
-									treeNode21,
-									treeNode22,
-									treeNode23,
-									treeNode24});
+			System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Reciept");
+			System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Orders");
+			System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Stock");
+			System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Suppliers");
+			System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Products");
+			System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Customers");
+			System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Companies");
+			System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Categories");
+			System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("Brands");
+			System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("Racks");
+			System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("S.M.S", new System.Windows.Forms.TreeNode[] {
+									treeNode27,
+									treeNode28,
+									treeNode29,
+									treeNode30,
+									treeNode31,
+									treeNode32,
+									treeNode33,
+									treeNode34,
+									treeNode35,
+									treeNode36});
+			System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Reciept");
+			System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("Outstanding");
+			System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("Stock");
+			System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("Short Products");
+			System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("Target Vs Achivement");
+			System.Windows.Forms.TreeNode treeNode43 = new System.Windows.Forms.TreeNode("Orders");
+			System.Windows.Forms.TreeNode treeNode44 = new System.Windows.Forms.TreeNode("Reports", new System.Windows.Forms.TreeNode[] {
+									treeNode38,
+									treeNode39,
+									treeNode40,
+									treeNode41,
+									treeNode42,
+									treeNode43});
+			System.Windows.Forms.TreeNode treeNode45 = new System.Windows.Forms.TreeNode("Back up");
+			System.Windows.Forms.TreeNode treeNode46 = new System.Windows.Forms.TreeNode("Info");
+			System.Windows.Forms.TreeNode treeNode47 = new System.Windows.Forms.TreeNode("Database", new System.Windows.Forms.TreeNode[] {
+									treeNode45,
+									treeNode46});
+			System.Windows.Forms.TreeNode treeNode48 = new System.Windows.Forms.TreeNode("Settings");
+			System.Windows.Forms.TreeNode treeNode49 = new System.Windows.Forms.TreeNode("Calculator");
+			System.Windows.Forms.TreeNode treeNode50 = new System.Windows.Forms.TreeNode("Log Out");
+			System.Windows.Forms.TreeNode treeNode51 = new System.Windows.Forms.TreeNode("Exit");
+			System.Windows.Forms.TreeNode treeNode52 = new System.Windows.Forms.TreeNode("Tools", new System.Windows.Forms.TreeNode[] {
+									treeNode48,
+									treeNode49,
+									treeNode50,
+									treeNode51});
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.label5 = new System.Windows.Forms.Label();
 			this.treeView1 = new System.Windows.Forms.TreeView();
@@ -132,6 +132,10 @@ namespace Shop_Management_System
 			this.label11 = new System.Windows.Forms.Label();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.panel2 = new System.Windows.Forms.Panel();
+			this.label13 = new System.Windows.Forms.Label();
+			this.label14 = new System.Windows.Forms.Label();
+			this.pictureBox9 = new System.Windows.Forms.PictureBox();
+			this.pictureBox8 = new System.Windows.Forms.PictureBox();
 			this.label8 = new System.Windows.Forms.Label();
 			this.label9 = new System.Windows.Forms.Label();
 			this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -182,15 +186,19 @@ namespace Shop_Management_System
 			this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
 			this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
 			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+			this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+			this.toolStripDropDownButton7 = new System.Windows.Forms.ToolStripDropDownButton();
+			this.reportToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+			this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
 			this.printDocument1 = new System.Drawing.Printing.PrintDocument();
 			this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-			this.label13 = new System.Windows.Forms.Label();
-			this.textBoxID = new System.Windows.Forms.TextBox();
-			this.button2 = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.panel2.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -203,18 +211,22 @@ namespace Shop_Management_System
 			// 
 			// label5
 			// 
+			this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+									| System.Windows.Forms.AnchorStyles.Right)));
 			this.label5.BackColor = System.Drawing.Color.SteelBlue;
 			this.label5.Font = new System.Drawing.Font("Stencil", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label5.ForeColor = System.Drawing.Color.White;
 			this.label5.Location = new System.Drawing.Point(-1, -1);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(1346, 97);
+			this.label5.Size = new System.Drawing.Size(1286, 97);
 			this.label5.TabIndex = 2;
 			this.label5.Text = "Shop Management System (S.M.S)";
 			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// treeView1
 			// 
+			this.treeView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+									| System.Windows.Forms.AnchorStyles.Left)));
 			this.treeView1.BackColor = System.Drawing.Color.White;
 			this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.treeView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -222,91 +234,94 @@ namespace Shop_Management_System
 			this.treeView1.ImageKey = "shop-icon.png";
 			this.treeView1.ImageList = this.imageList1;
 			this.treeView1.ItemHeight = 40;
-			this.treeView1.Location = new System.Drawing.Point(21, 131);
+			this.treeView1.Location = new System.Drawing.Point(13, 130);
 			this.treeView1.Name = "treeView1";
-			treeNode1.ImageKey = "reciept_img_icon.png";
-			treeNode1.Name = "Reciept";
-			treeNode1.Text = "Reciept";
-			treeNode2.ImageKey = "purchase_order_img_icon.png";
-			treeNode2.Name = "Orders";
-			treeNode2.Text = "Orders";
-			treeNode3.ImageKey = "stock_img_icon.png";
-			treeNode3.Name = "Stock";
-			treeNode3.Text = "Stock";
-			treeNode4.ImageKey = "supplier_img_icon.png";
-			treeNode4.Name = "Suppliers";
-			treeNode4.Text = "Suppliers";
-			treeNode5.ImageKey = "product_icon.png";
-			treeNode5.Name = "Products";
-			treeNode5.Text = "Products";
-			treeNode6.ImageKey = "customers_img_icon.png";
-			treeNode6.Name = "Customers";
-			treeNode6.Text = "Customers";
-			treeNode7.ImageKey = "company_img_icon.png";
-			treeNode7.Name = "Companies";
-			treeNode7.Text = "Companies";
-			treeNode8.ImageKey = "caregory_img_icon.png";
-			treeNode8.Name = "Categories";
-			treeNode8.Text = "Categories";
-			treeNode9.ImageKey = "brand_img_icon.png";
-			treeNode9.Name = "Brands";
-			treeNode9.Text = "Brands";
-			treeNode10.ImageKey = "rack_img_icon.png";
-			treeNode10.Name = "Racks";
-			treeNode10.Text = "Racks";
-			treeNode11.ImageKey = "shop-icon.png";
-			treeNode11.Name = "S.M.S";
-			treeNode11.Text = "S.M.S";
-			treeNode12.ImageKey = "reciept_img_icon.png";
-			treeNode12.Name = "RecieptReport";
-			treeNode12.Text = "Reciept";
-			treeNode13.ImageKey = "roday_sale_img_2_icon.png";
-			treeNode13.Name = "Sale";
-			treeNode13.Text = "Sale";
-			treeNode14.ImageKey = "stock_img_icon.png";
-			treeNode14.Name = "StockReport";
-			treeNode14.Text = "Stock";
-			treeNode15.ImageKey = "short_products_img_icon.png";
-			treeNode15.Name = "Short Products";
-			treeNode15.Text = "Short Products";
-			treeNode16.ImageKey = "target_img_icon.png";
-			treeNode16.Name = "Target Vs Achivement";
-			treeNode16.Text = "Target Vs Achivement";
-			treeNode17.ImageKey = "report.png";
-			treeNode17.Name = "Reports";
-			treeNode17.Text = "Reports";
-			treeNode18.ImageKey = "databse_backup_icon_img.png";
-			treeNode18.Name = "Back up";
-			treeNode18.Text = "Back up";
-			treeNode19.ImageKey = "data_gear.png";
-			treeNode19.Name = "Info";
-			treeNode19.Text = "Info";
-			treeNode20.ImageKey = "download (4).jpg";
-			treeNode20.Name = "Database";
-			treeNode20.Text = "Database";
-			treeNode21.ImageKey = "setting_img_icon.png";
-			treeNode21.Name = "Settings";
-			treeNode21.Text = "Settings";
-			treeNode22.ImageKey = "images__9_-removebg-preview.png";
-			treeNode22.Name = "Calculator";
-			treeNode22.Text = "Calculator";
-			treeNode23.ImageKey = "Logout.png";
-			treeNode23.Name = "Log Out";
-			treeNode23.Text = "Log Out";
-			treeNode24.ImageKey = "exit_icon.png";
-			treeNode24.Name = "Exit";
-			treeNode24.Text = "Exit";
-			treeNode25.ImageKey = "download__5_-removebg-preview.png";
-			treeNode25.Name = "Tools";
-			treeNode25.Text = "Tools";
+			treeNode27.ImageKey = "reciept_img_icon.png";
+			treeNode27.Name = "Reciept";
+			treeNode27.Text = "Reciept";
+			treeNode28.ImageKey = "purchase_order_img_icon.png";
+			treeNode28.Name = "Orders";
+			treeNode28.Text = "Orders";
+			treeNode29.ImageKey = "stock_img_icon.png";
+			treeNode29.Name = "Stock";
+			treeNode29.Text = "Stock";
+			treeNode30.ImageKey = "supplier_img_icon.png";
+			treeNode30.Name = "Suppliers";
+			treeNode30.Text = "Suppliers";
+			treeNode31.ImageKey = "product_icon.png";
+			treeNode31.Name = "Products";
+			treeNode31.Text = "Products";
+			treeNode32.ImageKey = "customers_img_icon.png";
+			treeNode32.Name = "Customers";
+			treeNode32.Text = "Customers";
+			treeNode33.ImageKey = "company_img_icon.png";
+			treeNode33.Name = "Companies";
+			treeNode33.Text = "Companies";
+			treeNode34.ImageKey = "caregory_img_icon.png";
+			treeNode34.Name = "Categories";
+			treeNode34.Text = "Categories";
+			treeNode35.ImageKey = "brand_img_icon.png";
+			treeNode35.Name = "Brands";
+			treeNode35.Text = "Brands";
+			treeNode36.ImageKey = "rack_img_icon.png";
+			treeNode36.Name = "Racks";
+			treeNode36.Text = "Racks";
+			treeNode37.ImageKey = "shop-icon.png";
+			treeNode37.Name = "S.M.S";
+			treeNode37.Text = "S.M.S";
+			treeNode38.ImageKey = "reciept_img_icon.png";
+			treeNode38.Name = "RecieptReport";
+			treeNode38.Text = "Reciept";
+			treeNode39.ImageKey = "unpaid_invoice_icon.png";
+			treeNode39.Name = "OutstandingReport";
+			treeNode39.Text = "Outstanding";
+			treeNode40.ImageKey = "stock_img_icon.png";
+			treeNode40.Name = "StockReport";
+			treeNode40.Text = "Stock";
+			treeNode41.ImageKey = "short_products_img_icon.png";
+			treeNode41.Name = "Short Products";
+			treeNode41.Text = "Short Products";
+			treeNode42.ImageKey = "target_img_icon.png";
+			treeNode42.Name = "Target Vs Achivement";
+			treeNode42.Text = "Target Vs Achivement";
+			treeNode43.ImageKey = "purchase_order_img_icon.png";
+			treeNode43.Name = "ReportOrder";
+			treeNode43.Text = "Orders";
+			treeNode44.ImageKey = "report.png";
+			treeNode44.Name = "Reports";
+			treeNode44.Text = "Reports";
+			treeNode45.ImageKey = "databse_backup_icon_img.png";
+			treeNode45.Name = "Back up";
+			treeNode45.Text = "Back up";
+			treeNode46.ImageKey = "data_gear.png";
+			treeNode46.Name = "Info";
+			treeNode46.Text = "Info";
+			treeNode47.ImageKey = "download (4).jpg";
+			treeNode47.Name = "Database";
+			treeNode47.Text = "Database";
+			treeNode48.ImageKey = "setting_img_icon.png";
+			treeNode48.Name = "Settings";
+			treeNode48.Text = "Settings";
+			treeNode49.ImageKey = "images__9_-removebg-preview.png";
+			treeNode49.Name = "Calculator";
+			treeNode49.Text = "Calculator";
+			treeNode50.ImageKey = "Logout.png";
+			treeNode50.Name = "Log Out";
+			treeNode50.Text = "Log Out";
+			treeNode51.ImageKey = "exit_icon.png";
+			treeNode51.Name = "Exit";
+			treeNode51.Text = "Exit";
+			treeNode52.ImageKey = "download__5_-removebg-preview.png";
+			treeNode52.Name = "Tools";
+			treeNode52.Text = "Tools";
 			this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-									treeNode11,
-									treeNode17,
-									treeNode20,
-									treeNode25});
+									treeNode37,
+									treeNode44,
+									treeNode47,
+									treeNode52});
 			this.treeView1.SelectedImageKey = "shop-icon.png";
 			this.treeView1.ShowNodeToolTips = true;
-			this.treeView1.Size = new System.Drawing.Size(261, 513);
+			this.treeView1.Size = new System.Drawing.Size(261, 607);
 			this.treeView1.TabIndex = 1;
 			this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.TreeView1AfterSelect);
 			// 
@@ -342,9 +357,14 @@ namespace Shop_Management_System
 			this.imageList1.Images.SetKeyName(25, "images__9_-removebg-preview.png");
 			this.imageList1.Images.SetKeyName(26, "download__5_-removebg-preview.png");
 			this.imageList1.Images.SetKeyName(27, "supplier_img_icon.png");
+			this.imageList1.Images.SetKeyName(28, "unpaid_icon.png");
+			this.imageList1.Images.SetKeyName(29, "pain_icon.png");
+			this.imageList1.Images.SetKeyName(30, "unpaid_invoice_icon.png");
 			// 
 			// panel1
 			// 
+			this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+									| System.Windows.Forms.AnchorStyles.Right)));
 			this.panel1.BackColor = System.Drawing.Color.White;
 			this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.panel1.Controls.Add(this.button5);
@@ -354,9 +374,9 @@ namespace Shop_Management_System
 			this.panel1.Controls.Add(this.label10);
 			this.panel1.Controls.Add(this.label11);
 			this.panel1.Controls.Add(this.pictureBox1);
-			this.panel1.Location = new System.Drawing.Point(1068, 131);
+			this.panel1.Location = new System.Drawing.Point(1010, 130);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(261, 513);
+			this.panel1.Size = new System.Drawing.Size(261, 607);
 			this.panel1.TabIndex = 10;
 			// 
 			// button5
@@ -366,13 +386,14 @@ namespace Shop_Management_System
 			this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
 			this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.button5.Location = new System.Drawing.Point(25, 399);
+			this.button5.Location = new System.Drawing.Point(12, 472);
 			this.button5.Name = "button5";
 			this.button5.Size = new System.Drawing.Size(218, 29);
 			this.button5.TabIndex = 3;
 			this.button5.Text = "Print Today Reciepts (P)";
 			this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.button5.UseVisualStyleBackColor = true;
+			this.button5.Click += new System.EventHandler(this.Button5Click);
 			// 
 			// button1
 			// 
@@ -381,7 +402,7 @@ namespace Shop_Management_System
 			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
 			this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.button1.Location = new System.Drawing.Point(25, 362);
+			this.button1.Location = new System.Drawing.Point(12, 435);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(217, 29);
 			this.button1.TabIndex = 2;
@@ -395,7 +416,7 @@ namespace Shop_Management_System
 			this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
 									| System.Windows.Forms.AnchorStyles.Right)));
 			this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-			this.pictureBox6.Location = new System.Drawing.Point(12, 437);
+			this.pictureBox6.Location = new System.Drawing.Point(12, 531);
 			this.pictureBox6.Name = "pictureBox6";
 			this.pictureBox6.Size = new System.Drawing.Size(66, 64);
 			this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -407,7 +428,7 @@ namespace Shop_Management_System
 			this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
 									| System.Windows.Forms.AnchorStyles.Right)));
 			this.label12.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-			this.label12.Location = new System.Drawing.Point(82, 439);
+			this.label12.Location = new System.Drawing.Point(82, 533);
 			this.label12.Name = "label12";
 			this.label12.Size = new System.Drawing.Size(175, 64);
 			this.label12.TabIndex = 10;
@@ -449,8 +470,14 @@ namespace Shop_Management_System
 			// 
 			// panel2
 			// 
+			this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+									| System.Windows.Forms.AnchorStyles.Right)));
 			this.panel2.BackColor = System.Drawing.Color.SteelBlue;
 			this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.panel2.Controls.Add(this.label13);
+			this.panel2.Controls.Add(this.label14);
+			this.panel2.Controls.Add(this.pictureBox9);
+			this.panel2.Controls.Add(this.pictureBox8);
 			this.panel2.Controls.Add(this.label8);
 			this.panel2.Controls.Add(this.label9);
 			this.panel2.Controls.Add(this.pictureBox5);
@@ -464,17 +491,60 @@ namespace Shop_Management_System
 			this.panel2.Controls.Add(this.label1);
 			this.panel2.Controls.Add(this.pictureBox2);
 			this.panel2.Controls.Add(this.labelDate);
-			this.panel2.Location = new System.Drawing.Point(304, 131);
+			this.panel2.Location = new System.Drawing.Point(279, 130);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(751, 135);
+			this.panel2.Size = new System.Drawing.Size(725, 135);
 			this.panel2.TabIndex = 11;
 			this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel2Paint);
+			// 
+			// label13
+			// 
+			this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label13.ForeColor = System.Drawing.Color.White;
+			this.label13.Location = new System.Drawing.Point(557, 84);
+			this.label13.Name = "label13";
+			this.label13.Size = new System.Drawing.Size(132, 19);
+			this.label13.TabIndex = 20;
+			this.label13.Text = "0+";
+			this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// label14
+			// 
+			this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label14.ForeColor = System.Drawing.Color.White;
+			this.label14.Location = new System.Drawing.Point(592, 59);
+			this.label14.Name = "label14";
+			this.label14.Size = new System.Drawing.Size(116, 19);
+			this.label14.TabIndex = 19;
+			this.label14.Text = "Pending Orders";
+			this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// pictureBox9
+			// 
+			this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
+			this.pictureBox9.Location = new System.Drawing.Point(557, 52);
+			this.pictureBox9.Name = "pictureBox9";
+			this.pictureBox9.Size = new System.Drawing.Size(29, 28);
+			this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox9.TabIndex = 18;
+			this.pictureBox9.TabStop = false;
+			// 
+			// pictureBox8
+			// 
+			this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+			this.pictureBox8.Location = new System.Drawing.Point(679, 10);
+			this.pictureBox8.Name = "pictureBox8";
+			this.pictureBox8.Size = new System.Drawing.Size(29, 28);
+			this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox8.TabIndex = 17;
+			this.pictureBox8.TabStop = false;
+			this.pictureBox8.Click += new System.EventHandler(this.PictureBox8Click);
 			// 
 			// label8
 			// 
 			this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label8.ForeColor = System.Drawing.Color.White;
-			this.label8.Location = new System.Drawing.Point(415, 85);
+			this.label8.Location = new System.Drawing.Point(278, 85);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(132, 19);
 			this.label8.TabIndex = 16;
@@ -485,9 +555,9 @@ namespace Shop_Management_System
 			// 
 			this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label9.ForeColor = System.Drawing.Color.White;
-			this.label9.Location = new System.Drawing.Point(450, 60);
+			this.label9.Location = new System.Drawing.Point(328, 58);
 			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(132, 19);
+			this.label9.Size = new System.Drawing.Size(85, 19);
 			this.label9.TabIndex = 15;
 			this.label9.Text = "Progress";
 			this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -495,7 +565,7 @@ namespace Shop_Management_System
 			// pictureBox5
 			// 
 			this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-			this.pictureBox5.Location = new System.Drawing.Point(415, 54);
+			this.pictureBox5.Location = new System.Drawing.Point(278, 51);
 			this.pictureBox5.Name = "pictureBox5";
 			this.pictureBox5.Size = new System.Drawing.Size(29, 28);
 			this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -506,7 +576,7 @@ namespace Shop_Management_System
 			// 
 			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label6.ForeColor = System.Drawing.Color.White;
-			this.label6.Location = new System.Drawing.Point(590, 85);
+			this.label6.Location = new System.Drawing.Point(416, 85);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(132, 19);
 			this.label6.TabIndex = 13;
@@ -517,9 +587,9 @@ namespace Shop_Management_System
 			// 
 			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label7.ForeColor = System.Drawing.Color.White;
-			this.label7.Location = new System.Drawing.Point(625, 60);
+			this.label7.Location = new System.Drawing.Point(451, 60);
 			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(132, 19);
+			this.label7.Size = new System.Drawing.Size(68, 19);
 			this.label7.TabIndex = 12;
 			this.label7.Text = "Target";
 			this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -527,7 +597,7 @@ namespace Shop_Management_System
 			// pictureBox4
 			// 
 			this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-			this.pictureBox4.Location = new System.Drawing.Point(590, 54);
+			this.pictureBox4.Location = new System.Drawing.Point(416, 54);
 			this.pictureBox4.Name = "pictureBox4";
 			this.pictureBox4.Size = new System.Drawing.Size(29, 28);
 			this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -538,7 +608,7 @@ namespace Shop_Management_System
 			// 
 			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label3.ForeColor = System.Drawing.Color.White;
-			this.label3.Location = new System.Drawing.Point(240, 85);
+			this.label3.Location = new System.Drawing.Point(145, 85);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(132, 19);
 			this.label3.TabIndex = 10;
@@ -549,9 +619,9 @@ namespace Shop_Management_System
 			// 
 			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label4.ForeColor = System.Drawing.Color.White;
-			this.label4.Location = new System.Drawing.Point(275, 60);
+			this.label4.Location = new System.Drawing.Point(180, 60);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(132, 19);
+			this.label4.Size = new System.Drawing.Size(68, 19);
 			this.label4.TabIndex = 9;
 			this.label4.Text = "Produts";
 			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -559,7 +629,7 @@ namespace Shop_Management_System
 			// pictureBox3
 			// 
 			this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-			this.pictureBox3.Location = new System.Drawing.Point(240, 54);
+			this.pictureBox3.Location = new System.Drawing.Point(145, 54);
 			this.pictureBox3.Name = "pictureBox3";
 			this.pictureBox3.Size = new System.Drawing.Size(29, 28);
 			this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -570,7 +640,7 @@ namespace Shop_Management_System
 			// 
 			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label2.ForeColor = System.Drawing.Color.White;
-			this.label2.Location = new System.Drawing.Point(59, 85);
+			this.label2.Location = new System.Drawing.Point(11, 85);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(132, 19);
 			this.label2.TabIndex = 7;
@@ -582,9 +652,9 @@ namespace Shop_Management_System
 			// 
 			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.ForeColor = System.Drawing.Color.White;
-			this.label1.Location = new System.Drawing.Point(94, 60);
+			this.label1.Location = new System.Drawing.Point(45, 60);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(132, 19);
+			this.label1.Size = new System.Drawing.Size(44, 19);
 			this.label1.TabIndex = 6;
 			this.label1.Text = "Sale";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -592,7 +662,7 @@ namespace Shop_Management_System
 			// pictureBox2
 			// 
 			this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-			this.pictureBox2.Location = new System.Drawing.Point(59, 54);
+			this.pictureBox2.Location = new System.Drawing.Point(11, 54);
 			this.pictureBox2.Name = "pictureBox2";
 			this.pictureBox2.Size = new System.Drawing.Size(29, 28);
 			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -603,21 +673,24 @@ namespace Shop_Management_System
 			// 
 			this.labelDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelDate.ForeColor = System.Drawing.Color.White;
-			this.labelDate.Location = new System.Drawing.Point(52, 15);
+			this.labelDate.Location = new System.Drawing.Point(3, 15);
 			this.labelDate.Name = "labelDate";
-			this.labelDate.Size = new System.Drawing.Size(546, 23);
+			this.labelDate.Size = new System.Drawing.Size(245, 23);
 			this.labelDate.TabIndex = 4;
 			this.labelDate.Text = "Seturday, 19 Nov, 2022";
 			this.labelDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// panel3
 			// 
+			this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+									| System.Windows.Forms.AnchorStyles.Left) 
+									| System.Windows.Forms.AnchorStyles.Right)));
 			this.panel3.BackColor = System.Drawing.Color.White;
 			this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.panel3.Controls.Add(this.dataGridView1);
-			this.panel3.Location = new System.Drawing.Point(304, 292);
+			this.panel3.Location = new System.Drawing.Point(279, 271);
 			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(751, 352);
+			this.panel3.Size = new System.Drawing.Size(725, 466);
 			this.panel3.TabIndex = 12;
 			// 
 			// dataGridView1
@@ -637,7 +710,7 @@ namespace Shop_Management_System
 			this.dataGridView1.Location = new System.Drawing.Point(0, 0);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.ReadOnly = true;
-			this.dataGridView1.Size = new System.Drawing.Size(749, 350);
+			this.dataGridView1.Size = new System.Drawing.Size(723, 464);
 			this.dataGridView1.TabIndex = 0;
 			this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1CellContentClick);
 			// 
@@ -797,19 +870,21 @@ namespace Shop_Management_System
 			this.toolStripDropDownButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolStripDropDownButton4.Name = "toolStripDropDownButton4";
 			this.toolStripDropDownButton4.Size = new System.Drawing.Size(76, 22);
-			this.toolStripDropDownButton4.Text = "R&eports";
+			this.toolStripDropDownButton4.Text = "Re&ports";
 			// 
 			// shortsProductsToolStripMenuItem
 			// 
 			this.shortsProductsToolStripMenuItem.Name = "shortsProductsToolStripMenuItem";
 			this.shortsProductsToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
 			this.shortsProductsToolStripMenuItem.Text = "&Shorts Products";
+			this.shortsProductsToolStripMenuItem.Click += new System.EventHandler(this.ShortsProductsToolStripMenuItemClick);
 			// 
 			// targetVSAchToolStripMenuItem
 			// 
 			this.targetVSAchToolStripMenuItem.Name = "targetVSAchToolStripMenuItem";
 			this.targetVSAchToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
 			this.targetVSAchToolStripMenuItem.Text = "&Target VS Ach.";
+			this.targetVSAchToolStripMenuItem.Click += new System.EventHandler(this.TargetVSAchToolStripMenuItemClick);
 			// 
 			// toolStripSeparator4
 			// 
@@ -854,12 +929,14 @@ namespace Shop_Management_System
 			this.backupToolStripMenuItem.Name = "backupToolStripMenuItem";
 			this.backupToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
 			this.backupToolStripMenuItem.Text = "&Backup";
+			this.backupToolStripMenuItem.Click += new System.EventHandler(this.BackupToolStripMenuItemClick);
 			// 
 			// restoreToolStripMenuItem
 			// 
 			this.restoreToolStripMenuItem.Name = "restoreToolStripMenuItem";
 			this.restoreToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
-			this.restoreToolStripMenuItem.Text = "&Restore";
+			this.restoreToolStripMenuItem.Text = "&Info";
+			this.restoreToolStripMenuItem.Click += new System.EventHandler(this.RestoreToolStripMenuItemClick);
 			// 
 			// toolStripSeparator6
 			// 
@@ -890,6 +967,8 @@ namespace Shop_Management_System
 			this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
 			this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
 									this.toolStripDropDownButton1,
+									this.toolStripSeparator8,
+									this.toolStripDropDownButton7,
 									this.toolStripSeparator1,
 									this.toolStripDropDownButton2,
 									this.toolStripSeparator2,
@@ -901,14 +980,52 @@ namespace Shop_Management_System
 									this.toolStripSeparator5,
 									this.toolStripDropDownButton6,
 									this.toolStripSeparator6,
+									this.toolStripButton2,
+									this.toolStripSeparator9,
 									this.toolStripButton1,
 									this.toolStripSeparator7,
 									this.toolStripLabel1});
 			this.toolStrip1.Location = new System.Drawing.Point(2, 99);
 			this.toolStrip1.Name = "toolStrip1";
-			this.toolStrip1.Size = new System.Drawing.Size(547, 25);
+			this.toolStrip1.Size = new System.Drawing.Size(723, 25);
 			this.toolStrip1.TabIndex = 0;
 			this.toolStrip1.Text = "toolStrip1";
+			// 
+			// toolStripSeparator8
+			// 
+			this.toolStripSeparator8.Name = "toolStripSeparator8";
+			this.toolStripSeparator8.Size = new System.Drawing.Size(6, 25);
+			// 
+			// toolStripDropDownButton7
+			// 
+			this.toolStripDropDownButton7.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+									this.reportToolStripMenuItem1});
+			this.toolStripDropDownButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton7.Image")));
+			this.toolStripDropDownButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripDropDownButton7.Name = "toolStripDropDownButton7";
+			this.toolStripDropDownButton7.Size = new System.Drawing.Size(102, 22);
+			this.toolStripDropDownButton7.Text = "Outstanding";
+			// 
+			// reportToolStripMenuItem1
+			// 
+			this.reportToolStripMenuItem1.Name = "reportToolStripMenuItem1";
+			this.reportToolStripMenuItem1.Size = new System.Drawing.Size(126, 22);
+			this.reportToolStripMenuItem1.Text = "All &Report";
+			this.reportToolStripMenuItem1.Click += new System.EventHandler(this.ReportToolStripMenuItem1Click);
+			// 
+			// toolStripButton2
+			// 
+			this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+			this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripButton2.Name = "toolStripButton2";
+			this.toolStripButton2.Size = new System.Drawing.Size(62, 22);
+			this.toolStripButton2.Text = "Sear&ch";
+			this.toolStripButton2.Click += new System.EventHandler(this.ToolStripButton2Click);
+			// 
+			// toolStripSeparator9
+			// 
+			this.toolStripSeparator9.Name = "toolStripSeparator9";
+			this.toolStripSeparator9.Size = new System.Drawing.Size(6, 25);
 			// 
 			// printDocument1
 			// 
@@ -924,59 +1041,29 @@ namespace Shop_Management_System
 			this.printPreviewDialog1.Name = "printPreviewDialog1";
 			this.printPreviewDialog1.Visible = false;
 			// 
-			// label13
-			// 
-			this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label13.Location = new System.Drawing.Point(918, 102);
-			this.label13.Name = "label13";
-			this.label13.Size = new System.Drawing.Size(181, 23);
-			this.label13.TabIndex = 28;
-			this.label13.Text = "Search Reciept By ID";
-			this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			// 
-			// textBoxID
-			// 
-			this.textBoxID.Location = new System.Drawing.Point(1068, 104);
-			this.textBoxID.Name = "textBoxID";
-			this.textBoxID.Size = new System.Drawing.Size(226, 20);
-			this.textBoxID.TabIndex = 30;
-			// 
-			// button2
-			// 
-			this.button2.BackColor = System.Drawing.SystemColors.Control;
-			this.button2.FlatAppearance.BorderSize = 0;
-			this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-			this.button2.Location = new System.Drawing.Point(1300, 102);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(31, 23);
-			this.button2.TabIndex = 1;
-			this.button2.UseVisualStyleBackColor = false;
-			this.button2.Click += new System.EventHandler(this.Button2Click);
-			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.Control;
-			this.ClientSize = new System.Drawing.Size(1343, 679);
-			this.Controls.Add(this.textBoxID);
-			this.Controls.Add(this.button2);
+			this.ClientSize = new System.Drawing.Size(1285, 749);
 			this.Controls.Add(this.toolStrip1);
-			this.Controls.Add(this.label13);
 			this.Controls.Add(this.pictureBox7);
 			this.Controls.Add(this.panel3);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.treeView1);
 			this.Controls.Add(this.label5);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "MainForm";
-			this.Text = "Shop Management System";
+			this.Text = "S.M.S";
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.panel1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.panel2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -989,7 +1076,15 @@ namespace Shop_Management_System
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
-		private System.Windows.Forms.TextBox textBoxID;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
+		private System.Windows.Forms.ToolStripButton toolStripButton2;
+		private System.Windows.Forms.PictureBox pictureBox9;
+		private System.Windows.Forms.Label label14;
+		private System.Windows.Forms.Label label13;
+		private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem1;
+		private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton7;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+		private System.Windows.Forms.PictureBox pictureBox8;
 		private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
 		private System.Drawing.Printing.PrintDocument printDocument1;
 		private System.Windows.Forms.ToolStripLabel toolStripLabel1;

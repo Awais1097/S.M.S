@@ -88,7 +88,7 @@ namespace Shop_Management_System
 			this.label6.ForeColor = System.Drawing.Color.White;
 			this.label6.Location = new System.Drawing.Point(107, 1);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(1061, 103);
+			this.label6.Size = new System.Drawing.Size(1223, 103);
 			this.label6.TabIndex = 13;
 			this.label6.Text = "Stock";
 			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -110,7 +110,7 @@ namespace Shop_Management_System
 			this.dataGridView1.Location = new System.Drawing.Point(12, 175);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.ReadOnly = true;
-			this.dataGridView1.Size = new System.Drawing.Size(647, 444);
+			this.dataGridView1.Size = new System.Drawing.Size(647, 451);
 			this.dataGridView1.TabIndex = 15;
 			this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1CellContentClick);
 			// 
@@ -160,7 +160,7 @@ namespace Shop_Management_System
 			this.dataGridView3.Location = new System.Drawing.Point(665, 201);
 			this.dataGridView3.Name = "dataGridView3";
 			this.dataGridView3.ReadOnly = true;
-			this.dataGridView3.Size = new System.Drawing.Size(485, 195);
+			this.dataGridView3.Size = new System.Drawing.Size(507, 195);
 			this.dataGridView3.TabIndex = 17;
 			// 
 			// ColumnDate
@@ -229,7 +229,7 @@ namespace Shop_Management_System
 			this.dataGridView2.Location = new System.Drawing.Point(665, 424);
 			this.dataGridView2.Name = "dataGridView2";
 			this.dataGridView2.ReadOnly = true;
-			this.dataGridView2.Size = new System.Drawing.Size(485, 195);
+			this.dataGridView2.Size = new System.Drawing.Size(507, 202);
 			this.dataGridView2.TabIndex = 29;
 			// 
 			// dataGridViewTextBoxColumn1
@@ -284,7 +284,7 @@ namespace Shop_Management_System
 			this.textBoxpro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.textBoxpro.Location = new System.Drawing.Point(43, 141);
 			this.textBoxpro.Name = "textBoxpro";
-			this.textBoxpro.Size = new System.Drawing.Size(479, 22);
+			this.textBoxpro.Size = new System.Drawing.Size(502, 22);
 			this.textBoxpro.TabIndex = 32;
 			this.textBoxpro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.textBoxpro.TextChanged += new System.EventHandler(this.TextBoxproTextChanged);
@@ -303,10 +303,10 @@ namespace Shop_Management_System
 			// 
 			this.button3.BackColor = System.Drawing.Color.LightSteelBlue;
 			this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-			this.button3.Location = new System.Drawing.Point(528, 138);
+			this.button3.Location = new System.Drawing.Point(551, 138);
 			this.button3.Name = "button3";
 			this.button3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.button3.Size = new System.Drawing.Size(131, 26);
+			this.button3.Size = new System.Drawing.Size(108, 26);
 			this.button3.TabIndex = 37;
 			this.button3.Text = "VIEW ALL";
 			this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -317,7 +317,7 @@ namespace Shop_Management_System
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1162, 631);
+			this.ClientSize = new System.Drawing.Size(1190, 638);
 			this.Controls.Add(this.button3);
 			this.Controls.Add(this.textBoxpro);
 			this.Controls.Add(this.pictureBox3);
@@ -331,10 +331,11 @@ namespace Shop_Management_System
 			this.Controls.Add(this.dataGridView1);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.label6);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "FormStockReport";
-			this.Text = "FormStockReport";
+			this.Text = "S.M.S";
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
