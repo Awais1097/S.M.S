@@ -38,10 +38,10 @@ class LogInActivity : AppCompatActivity() {
             )
         }
         binding.createNow.setOnClickListener {
-          //  ActivityUtils.startRegisterActivity(this)
-            ActivityUtils.startCallActivity(
+            ActivityUtils.startRegisterActivity(this)
+           /* ActivityUtils.startCallActivity(
                 this, "+923066395565"
-            )
+            )*/
         }
 
     }

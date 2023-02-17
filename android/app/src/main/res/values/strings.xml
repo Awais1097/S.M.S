@@ -138,5 +138,9 @@
     <string name="search_reciept">Search Receipt</string>
     <string name="recripy_id">Receipt ID:</string>
     <string name="search">Search</string>
+    <string name="group_by_catergory">Group By Catergory</string>
+    <string name="group_by_company">Group By Company</string>
+    <string name="group_by_rack">Group By Rack</string>
+    <string name="group_by_brand">Group By Brand</string>
 
 </resources>

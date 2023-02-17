@@ -11,21 +11,22 @@ import android.widget.TextView
 import androidx.activity.ComponentActivity
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.*
+import com.awais.storemanagementsystem.database.DataBaseConnection
+import com.awais.storemanagementsystem.database.ServerData
 import com.awais.storemanagementsystem.databinding.ActivityMainBinding
 import com.awais.storemanagementsystem.dbbackup.OnCompleteListener
 import com.awais.storemanagementsystem.dbbackup.RoomBackup
 import com.awais.storemanagementsystem.roomdb.AppDatabase
-import com.awais.storemanagementsystem.util.ActivityUtils
-import com.awais.storemanagementsystem.util.BottomSheet
-import com.awais.storemanagementsystem.util.UserData
-import com.awais.storemanagementsystem.util.Utilities
+import com.awais.storemanagementsystem.util.*
 import com.google.android.gms.ads.MobileAds
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
+import java.sql.Connection
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -141,6 +142,40 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 ActivityUtils.startRegisterActivity(this, true)
                 return true
             }
+            R.id.nav_server_setting->{
+                ProgressDialogUtils.dialodForIPAddress(this@MainActivity,
+                    object : ProgressDialogUtils.DialogSubmitClick {
+                        override fun onClick(ip: ServerData) {
+                            UserData.saveIP(this@MainActivity, ip)
+                        }
+                    })
+                return true
+            }
+            R.id.nav_sync->{
+                object  : DataBaseConnection(){
+                    override fun onPostExecute(connection: Connection) {
+                        Utilities.showSnackbar(
+                            binding.root,
+                            "Server Connected.",
+                            "OK",
+                            getColor(R.color.Green)
+                        ) {
+                        }
+                    }
+
+                    override fun onError(connection: String) {
+                        binding.appBarMain.syncView.isVisible = false
+                        Utilities.showSnackbar(
+                            binding.root,
+                            "Server Not Connected.",
+                            "Try Again",
+                            getColor(R.color.Red)
+                        ) {
+                        }
+                    }
+                }.execute(UserData.getIP(App.context))
+                return true
+            }
         }
         try {
             if (navController!!.currentDestination!!.id != menu.itemId)
@@ -151,6 +186,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     private fun setToolBarColor(header: View) {
         val isChecked = !UserData.userShopOnOff(this)
         binding.appBarMain.toolbar.setBackgroundColor(
